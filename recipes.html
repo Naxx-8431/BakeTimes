@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles/general.css">
+    <link rel="stylesheet" href="styles/header.css">
+    <title>RECIPES</title>
+    <style>
+.container {
+    margin: 25px 103px;
+    text-align: center;
+        }
+.search {
+    margin: 25px 103px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.search-bar {
+    border: 2px solid #60697B;
+    outline: none;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 250px;
+    width: 500px;
+    
+}
+.search-bar::placeholder {
+    font-size: 16px;    
+}
+.search-label {
+    font-size: 22px;
+    margin-right: 5px;
+    color: #60697B;
+    vertical-align: middle;
+}
+.recipe-image {
+    width: 250px;
+    border-radius: 7px;
+    transition: all 0.3s ease-in-out;
+}
+.recipe-image:hover {
+    transform: scale(1.05);
+}
+.recipes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 0 103px;
+    gap: 104px; 
+}
+
+.recipe-title p {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0;
+    cursor: pointer;
+}
+        
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-left">
+           <a href="index.html"><p id="p" style="margin: 0;">BAKE<span style="font-weight: 400; font-size: 25px;">TIMES</span></p></a> 
+        </div>
+        <div class="header-middle">
+                <a href="recipes.html">RECIPES</a>
+                <a href="bakingbasics.html">BAKING BASICS</a>
+                <a href="holidays.html">HOLIDAYS</a>
+                <a href="index.html#about">ABOUT US</a>
+                <a href="reviews.html">REVIEWS</a>       
+        </div>
+        <div class="header-right">
+                <a href="#" class="fa fa-facebook"></a>
+                <a href="#" class="fa fa-twitter"></a>
+                <a href="#" class="fa fa-instagram"></a>
+        </div>
+    </div>
+    <div class="container">
+        <h1 style="font-size: 40px; margin: 0 0 10px;">Recipe Collections</h1>
+        <p style="font-size: 20px; margin: 0;">Discover thousands of tested recipes from simple cookies to show-stopping cakes.
+                      Filter by<br> ingredients, dietary needs, or skill level to find your perfect bake.</p>
+    </div>
+    <div class="search">
+        <form action="/action_page.php">
+            <label for="bar" class="search-label">Search baking recipes:</label>
+            <input type="text" id="bar" class="search-bar" placeholder="Search recipes, ingredients, or techniques..." name="search">
+        </form>
+    </div>
+    <hr style="border: 0; height: 1px; background: #eee; margin: 40px 0;">
+
+    <div>
+        <h2 style="margin: 0 103px 25px;">Featured Collections</h2>
+
+        <div class="recipes">
+        <div class="recipe-card">
+            <a href=""><img src="tumbnail-images/Vanilla Sponge Cake.png" alt="vanilla-sponge" class="recipe-image"></a>
+            <div class="recipe-title">
+                <p>Vanilla Sponge Cake</p>
+            </div>
+        </div>
+        <div class="recipe-card">
+            <a href=""><img src="tumbnail-images/chocolatefudgecake.png" alt="choco-fudge" class="recipe-image"></a>
+            <div class="recipe-title">
+                <p>Chocolate Fudge Cake</p>   
+            </div>
+        </div>
+        <div class="recipe-card">
+             <a href=""><img src="tumbnail-images/Apple Scones.png" alt="apple-scones" class="recipe-image"></a>
+             <div class="recipe-title">
+                 <p>Apple Scones</p>
+            </div>
+        </div>
+        <div class="recipe-card">
+            <a href=""><img src="tumbnail-images/CinnamonRolls.png" alt="Classic White Bread" class="recipe-image"></a>
+            <div class="recipe-title">
+                <p>Cinnamon Rolls</p>
+            </div>
+        </div>
+    </div>
+    
+    </div>
+    <hr style="border: 0; height: 1px; background: #eee; margin: 40px 0;">
+
+    <div>
+        <h2 style="margin: 0 103px 25px;">All Recipes</h2>
+
+    <div class="recipes">
+        <div class="recipe-card">
+            <a href=""><img src="tumbnail-images/Lemon Drizzle Cake.png" alt="vanilla-sponge" class="recipe-image"></a>
+            <div class="recipe-title">
+                <p>Lemon Drizzle Cake</p>
+            </div>
+        </div>
+        <div class="recipe-card">
+            <a href=""><img src="tumbnail-images/classicwhitebread.png" alt="vanilla-sponge" class="recipe-image"></a>
+            <div class="recipe-title">
+                <p>Classic White Bread</p>
+            </div>
+        </div>
+        <div class="recipe-card">
+            <a href=""><img src="tumbnail-images/RyeBread.png" alt="vanilla-sponge" class="recipe-image"></a>
+            <div class="recipe-title">
+                <p>Rye Bread</p>
+            </div>
+        </div>
+        <div class="recipe-card">
+            <a href=""><img src="tumbnail-images/Vanilla Sponge Cake.png" alt="vanilla-sponge" class="recipe-image"></a>
+            <div class="recipe-title">
+                <p>Vanilla Sponge Cake</p>
+            </div>
+        </div>
+        <div class="recipe-card">
+            <a href=""><img src="tumbnail-images/chocolatefudgecake.png" alt="choco-fudge" class="recipe-image"></a>
+            <div class="recipe-title">
+                <p>Chocolate Fudge Cake</p>   
+            </div>
+        </div>
+        <div class="recipe-card">
+            <a href=""><img src="tumbnail-images/Carrot Walnut Cake.png" alt="vanilla-sponge" class="recipe-image"></a>
+            <div class="recipe-title">
+                <p>Carrot Walnut Cake</p>
+            </div>
+        </div>
+        <div class="recipe-card">
+             <a href=""><img src="tumbnail-images/Apple Scones.png" alt="apple-scones" class="recipe-image"></a>
+             <div class="recipe-title">
+                 <p>Apple Scones</p>
+            </div>
+        </div>
+        <div class="recipe-card">
+            <a href=""><img src="tumbnail-images/Sugar Cookies.png" alt="vanilla-sponge" class="recipe-image"></a>
+            <div class="recipe-title">
+                <p>Sugar Cookies</p>
+            </div>
+        </div>
+        <div class="recipe-card">
+            <a href=""><img src="tumbnail-images/Yule Log.png" alt="vanilla-sponge" class="recipe-image"></a>
+            <div class="recipe-title">
+                <p>Yule Log Cake</p>
+            </div>
+        </div>
+        <div class="recipe-card">
+            <a href=""><img src="tumbnail-images/CinnamonRolls.png" alt="Classic White Bread" class="recipe-image"></a>
+            <div class="recipe-title">
+                <p>Cinnamon Rolls</p>
+            </div>
+        </div>
+    </div>
+    
+    
+    </div>
+
+    <footer>
+        <p style="margin: 0; font-size: 16px;">© 2025 BAKE TIMES. All rights reserved.</p>
+        <div>
+            <a href="#" class="fa fa-facebook footer-link"></a>
+            <a href="#" class="fa fa-twitter footer-link"></a>
+            <a href="#" class="fa fa-instagram footer-link"></a>
+        </div>
+    </footer>
+</body>
+</html>
+
+
+
+
+
+
+
+

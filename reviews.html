@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3pro.css">
+    <link rel="stylesheet" href="styles/general.css">
+    <link rel="stylesheet" href="styles/header.css">
+    <title>REVIEWS</title>
+    <style>
+.container {
+    margin: 30px 103px;
+    text-align: center;
+}
+
+.tr-container {
+    margin: 30px 103px;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 7px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+div {
+    color: #343E51;
+}
+
+.bar-5 {width: 50%; height: 18px; background-color: #04AA6D;}
+.bar-4 {width: 30%; height: 18px; background-color: #2196F3;}
+.bar-3 {width: 11%; height: 18px; background-color: #00bcd4;}
+.bar-2 {width: 4%; height: 18px; background-color: #ff9800;}
+.bar-1 {width: 6%; height: 18px; background-color: #f44336;}
+
+.r-heading{
+    font-size: 25px;
+    margin-right: 25px;
+}
+.fa-star{
+    font-size: 25px;
+}
+.checked {
+  color: orange;
+}
+.side {
+  float: left;
+  width: 15%;
+  margin-top:10px;
+}
+.middle {
+  margin-top:10px;
+  float: left;
+  width: 70%;
+}
+.right {
+  text-align: right;
+}
+.rows:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.bar-container {
+  width: 100%;
+  background-color: #e4e4e4;
+  text-align: center;
+  color: white;
+}
+.review-card {
+    margin: 30px 103px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+.card-contents {
+    width: 45%;
+    padding: 20px;
+    border-radius: 7px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+.card-contents h3, p {
+    margin: 5px;
+}
+.review-form {
+    background-color: rgb(255, 248, 236);
+    margin: 30px 103px;
+    display: grid;
+    grid-template-columns: 0.8fr 1fr;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 68px;
+    gap: 150px;
+    line-height: 1.7;
+}
+.review-form-title h2 {
+    font-size: 41px;
+    font-weight: 600;
+}
+.review-form-title p {
+    font-size: 20px;
+    margin: 20px 0;
+}
+.form-content, input, textarea {
+    border: none;
+    display: block;
+    outline: none;
+    margin: 0 0 20px 0;
+    padding: 20px;
+    width: 100%;
+    border-radius: 5px;
+}
+input::placeholder, textarea::placeholder {
+    font-size: 16px;
+    font-family: Roboto, Arial;  
+}
+.review-btn {
+    padding: 8px 15px;
+    border: none;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 5px;
+    background-color: rgb(255, 220, 138);
+    color: white;
+    margin-right: 10px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: opacity 0.15s;
+}
+.review-btn:hover {
+    opacity: 0.7;
+}
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-left">
+           <a href="index.html"><p id="p" style="margin: 0;">BAKE<span style="font-weight: 400; font-size: 25px;">TIMES</span></p></a> 
+        </div>
+        <div class="header-middle">
+                <a href="recipes.html">RECIPES</a>
+                <a href="bakingbasics.html">BAKING BASICS</a>
+                <a href="holidays.html">HOLIDAYS</a>
+                <a href="index.html#about">ABOUT US</a>
+                <a href="reviews.html">REVIEWS</a>       
+        </div>
+        <div class="header-right">
+                <a href="#" class="fa fa-facebook"></a>
+                <a href="#" class="fa fa-twitter"></a>
+                <a href="#" class="fa fa-instagram"></a>
+        </div>
+    </div>
+    
+    <div class="container">
+        <h1 style="font-size: 44px; font-weight: 600;">Sweet Words from Our Bakers</h1>
+        <p style="font-size: 20px;">Baking is love made visible — and our community's feedback is the icing on the cake!</p>
+    </div>
+
+    <div class="tr-container">
+<div class="total-reviews-container">
+<span class="r-heading">User Ratings</span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star "></span>
+<p>4.1 average based on 305 reviews.</p>
+<hr style="border: 1px solid #60697B; margin: 10px 0;">
+</div>
+<div class="rows">
+    <div class="side">
+        <div>5 Star</div>
+    </div>
+    <div class="middle">
+        <div class="bar-container">
+            <div class="bar-5"></div>
+        </div>
+    </div>
+    <div class="side right">
+        <div>150</div>
+    </div>
+
+    <div class="side">
+        <div>4 Star</div>
+    </div>
+    <div class="middle">
+        <div class="bar-container">
+            <div class="bar-4"></div>
+        </div>
+    </div>
+    <div class="side right">
+        <div>90</div>
+    </div>
+
+    <div class="side">
+        <div>3 Star</div>
+    </div>
+    <div class="middle">
+        <div class="bar-container">
+            <div class="bar-3"></div>
+        </div>
+    </div>
+    <div class="side right">
+        <div>35</div>
+    </div>
+
+    <div class="side">
+        <div>2 Star</div>
+    </div>
+    <div class="middle">
+        <div class="bar-container">
+            <div class="bar-2"></div>
+        </div>
+    </div>
+    <div class="side right">
+        <div>12</div>
+    </div>
+
+    <div class="side">
+        <div>1 Star</div>
+    </div>
+    <div class="middle">
+        <div class="bar-container">
+            <div class="bar-1"></div>
+        </div>
+    </div>
+    <div class="side right">
+        <div>18</div>
+    </div>
+</div>
+</div>
+
+<div class="review-card">
+  <div class="card-contents">
+      <h3>Marcus</h3>
+      <p class="fa fa-star checked"></p>
+      <p class="fa fa-star checked"></p>
+      <p class="fa fa-star checked"></p>
+      <p class="fa fa-star checked"></p>
+      <p class="fa fa-star checked"></p>
+      <p>Best cookies ever! Super easy to follow and came out perfect. Will bake again!</p>
+      <p class="review-date">Reviewed on: 2025-01-15</p>
+  </div>
+  <div class="card-contents">
+      <h3>Sarah</h3>
+      <p class="fa fa-star checked"></p>
+      <p class="fa fa-star checked"></p>
+      <p class="fa fa-star checked"></p>
+      <p class="fa fa-star checked"></p>
+      <p class="fa fa-star checked"></p>
+      <p>Great for beginners! The banana bread was a hit. Clear and simple instructions.</p>
+      <p class="review-date">Reviewed on: 2025-01-10</p>
+  </div>
+  <div class="card-contents">
+      <h3>John</h3>
+      <p class="fa fa-star checked"></p>
+      <p class="fa fa-star checked"></p>
+      <p class="fa fa-star checked"></p>
+      <p class="fa fa-star checked"></p>
+      <p class="fa fa-star "></p> 
+      <p>Loved the cake recipe, but more photos would help. Still turned out great!</p>
+      <p class="review-date">Reviewed on: 2025-01-05</p>
+  </div>
+  <div class="card-contents">
+      <h3>Emily</h3>
+      <p class="fa fa-star checked"></p>
+      <p class="fa fa-star checked"></p>
+      <p class="fa fa-star checked"></p>
+      <p class="fa fa-star checked"></p>
+      <p class="fa fa-star "></p>
+      <p>Recipes are tasty, but had to tweak one or two ingredients. Worth it though!</p>
+      <p class="review-date">Reviewed on: 2025-01-01</p>
+  </div>
+</div>
+
+
+
+<div class="review-form">
+    <div class="review-form-title">
+        <h2>Share Your Baking Story</h2>
+        <p>Leave a review and tell us about your baking experience. 
+            Whether it was a cake that brightened your day or bread that brought comfort to your table, 
+            your words help other bakers find recipes they'll love.</p>
+    </div>
+    <div class="form-content">
+        <form action="">
+            <input type="text" placeholder="Enter Your Name..">
+            <textarea name="review" id="review" placeholder="Enter your review.."></textarea>
+            <button type="submit" class="review-btn">Submit</button>
+            <button type="reset" class="review-btn">reset</button>
+        </form>
+    </div>
+    
+</div>
+    <footer>
+        <p style="margin: 0; font-size: 16px;">© 2025 BAKE TIMES. All rights reserved.</p>
+        <div>
+            <a href="#" class="fa fa-facebook footer-link"></a>
+            <a href="#" class="fa fa-twitter footer-link"></a>
+            <a href="#" class="fa fa-instagram footer-link"></a>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,336 @@
+.bg {
+    background-color: #f1f1f1;
+}
+
+.header {
+    background-color: rgb(255, 255, 255);
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    margin: 0;
+    top: 20px;
+    left: 50%;
+    padding: 45px 30px;
+    position: fixed;
+    transform: translateX(-50%);
+    width: 90%;
+    border-radius: 12px;
+    box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.15);
+    z-index: 300;
+}
+.header-left {
+    font-family:"Lexend", sans-serif;
+    font-weight: 700;
+    font-size: 35px;   
+}
+.header-left a {
+    text-decoration: none;
+}
+.header-left a:hover #p {
+  color: #60697B; 
+  transition: color 0.3s ease;
+}
+
+.header-middle {
+    display: flex;
+    justify-content: space-between;
+    width: 600px;
+}
+
+.header-middle a {
+    text-decoration: none;
+    color: #343E51;
+    font-weight: 500;
+}
+.header-middle a:hover {
+    color: #343E51;
+}
+.header-middle a::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 1px;
+    background-color: #60697B;
+    transition: width .3s;
+}
+.header-middle a:hover::after {
+    width: 100%;
+    transition: width .3s;
+}
+
+.header-right {
+    display: flex;;
+    justify-content: flex-end;
+     
+}
+.header-right a, .footer-link {
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 20px;
+    color: #343E51;
+    transition: bottom 1s;
+    position: relative;
+}
+.header-right a:hover, .footer-link:hover {
+    color: #60697B;
+    bottom: 2px;
+    transition: color 0.15s;
+}
+
+.fa-twitter::before{
+	content:"𝕏";
+}
+#menubtn, #menucontent {
+    display: none;
+}
+.menu-content {
+    position: fixed;
+    z-index: 301;
+    background-color: #f1f1f1;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.15);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    padding: 20px;
+}
+.menu-content a {
+    text-decoration: none;
+    color: #343E51;
+}
+.m-btn {
+    display: none;
+    border: none;
+    padding: 10px;
+    background-color: #00000000;
+    color: #343E51;
+    font-size: 25px;
+}
+
+.hero-section {
+    display: grid;
+    justify-items: end;
+    align-items: center;
+    grid-template-columns: 0.8fr 1fr;
+    gap: 50px;
+    padding: 160px 0px 50px 0;
+    margin: 0 103px;
+    
+}
+
+
+
+.hero-content { 
+    width: 528px;
+}
+.hero-content h1 {
+    font-size: 50px;
+}
+.hero-content p {
+    font-size: 25px;
+}
+
+.btn {
+    padding: 18px 28px;
+    border: none;
+    font-size: 17px;
+    font-weight: 700;
+    border-radius: 50px;
+    background-color: rgb(255, 207, 95);
+    color: #f1f1f1;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: opacity 0.15s;
+}
+.btn:hover {
+    opacity: 0.7;
+}
+
+
+.cu {
+    background-color: #f1f1f1;
+    border: 2px solid rgb(255, 207, 95);
+    color: rgb(255, 207, 95);
+    transition: background-color 0.15s, color 0.15s;
+}
+.cu:hover {
+    opacity: none;
+    background-color: rgb(255, 207, 95);
+    color: #f1f1f1;
+}
+
+
+.about-us {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    scroll-margin-top: 170px;
+    gap: 50px;
+    flex-direction: row;
+    margin: 120px 103px 70px;
+}
+
+.about-us h2 {
+    font-size: 36px;
+}
+.about-us p {
+    font-size: 26px;
+}
+
+.about-cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: row;
+    gap: 200px;
+    margin: 0px 103px;
+    vertical-align:top;
+    
+}
+    
+.ab-cards {
+    width: 300px;
+    height: 160px;
+    text-align: center;
+}
+.ab-cards h4 {
+    font-size: 26px;
+    margin: 0 0 10px;
+}
+.ab-cards p {
+    font-size: 18px;
+    margin: 0;
+}  
+
+
+.featured-recipes {
+    margin: 120px 103px;
+}
+
+.featured-recipe-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.featured-recipes-cards {
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+.fr-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 20px;
+    gap: 250px;
+    
+}
+.recipe-link {
+    text-decoration: none;
+    color: rgb(255, 242, 95);
+    font-size: 20px;
+    font-weight: 500;
+}
+.recipe-link:hover {
+    color: rgb(255, 242, 95);
+}
+.recipe-link::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 1px;
+    background-color: rgb(255, 242, 95);
+    transition: width .3s;
+}
+.recipe-link:hover::after {
+    width: 21%;
+    transition: width .3s;
+}
+
+
+
+.subscription-container {
+    background-color: rgb(255, 254, 236);
+    border-radius: 7px;
+    padding: 68px;
+    margin: 0 103px;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: 0.8fr 1fr;
+    gap: 150px;
+}
+
+.subscription-form .input-ne {
+    display: block;
+    border: none;
+    outline: none;
+    padding: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.input-ne::placeholder {
+    font-size: 16px;
+    
+}
+
+input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #60697B; 
+    cursor: pointer;
+    margin: 0 5px 0 0;
+    vertical-align: middle;
+}
+  .submit-btn {
+    padding: 10px 15px;
+    border: 2px solid rgb(255, 207, 95);
+    font-size: 17px;
+    font-weight: 700;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.388);
+    color: rgb(255, 207, 95);
+    margin-right: 10px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.15s, color 0.15s;
+    
+}
+  .submit-btn:hover {
+    background-color: rgb(255, 207, 95);
+    color: #f1f1f1;
+  }
+
+  footer {
+    margin: 0 103px;
+    padding: 40px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.hero-img {
+    width: 540px;
+    height: 520px;
+    border-radius: 50% ; 
+}
+ 
+.ab-image {
+    width: 400px;
+    height: 380px;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+
+.ricipe-img {
+    width: 550px;
+    border-radius: 7px;
+}

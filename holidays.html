@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles/general.css">
+    <link rel="stylesheet" href="styles/header.css">
+    <title>HOLIDAYS SECTION</title>
+    <style>
+.holidays-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 40%;
+    margin: auto;
+    margin-top: 30px;
+    
+}
+.holidays-nav a {
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 10px;
+    font-weight: 500;
+    color: #343E51;
+}
+.nav:hover {
+    opacity: 0.7;
+    transition: opacity 0.15s;
+}
+.holiday {
+    margin: 0 103px;
+    scroll-margin-top: 170px;
+    display: none;
+}
+.holiday:target {
+    overflow: hidden;
+    display: block;
+}
+.holiday-head {
+    text-align: center;
+    margin: 60px 0;
+}
+.holiday-head h2 {
+    font-size: 44px;
+    margin: 0 15px;
+}
+.holiday-head p {
+    font-size: 20px;
+    margin: 0;
+}
+.cr-cards {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 104px;
+}
+.card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.card img {
+    width: 250px;
+    border-radius: 7px;
+    transition: all 0.3s ease-in-out;
+}
+.card img:hover {
+    transform: scale(1.05);
+}
+.card p {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0;
+    cursor: pointer;
+}
+
+.subscription-container {
+    background-color: rgb(236, 255, 240);
+    border-radius: 7px;
+    padding: 68px;
+    margin: 60px 103px 0;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: 0.8fr 1fr;
+    gap: 150px;
+}
+
+.subscription-form .input-ne {
+    display: block;
+    border: none;
+    outline: none;
+    padding: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.input-ne::placeholder {
+    font-size: 16px;
+    
+}
+
+input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #60697B; 
+    cursor: pointer;
+    margin: 0 5px 0 0;
+    vertical-align: middle;
+}
+.submit-btn {
+    padding: 10px 15px;
+    border: 2px solid rgb(255, 207, 95);
+    font-size: 17px;
+    font-weight: 700;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.388);
+    color: rgb(255, 207, 95);
+    margin-right: 10px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.15s, color 0.15s;
+}
+.submit-btn:hover {
+    background-color: rgb(255, 207, 95);
+    color: #f1f1f1;
+}
+
+
+    </style>
+</head>
+<body style="line-height: 1.7;">
+    <div class="header">
+        <div class="header-left">
+           <a href="index.html"><p id="p" style="margin: 0;">BAKE<span style="font-weight: 400; font-size: 25px;">TIMES</span></p></a> 
+        </div>
+        <div class="header-middle">
+                <a href="recipes.html">RECIPES</a>
+                <a href="bakingbasics.html">BAKING BASICS</a>
+                <a href="holidays.html">HOLIDAYS</a>
+                <a href="index.html#about">ABOUT US</a>
+                <a href="reviews.html">REVIEWS</a>       
+        </div>
+        <div class="header-right">
+                <a href="#" class="fa fa-facebook"></a>
+                <a href="#" class="fa fa-twitter"></a>
+                <a href="#" class="fa fa-instagram"></a>
+        </div>
+    </div>
+
+    <div class="holidays-nav">
+        <a href="#holiday1" id="christmas-link" style="background-color: #e0ffe3;" class="nav">🎄 Christmas</a>
+        <a href="#holiday2" id="thanksgiving-link" style="background-color: #fcffdd;" class="nav">🦃 Thanksgiving</a>
+        <a href="#holiday3" id="easter-link" style="background-color: #fff2d8;" class="nav">🐰 Easter</a>
+    </div>
+
+
+
+                                                                <!-- Christmas Recipes Section -->
+
+
+
+<div class="holiday" id="holiday1">
+  <div class="holiday-head" id="christmas-head">
+    <h2>🎄Christmas</h2>
+    <p>Christmas is a time for baking delicious treats and spending time with family.</p>
+  </div>
+   
+    <div class="christmas-recipes">
+    <div class="cr-cards">
+        <div class="card">
+            <a href=""><img src="tumbnail-images/Gingerbread.png" alt="Gingerbread Cookies"></a>
+            <p>gingerbread cookies</p>
+        </div>
+
+        <div class="card">
+            <a href=""><img src="tumbnail-images/Fruit Cake.png" alt="Christmas Fruit Cake"></a>
+            <p>Christmas Fruit Cake</p>
+        </div>
+
+        <div class="card">
+            <a href=""><img src="tumbnail-images/Yule Log.png" alt="Yule Log Cake"></a> 
+            <p>Yule Log Cake</p>
+        </div>
+
+        <div class="card">
+            <a href=""><img src="tumbnail-images/Sugar Cookies.png" alt="Sugar Cookies"></a>
+            <p>Sugar Cookies</p>
+        </div>
+    </div>
+</div>
+</div>
+
+
+
+
+                                                            <!-- Thanksgiving Recipes Section -->
+
+<div class="holiday" id="holiday2">
+  <div class="holiday-head" id="thanksgiving-head">
+    <h2>🦃Thanksgiving</h2>
+    <p>Thanksgiving is all about gratitude and enjoying a feast with loved ones.</p>
+    </div>
+
+    <div class="thanksgiving-recipes">
+        <div class="cr-cards">
+            <div class="card">
+                <a href=""><img src="tumbnail-images/Pumpkin Pie.png" alt="Pumpkin Pie"></a>
+                <p>Pumpkin Pie</p>
+            </div>
+
+            <div class="card">
+                <a href=""><img src="tumbnail-images/Pecan Pie.png" alt="Pecan Pie"></a>
+                <p>Pecan Pie</p>
+            </div>
+
+            <div class="card">
+                <a href=""><img src="tumbnail-images/Apple Cider Donuts.png" alt="Apple Cider Donuts"></a>
+                <p>Apple Cider Donuts</p>
+            </div>
+
+            <div class="card">
+                <a href=""><img src="tumbnail-images/Cornbread.png" alt="Cornbread"></a>
+                <p>Cornbread</p>
+            </div>
+
+        </div>
+</div>
+</div>
+
+
+
+                                                                <!-- Easter Recipes Section -->
+
+<div class="holiday" id="holiday3">
+  <div class="holiday-head" id="easter-head">
+    <h2>🐰Easter</h2>
+    <p>Easter is a joyful celebration, often marked by baking sweet treats and decorating eggs.</p>
+  </div>
+
+    <div class="easter-recipes">
+        <div class="cr-cards">
+            <div class="card">
+                <a href=""><img src="tumbnail-images/Carrot Walnut Cake.png" alt="Carrot Cake"></a>
+                <p>Carrot Cake</p>
+            </div>
+
+            <div class="card">
+                <a href=""><img src="tumbnail-images/Chocolate Eggs.png" alt="Chocolate Eggs"></a>
+                <p>Chocolate Eggs</p>
+            </div>
+
+            <div class="card">
+                <a href=""><img src="tumbnail-images/Hot Cross Buns.png" alt="Hot Cross Buns"></a>
+                <p>Hot Cross Buns</p>
+            </div>
+
+            <div class="card">
+                <a href=""><img src="tumbnail-images/Easter Cookies.png" alt="Easter Cookies"></a>
+                <p>Easter Cookies</p>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="subscription-container">
+        <div>
+            <h2 style="font-size: 36px; margin: 0;">Celebrate the Holidays with Sweet Treats in Your Inbox</h2>
+            <p style="font-size: 20px;">Join our holiday mailing list and receive delicious recipes, 
+                baking guides, and festive kitchen ideas right in your inbox. 
+                Make every holiday bake warm, joyful, and unforgettable!</p>
+        </div>
+        <div>
+            <form action="#" class="subscription-form">
+                <div>
+                    <input class="input-ne" type="text" placeholder="Name*" required>
+                    <input class="input-ne" type="email" placeholder="Email*" required>
+                    <input type="checkbox" id="checbox"><label for="checbox" style="color: #343E51; font-weight: 400; cursor: pointer;">Receive fresh baking ideas and recipes weekly.</label>
+                </div>
+                <input class="submit-btn" type="submit">
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p style="margin: 0; font-size: 16px;">© 2025 BAKE TIMES. All rights reserved.</p>
+        <div>
+            <a href="#" class="fa fa-facebook footer-link"></a>
+            <a href="#" class="fa fa-twitter footer-link"></a>
+            <a href="#" class="fa fa-instagram footer-link"></a>
+        </div>
+    </footer>
+</body>
+</html>

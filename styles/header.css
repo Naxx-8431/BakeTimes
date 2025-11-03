@@ -1,0 +1,84 @@
+.header {
+    background-color: rgb(255, 255, 255);
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    padding: 45px 103px;
+    box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.15);
+    position: sticky;
+    z-index: 500;
+    top: 0;
+}
+.header-left {
+    font-family:"Lexend", sans-serif;
+    font-weight: 700;
+    font-size: 35px;   
+}
+.header-left a {
+    text-decoration: none;
+}
+.header-left a:hover #p {
+  color: #60697B; 
+  transition: color 0.3s ease;
+}
+
+.header-middle {
+    display: flex;
+    justify-content: space-between;
+    width: 600px;
+}
+
+.header-middle a {
+    text-decoration: none;
+    color: #343E51;
+    font-weight: 500;
+}
+.header-middle a:hover {
+    color: #343E51;
+}
+.header-middle a::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 1px;
+    background-color: #60697B;
+    transition: width .3s;
+}
+.header-middle a:hover::after {
+    width: 100%;
+    transition: width .3s;
+}
+
+.header-right {
+    display: flex;;
+    justify-content: flex-end;
+     
+}
+.header-right a, .footer-link {
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 20px;
+    color: #343E51;
+    transition: bottom 1s;
+    position: relative;
+}
+.header-right a:hover, .footer-link:hover {
+    color: #60697B;
+    bottom: 2px;
+    transition: color 0.15s;
+}
+
+.fa-twitter::before{
+	content:"𝕏";
+}
+
+
+footer {
+    margin: 0 103px;
+    padding: 40px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
