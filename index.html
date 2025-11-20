@@ -20,6 +20,11 @@
         <div class="header-left">
             <a href="index.html" class="logo"><p id="p" style="margin: 0;">BAKE<span style="font-weight: 400; font-size: 25px;">TIMES</span></p></a>
         </div>
+
+
+        <button id="menu-toggle" class="m-btn" aria-label="Open menu" aria-expanded="false" aria-controls="header-nav">☰</button>
+
+
         <div class="header-middle">
                 <a href="recipes.html">RECIPES</a>
                 <a href="bakingbasics.html">BAKING BASICS</a>
@@ -30,24 +35,13 @@
 
 
         <div class="header-right">
-                <a href="#" class="fa fa-facebook"></a>
-                <a href="#" class="fa fa-twitter"></a>
-                <a href="https://www.instagram.com/" class="fa fa-instagram"></a>
-                <div class="menu">
-                    <button id="menubtn" class="fa fa-bars m-btn"></button>
-                </div>
+                <a href="https://facebook.com" class="fa fa-facebook"></a>
+                <a href="https://twitter.com" class="fa fa-twitter"></a>
+                <a href="https://instagram.com" class="fa fa-instagram"></a>
         </div>
  
     </div>
 
-    <div class="menu-content" id="menucontent">
-        <button id="closebtn" class="fa fa-close m-btn"></button>
-        <div><a href="recipes.html">RECIPES</a></div>
-        <div><a href="bakingbasics.html">BAKING BASICS</a></div>
-        <div><a href="holidays.html">HOLIDAYS</a></div>
-        <div><a href="#about">ABOUT US</a></div>
-        <div><a href="reviews.html">REVIEWS</a> </div>         
-    </div>
 
 
     <div class="hero-section">
@@ -59,7 +53,7 @@
             <p>Hello! We bake cakes and desserts with love, using fresh ingredients and timeless recipes.
                Each creation is made to bring joy, flavor, and sweetness to your day.</p>
             <div class="hero-buttons">
-                <button class="btn">Explore Recipes</button>
+                <button class="btn js-recipe-button">Explore Recipes</button>
                 <button class="btn cu">Contact Us</button>
             </div>
         </div>
@@ -106,67 +100,11 @@
                 <h2 style="font-size: 36px; margin: 0 0 16px;">Handpicked Delights</h2>
                 <p style="font-size: 20px; margin: 0;">Delicious creations baked fresh to perfection daily.</p>
             </div>
-            <button class="btn" style="color: white;">See all recipes</button>
+            <button class="btn js-recipe-button" style="color: white;">See all recipes</button>
         </div>
 
         <div class="featured-recipes-cards">
-            <div class="fr-card">
-                <div>
-                    <h4 style="font-size: 36px;">Red Velvet Cake</h4>
-                    <p style="font-size: 24px;">Moist red velvet layers paired with a hint of cocoa and smooth cream cheese frosting.
-                       Elegant, vibrant, and full of flavor, it remains a cherished favorite for every occasion.</p>
-                    <a href="#" class="recipe-link">Explore Here</a>
-                </div>
-                <div>
-                    <img class="ricipe-img" src="tumbnail-images/Red Velvet Cake.png" alt="red-velvet">
-                </div>
-            </div>
-            <div class="fr-card">
-                <div>
-                    <img class="ricipe-img" src="tumbnail-images/Vanilla Sponge Cake.png" alt="vanilla-sponge">
-                </div>
-                <div>
-                    <h4 style="font-size: 36px;">Vanilla Sponge Cake</h4>
-                    <p style="font-size: 24px;">Light, airy, and delicately sweet, this sponge cake is crafted for any celebration.
-                       Its soft texture and subtle flavor make it a timeless classic, loved by all ages alike.</p>
-                    <a href="#" class="recipe-link">Explore Here</a>
-                </div>
-            </div>
-            <div class="fr-card">
-                <div>
-                    <h4 style="font-size: 36px;">Chocolate Fudge Cake</h4>
-                    <p style="font-size: 24px;">A rich and decadent cake layered with smooth chocolate fudge frosting that melts in every bite.
-                       Moist, indulgent, and deeply satisfying, it is the ultimate dessert for true chocolate lovers.</p>
-                    <a href="#" class="recipe-link">Explore Here</a>
-                </div>
-                <div>
-                    <img class="ricipe-img" src="tumbnail-images/chocolatefudgecake.png" alt="choco-fudge">
-                </div>
-            </div>
-            <div class="fr-card">
-                <div>
-                    <img class="ricipe-img" src="tumbnail-images/Apple Scones.png" alt="apple-scones">
-                </div>
-                <div>
-                    <h4 style="font-size: 36px;">Apple Scones</h4>
-                    <p style="font-size: 24px;">Delicate and crumbly scones packed with tender apple pieces that add a natural sweetness.
-                       Baked to a golden finish, they offer a cozy balance of flavor, ideal for tea time or light snacks.</p>
-                    <a href="#" class="recipe-link">Explore Here</a>
-                </div>
-                
-            </div>
-            <div class="fr-card">
-                <div>
-                    <h4 style="font-size: 36px;">Cinnamon Rolls</h4>
-                    <p style="font-size: 24px;">Soft, golden rolls filled with a swirl of cinnamon sugar and finished with a smooth glaze.
-                       Each bite is warm, fluffy,
-                       and irresistibly comforting, perfect for mornings or sweet indulgent moments.</p>
-                    <a href="#" class="recipe-link">Explore Here</a>
-                </div>
-                <div>
-                    <img class="ricipe-img" src="tumbnail-images/CinnamonRolls.png" alt="CinnamonRolls">
-                </div>
-            </div>
+           
         </div>
     </div>
     
@@ -175,8 +113,8 @@
         <div>
             <h2 style="font-size: 36px; margin: 0;">Weekly Recipes Delivered to Your Inbox</h2>
             <p style="font-size: 20px;">Subscribe today and get delightful baking recipes,
-                                        handy tips, and kitchen inspiration sent directly to your inbox.
-                                        Discover new ways to make every bake extra special!</p>
+                handy tips, and kitchen inspiration sent directly to your inbox.
+                Discover new ways to make every bake extra special!</p>
         </div>
         <div>
             <form action="#" class="subscription-form">
@@ -193,10 +131,14 @@
     <footer>
         <p style="margin: 0; font-size: 16px;">© 2025 BAKE TIMES. All rights reserved.</p>
         <div>
-            <a href="#" class="fa fa-facebook footer-link"></a>
-            <a href="#" class="fa fa-twitter footer-link"></a>
-            <a href="#" class="fa fa-instagram footer-link"></a>
+            <a href="https://facebook.com" class="fa fa-facebook footer-link"></a>
+            <a href="https://twitter.com" class="fa fa-twitter footer-link"></a>
+            <a href="https://instagram.com" class="fa fa-instagram footer-link"></a>
         </div>
     </footer>
+
+    <script src="scripts/header.js"></script>
+    <script src="scripts/data's/recipe-Collections.js"></script>
+    <script src="scripts/home-Page.js"></script>
 </body>
 </html>

@@ -51,7 +51,6 @@ function recipeListHTML(recipes = recipeList) {
 recipeListHTML();
 
 
-
 const featuredRecipes = document.getElementById('featured-Section');
 const featuredRecipesText = document.querySelector('.js-recipeText');
 const allRecipesText = document.querySelector('.js-allRecipeText');
@@ -82,3 +81,5 @@ if(searchText.trim() !== '') {
   recipeListHTML(filteredRecipes);
 
 });
+
+

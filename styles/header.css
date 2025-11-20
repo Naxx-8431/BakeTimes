@@ -24,6 +24,16 @@
   transition: color 0.3s ease;
 }
 
+
+.m-btn {
+    display: none;
+    border: none;
+    padding: 10px;
+    background-color: #00000000;
+    color: #343E51;
+    font-size: 25px;
+}
+
 .header-middle {
     display: flex;
     justify-content: space-between;
@@ -82,3 +92,105 @@ footer {
     align-items: center;
     justify-content: space-between;
   }
+
+@media (max-width: 1200px) {
+    .header-right {
+        display: none;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+    }
+
+    footer p {
+        font-size: 14px;
+    }
+
+    footer div {
+        justify-content: center;
+    }
+}
+
+
+@media (max-width: 992px) {
+  .header {
+    padding: 45px 20px;
+    position: relative;
+  }
+
+  .m-btn {
+    display: block; /* previously hidden */
+    background: transparent;
+    border: none;
+    font-size: 26px;
+    cursor: pointer;
+    color: #343E51;
+    margin-left: 10px;
+  }
+
+  .header-middle, .header-right {
+    display: none;
+  }
+
+  /* when menu is opened (JS adds .menu-open to .header) */
+  .header.menu-open .header-middle {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 100%;
+    width: 90%;
+    background: #fff;
+    padding: 16px 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    z-index: 999;
+  }
+
+  .header.menu-open .header-right {
+    display: flex;
+    gap: 12px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: calc(100% + 160px); /* keep below nav links; adjust if needed */
+    padding: 12px 20px;
+    background: #fff;
+  }
+
+  .header-middle a {
+    font-size: 18px;
+    padding: 6px 0;
+  }
+
+
+
+  .header-middle a::after {
+    content: none !important;     /* remove underline element */
+    display: none !important;     /* ensure it doesn’t render */
+    width: 0 !important;
+    height: 0 !important;
+    transition: none !important;  /* stop animation */
+  }
+
+  .header-middle a:hover::after {
+    width: 0 !important;          /* prevent hover underline */
+  }
+
+
+  footer {
+        padding: 16px 12px;
+    }
+
+    footer p {
+        font-size: 12px;
+    }
+
+    footer div a {
+        font-size: 16px;
+    }
+
+}

@@ -36,6 +36,9 @@
     color: #60697B;
     vertical-align: middle;
 }
+
+
+
 .recipe-image {
     width: 250px;
     border-radius: 7px;
@@ -68,6 +71,10 @@
         <div class="header-left">
            <a href="index.html"><p id="p" style="margin: 0;">BAKE<span style="font-weight: 400; font-size: 25px;">TIMES</span></p></a> 
         </div>
+
+        <button id="menu-toggle" class="m-btn" aria-label="Open menu" aria-expanded="false" aria-controls="header-nav">☰</button>
+
+
         <div class="header-middle">
                 <a href="recipes.html">RECIPES</a>
                 <a href="bakingbasics.html">BAKING BASICS</a>
@@ -90,6 +97,8 @@
         <form action="/action_page.php">
             <label for="bar" class="search-label">Search baking recipes:</label>
             <input type="text" id="bar" class="search-bar" placeholder="Search recipes, ingredients, or techniques..." name="search">
+
+            <div id="suggestions-box"></div>
         </form>
     </div>
     <hr style="border: 0; height: 1px; background: #eee; margin: 40px 0;">
@@ -125,7 +134,7 @@
         </div>
     </footer>
 
-
+<script src="scripts/header.js"></script>
 <script src="scripts/data's/recipe-Collections.js"></script>
 <script src="scripts/recipe.js"></script>
 
