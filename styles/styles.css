@@ -134,7 +134,9 @@
 
 .hero-content p {
   margin: 0 0 18px 0;
-  font-size: clamp(14px, 2.2vw + 2px, 24px); /* min 14px, responsive, max 24px */
+  font-size: clamp(14px, 2.2vw + 2px, 24px);
+  text-align: justify;
+  text-justify: inter-word; /* min 14px, responsive, max 24px */
   
 }
 
@@ -214,6 +216,8 @@
 .about-us p {
   font-size: 26px;
   margin: 0;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 
@@ -311,6 +315,8 @@
 
 .fr-card p {
     font-size: clamp(14px, 2.2vw, 24px);
+    text-align: justify;
+    text-justify: inter-word;
     margin: 0 0 12px;
 }
 

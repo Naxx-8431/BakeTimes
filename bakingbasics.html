@@ -10,38 +10,130 @@
     <style>
 .baking-basics-hero {
     display: grid;
-    justify-items: end;
     align-items: center;
-    grid-template-columns: 0.8fr 1fr;
-    gap: 100px;
-    margin: 0 103px;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(30px, 6vw, 100px);            /* responsive gap */
+    margin: 0 clamp(16px, 8vw, 103px);    
     padding: 25px 0;
 }  
 
-.section-title {
-    font-size: 35px;
-    margin: 25px 0 30px;
+.bb-img {
+    width: clamp(260px, 30vw, 480px);        /* SHRINKS smoothly */
+    height: auto;                            /* no fixed height → no overlap */
+    border-radius: 5px;
+    display: block;
+    object-fit: cover;
+    justify-self: end; 
+}
+.hero-content {
+    max-width: 528px;
 }
 
-.section-content {
-    margin-top: 50px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 50px;
-    
+.hero-content h1 {
+    font-size: clamp(26px, 4vw, 50px);
+    margin: 0 0 12px;
+    line-height: 1.1;
 }
-.section-image {
-    width: 300px;
+
+.hero-content p {
+    font-size: clamp(14px, 2vw, 25px);
+    margin: 0;
+    line-height: 1.5;
+    text-align: justify;
+    text-justify: inter-word;
 }
-.section-text {
-    flex: 1;
+
+/* outer wrapper that currently has style="margin: 0 103px;" */
+.sections {
+  margin: 0 clamp(16px, 8vw, 103px);  /* 103px on large screens, less on small */
 }
+
+/* each section block */
 .sec {
-    margin-top: 120px;
+  margin-top: clamp(60px, 8vw, 120px);
 }
-    </style>
+
+/* headings */
+.section-title {
+  font-size: clamp(24px, 3vw, 35px);
+  margin: 25px 0 30px;
+}
+
+/* image + text row */
+.section-content {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(24px, 5vw, 50px);  /* gap shrinks with screen */
+}
+
+/* image */
+.section-image {
+  width: clamp(220px, 26vw, 300px);  /* responsive image width */
+  height: auto;
+  display: block;
+  border-radius: 5px;
+}
+
+/* text column */
+.section-text {
+  flex: 1;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+/* override the inline font-size on <p> */
+.section-text p {
+  font-size: clamp(16px, 2.3vw, 20px) !important;
+  line-height: 1.6;
+  margin: 0;
+}
+
+
+
+@media (max-width: 992px) {
+    .baking-basics-hero {
+        grid-template-columns: 1fr;          /* STACK */
+        justify-items: center;
+        text-align: center;
+        
+        margin: 0 clamp(12px, 6vw, 32px);
+    }
+
+    .hero-img {
+        order: -1;                           /* image FIRST */
+    }
+
+    .hero-content {
+        max-width: 600px;
+    }
+
+
+    .section-content {
+    flex-direction: column;     /* stack vertically */
+    align-items: center;
+    text-align: center;
+    gap: 24px;
+    margin-top: 32px;
+  }
+
+  .section-title {
+    text-align: center;
+  }
+
+  /* ensure image comes FIRST, text SECOND */
+  .section-content > .section-text {
+    order: 1;
+    max-width: 640px;
+  }
+
+  .section-content > div:not(.section-text) {
+    order: 0;                   /* these are the image wrappers */
+  }
+}
+</style>
 </head>
 <body>
     <div class="header">
@@ -68,20 +160,20 @@
     </div>
 
     <div class="baking-basics-hero">
-        <div class="hero-content" style="width: 528px;">
-            <h1 style="font-size: 50px;">Bake with Ease and Joy</h1>
-            <p style="font-size: 25px;">Discover the joy of baking with simple tips and trusted techniques.
+        <div class="hero-content">
+            <h1>Bake with Ease and Joy</h1>
+            <p>Discover the joy of baking with simple tips and trusted techniques.
                From measuring ingredients to mastering dough, 
                Bake Times helps you build confidence and creativity in every recipe.</p>
         </div>
 
         <div class="hero-img">
-            <img src="tumbnail-images/baking-basics-hero.png" alt="hero-image" style="width: 540px; height: 520px; border-radius: 5px;">
+            <img src="tumbnail-images/baking-basics-hero.png" alt="hero-image" class="bb-img">
         </div>
     </div>
 
     <div class="container">
-        <div class="sections" style="margin: 0 103px;">
+        <div class="sections">
             <div class="sec">
                 <h2 class="section-title">Essential Baking Techniques</h2>
             <div class="section-content">
@@ -89,7 +181,7 @@
                     <img src="tumbnail-images/techniques.png" alt="techniques" class="section-image">
                 </div>
                 <div class="section-text">
-                    <p style="font-size: 25px; margin: 0;">Once you've mastered the basics, techniques become your best tools. 
+                    <p>Once you've mastered the basics, techniques become your best tools. 
                     Knowing when to cream butter and sugar for a light sponge or when to 
                     gently fold egg whites into a batter makes all the difference in texture. 
                     Kneading bread dough until it becomes smooth and elastic is a skill that comes with practice, 
@@ -105,7 +197,7 @@
                 <h2 class="section-title">Your Baking Guides</h2>
             <div class="section-content">
                 <div class="section-text">
-                    <p style="font-size: 25px; margin: 0;">Guides are here to support you as you grow more confident. 
+                    <p>Guides are here to support you as you grow more confident. 
                         Understanding the unique qualities of different flours helps you choose the right one for cakes, 
                         breads, or pastries. Learning how to measure correctly can save a recipe from disaster, 
                         and knowing how to adjust when baking at high altitudes can make challenging environments 
@@ -127,7 +219,7 @@
                     <img src="tumbnail-images/resource.png" alt="techniques" class="section-image">
                 </div>
                 <div class="section-text">
-                    <p style="font-size: 25px; margin: 0;">Beyond the basics, there's a whole world of resources to keep you inspired. 
+                    <p>Beyond the basics, there's a whole world of resources to keep you inspired. 
                         From books and cookbooks packed with timeless recipes to online courses and video tutorials 
                         that walk you through advanced techniques, you'll never run out of ways to learn. Our favorite baking blogs 
                         and websites offer endless ideas, while community groups give you a chance to share, ask questions, 
@@ -142,7 +234,7 @@
                 <h2 class="section-title">Bake, Create, and Share</h2>
             <div class="section-content">
                 <div class="section-text">
-                    <p style="font-size: 25px; margin: 0;">Baking is not only about the recipes you follow,
+                    <p>Baking is not only about the recipes you follow,
                          but also about the joy that comes from creating and sharing. Every loaf, 
                          cake, or cookie is an opportunity to learn and to bring something special to the table. 
                          As you continue, take time to notice the small improvements you make and embrace the 
