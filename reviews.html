@@ -38,11 +38,11 @@ div {
     color: #343E51;
 }
 
-.bar-5 {width: 50%; height: 18px; background-color: #04AA6D;}
-.bar-4 {width: 30%; height: 18px; background-color: #2196F3;}
-.bar-3 {width: 11%; height: 18px; background-color: #00bcd4;}
-.bar-2 {width: 4%; height: 18px; background-color: #ff9800;}
-.bar-1 {width: 6%; height: 18px; background-color: #f44336;}
+.bar-5 {width: 50%; height: clamp(10px, 2vw, 18px); background-color: #04AA6D;}
+.bar-4 {width: 30%; height: clamp(10px, 2vw, 18px); background-color: #2196F3;}
+.bar-3 {width: 11%; height: clamp(10px, 2vw, 18px); background-color: #00bcd4;}
+.bar-2 {width: 4%; height: clamp(10px, 2vw, 18px); background-color: #ff9800;}
+.bar-1 {width: 6%; height: clamp(10px, 2vw, 18px); background-color: #f44336;}
 
 .r-heading{
     font-size: clamp(18px, 2.4vw, 25px);   
@@ -54,30 +54,49 @@ div {
 .checked {
   color: orange;
 }
-.side {
-  float: left;
-  width: 15%;
-  margin-top:10px;
+
+.rows {
+  display: grid;
+  grid-template-columns: auto 1fr auto;  /* text | bar | number */
+  column-gap: 12px;
+  row-gap: 8px;
+  align-items: center;                   /* vertically center everything */
+  margin-top: 10px;
 }
+
+/* left and right cells */
+.side,
+.right,
 .middle {
-  margin-top:10px;
-  float: left;
-  width: 70%;
+  margin-top: 0;
 }
+
+/* left label (“5 Star”) */
+.side {
+  font-size: 14px;
+}
+
+/* number on the right */
 .right {
   text-align: right;
+  font-size: 14px;
 }
-.rows:after {
-  content: "";
-  display: table;
-  clear: both;
+
+/* bar column */
+.middle {
+  width: 100%;
 }
+
+/* bar track */
 .bar-container {
   width: 100%;
   background-color: #e4e4e4;
-  text-align: center;
+  text-align: left;
   color: white;
+  border-radius: 4px;
+  overflow: hidden;
 }
+
 
 
 .review-card {
