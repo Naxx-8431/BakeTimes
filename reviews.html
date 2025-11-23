@@ -11,14 +11,26 @@
     <title>REVIEWS</title>
     <style>
 .container {
-    margin: 30px 103px;
+    margin: clamp(24px, 6vw, 40px) clamp(16px, 8vw, 103px);
     text-align: center;
 }
 
+/* override inline font-size/margins */
+.container h1 {
+    font-size: clamp(26px, 3.5vw, 40px) !important;
+    margin: 0 0 10px !important;
+}
+
+.container p {
+    font-size: clamp(14px, 2.1vw, 20px) !important;
+    margin: 0 !important;
+    line-height: 1.5;
+}
+
 .tr-container {
-    margin: 30px 103px;
+    margin: 30px clamp(16px, 8vw, 103px);  
+    padding: clamp(1px, 3vw, 30px);
     background-color: #ffffff;
-    padding: 30px;
     border-radius: 7px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
@@ -33,11 +45,11 @@ div {
 .bar-1 {width: 6%; height: 18px; background-color: #f44336;}
 
 .r-heading{
-    font-size: 25px;
-    margin-right: 25px;
+    font-size: clamp(18px, 2.4vw, 25px);   
+    margin-right: 25px;  
 }
 .fa-star{
-    font-size: 25px;
+    font-size: clamp(18px, 2.4vw, 25px);
 }
 .checked {
   color: orange;
@@ -66,42 +78,65 @@ div {
   text-align: center;
   color: white;
 }
+
+
 .review-card {
-    margin: 30px 103px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-content: center;
-    justify-content: space-between;
-    gap: 50px;
+    margin: 30px clamp(16px, 8vw, 103px);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: clamp(16px, 3vw, 32px);
 }
 .card-contents {
-    width: 45%;
-    padding: 20px;
+    padding: clamp(12px, 2vw, 20px);
     border-radius: 7px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    background-color: #fff;
 }
-.card-contents h3, p {
+.card-contents h3,
+.card-contents p {
     margin: 5px;
 }
+
+.card-contents h3 {
+    font-size: clamp(16px, 2.4vw, 20px);
+}
+
+.card-contents p {
+    font-size: clamp(13px, 2vw, 16px);
+    line-height: 1.5;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.card-contents .fa-star {
+    font-size: clamp(14px, 2vw, 18px);
+}
+
+
+
+
 .review-form {
     background-color: rgb(255, 248, 236);
-    margin: 30px 103px;
+    margin: 30px clamp(16px, 8vw, 103px);
     display: grid;
     grid-template-columns: 0.8fr 1fr;
     justify-content: center;
     align-items: flex-start;
-    padding: 68px;
-    gap: 150px;
+    padding: clamp(23px, 4vw, 68px);
+    gap: clamp(40px, 6vw, 150px);
     line-height: 1.7;
 }
+
 .review-form-title h2 {
-    font-size: 41px;
+    font-size: clamp(25px, 4vw, 41px);
     font-weight: 600;
 }
 .review-form-title p {
-    font-size: 20px;
+    font-size: clamp(14px, 2.4vw, 20px);
     margin: 20px 0;
+    line-height: 1.6;
+    text-align: justify;
+    text-justify: inter-word;
 }
 .form-content, input, textarea {
     border: none;
@@ -132,6 +167,27 @@ input::placeholder, textarea::placeholder {
 .review-btn:hover {
     opacity: 0.7;
 }
+
+
+@media (max-width: 992px) {
+  .review-form {
+      grid-template-columns: 1fr;       /* stack title and form */
+      text-align: center;
+      margin: 24px clamp(16px, 6vw, 32px);
+      padding: clamp(20px, 6vw, 36px);
+      gap: 24px;                        /* smaller gap between title and form */
+  }
+
+  .review-form-title {
+      max-width: 640px;
+      margin: 0 auto;
+  }
+
+  .form-content {
+      width: 100%;
+  }
+}
+
     </style>
 </head>
 <body>
@@ -159,83 +215,83 @@ input::placeholder, textarea::placeholder {
     </div>
     
     <div class="container">
-        <h1 style="font-size: 44px; font-weight: 600;">Sweet Words from Our Bakers</h1>
-        <p style="font-size: 20px;">Baking is love made visible — and our community's feedback is the icing on the cake!</p>
+        <h1>Sweet Words from Our Bakers</h1>
+        <p>Baking is love made visible — and our community's feedback is the icing on the cake!</p>
     </div>
 
     <div class="tr-container">
-<div class="total-reviews-container">
-<span class="r-heading">User Ratings</span>
-<span class="fa fa-star checked"></span>
-<span class="fa fa-star checked"></span>
-<span class="fa fa-star checked"></span>
-<span class="fa fa-star checked"></span>
-<span class="fa fa-star "></span>
-<p>4.1 average based on 305 reviews.</p>
-<hr style="border: 1px solid #60697B; margin: 10px 0;">
-</div>
-<div class="rows">
-    <div class="side">
-        <div>5 Star</div>
-    </div>
-    <div class="middle">
-        <div class="bar-container">
-            <div class="bar-5"></div>
+        <div class="total-reviews-container">
+        <span class="r-heading">User Ratings</span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star "></span>
+        <p>4.1 average based on 305 reviews.</p>
+        <hr style="border: 1px solid #60697B; margin: 10px 0;">
         </div>
-    </div>
-    <div class="side right">
-        <div>150</div>
-    </div>
+        <div class="rows">
+            <div class="side">
+                <div>5 Star</div>
+            </div>
+            <div class="middle">
+                <div class="bar-container">
+                    <div class="bar-5"></div>
+                </div>
+            </div>
+            <div class="side right">
+                <div>150</div>
+            </div>
 
-    <div class="side">
-        <div>4 Star</div>
-    </div>
-    <div class="middle">
-        <div class="bar-container">
-            <div class="bar-4"></div>
-        </div>
-    </div>
-    <div class="side right">
-        <div>90</div>
-    </div>
+            <div class="side">
+                <div>4 Star</div>
+            </div>
+            <div class="middle">
+                <div class="bar-container">
+                    <div class="bar-4"></div>
+                </div>
+            </div>
+            <div class="side right">
+                <div>90</div>
+            </div>
 
-    <div class="side">
-        <div>3 Star</div>
-    </div>
-    <div class="middle">
-        <div class="bar-container">
-            <div class="bar-3"></div>
-        </div>
-    </div>
-    <div class="side right">
-        <div>35</div>
-    </div>
+            <div class="side">
+                <div>3 Star</div>
+            </div>
+            <div class="middle">
+                <div class="bar-container">
+                    <div class="bar-3"></div>
+                </div>
+            </div>
+            <div class="side right">
+                <div>35</div>
+            </div>
 
-    <div class="side">
-        <div>2 Star</div>
-    </div>
-    <div class="middle">
-        <div class="bar-container">
-            <div class="bar-2"></div>
-        </div>
-    </div>
-    <div class="side right">
-        <div>12</div>
-    </div>
+            <div class="side">
+                <div>2 Star</div>
+            </div>
+            <div class="middle">
+                <div class="bar-container">
+                    <div class="bar-2"></div>
+                </div>
+            </div>
+            <div class="side right">
+                <div>12</div>
+            </div>
 
-    <div class="side">
-        <div>1 Star</div>
-    </div>
-    <div class="middle">
-        <div class="bar-container">
-            <div class="bar-1"></div>
+            <div class="side">
+                <div>1 Star</div>
+            </div>
+            <div class="middle">
+                <div class="bar-container">
+                    <div class="bar-1"></div>
+                </div>
+            </div>
+            <div class="side right">
+                <div>18</div>
+            </div>
         </div>
     </div>
-    <div class="side right">
-        <div>18</div>
-    </div>
-</div>
-</div>
 
 <div class="review-card">
   <div class="card-contents">
@@ -297,7 +353,6 @@ input::placeholder, textarea::placeholder {
             <button type="reset" class="review-btn">reset</button>
         </form>
     </div>
-    
 </div>
     <footer>
         <p style="margin: 0; font-size: 16px;">© 2025 BAKE TIMES. All rights reserved.</p>
