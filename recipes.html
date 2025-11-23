@@ -54,30 +54,45 @@
 
 
 .recipe-image {
-    width: 250px;
+    width: clamp(140px, 18vw, 250px);  /* shrinks on small screens, max 250px */
     border-radius: 7px;
     transition: all 0.3s ease-in-out;
 }
+
 .recipe-image:hover {
     transform: scale(1.05);
 }
+
+/* wrapper for all cards */
 .recipes {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));  /* 4 per row on large screens */
+    margin: 0 clamp(16px, 8vw, 103px);
+    gap: clamp(20px, 3vw, 40px);
+}
+
+
+/* each card */
+.recipe-card {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    margin: 0 103px;
-    gap: 104px; 
+    flex: 0 1 250px;                     /* allows wrapping nicely */
 }
-
-.recipe-title p {
+.recipe-title {
     text-align: center;
-    font-size: 20px;
-    font-weight: 500;
-    margin: 0;
-    cursor: pointer;
 }
 
+.recipeText, .allRecipeText {
+    margin: 0 clamp(16px, 8vw, 103px) 25px !important;
+    font-size: clamp(24px, 3vw, 32px) !important;
+}
+
+@media (max-width: 1200px) {
+    .recipes {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
 
 @media (max-width: 992px) {
 
@@ -95,7 +110,11 @@
     }
 }
 
-
+@media (max-width: 576px) {
+  .recipes {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
 
         
     </style>
@@ -138,7 +157,7 @@
     <hr style="border: 0; height: 1px; background: #eee; margin: 40px 0;">
 
     <div>
-        <h2 style="margin: 0 103px 25px;" class="js-recipeText">Featured Collections</h2>
+        <h2 class="js-recipeText recipeText">Featured Collections</h2>
 
         <div class="recipes js-Featured-Recipes" id="featured-Section">
         
@@ -150,7 +169,7 @@
     
 
     <div>
-        <h2 style="margin: 0 103px 25px;" class="js-allRecipeText">All Recipes</h2>
+        <h2 class="js-allRecipeText allRecipeText">All Recipes</h2>
 
     <div class="recipes js-recipes">
         
