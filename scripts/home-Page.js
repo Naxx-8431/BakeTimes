@@ -4,11 +4,11 @@ function renderFeaturedRecipes(recipes = recipeList) {
   let featuredRecipeHTML = '';
 
   featuredRecipes.forEach((recipe, index) => {
-    const imageDiv = `<div><img class="ricipe-img" src="${recipe.image}" alt="${recipe.name}"></div>`;
+    const imageDiv = `<div class="fr-image"><img class="ricipe-img" src="${recipe.image}" alt="${recipe.name}"></div>`;
     const contentDiv = `
-      <div>
-        <h4 style="font-size: 36px;">${recipe.name}</h4>
-        <p style="font-size: 24px;">${recipe.description}</p>
+      <div class="fr-content">
+        <h4>${recipe.name}</h4>
+        <p>${recipe.description}</p>
         <a href="#" class="recipe-link">Explore Here</a>
       </div>
     `;

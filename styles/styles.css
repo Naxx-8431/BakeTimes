@@ -95,42 +95,75 @@
 }
 
 .hero-section {
-    display: grid;
-    justify-items: end;
-    align-items: center;
-    grid-template-columns: 0.8fr 1fr;
-    gap: 50px;
-    padding: 160px 0px 50px 0;
-    margin: 0 103px;
-    
+  display: grid;
+  align-items: center;
+  gap: clamp(16px, 4vw, 50px);
+  grid-template-columns: clamp(250px, 40%, 540px) 1fr;
+  padding: 160px 0 50px;
+  margin: 0 103px;
+  box-sizing: border-box;
+  justify-items: end; 
+}
+
+.hero-image { /* helps center image on small screens */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-img {
+  width: clamp(250px, 100%, 540px); /* min 250px, grows with container, max 540px */
+  height: auto;
+  border-radius: 50%;
+  display: block;
+  object-fit: cover;
 }
 
 
-
-.hero-content { 
-    width: 528px;
+/* --- content container --- */
+.hero-content {
+  width: clamp(150px, 100%, 528px); /* min 150px, preferred full column, max 528px */
+  box-sizing: border-box;
 }
+/* responsive type scales */
 .hero-content h1 {
-    font-size: 50px;
+  margin: 0 0 12px 0;
+  font-size: clamp(20px, 4vw + 6px, 50px); /* min 20px, responsive, max 50px */
+  line-height: 1.05;
 }
+
 .hero-content p {
-    font-size: 25px;
+  margin: 0 0 18px 0;
+  font-size: clamp(14px, 2.2vw + 2px, 24px); /* min 14px, responsive, max 24px */
+  
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
 }
 
 .btn {
-    padding: 18px 28px;
-    border: none;
-    font-size: 17px;
-    font-weight: 700;
-    border-radius: 50px;
-    background-color: rgb(255, 207, 95);
-    color: #f1f1f1;
-    margin-right: 10px;
-    cursor: pointer;
-    transition: opacity 0.15s;
+  padding: clamp(10px, 1.4vw, 18px) clamp(12px, 2vw, 28px);
+  border: none;
+  font-size: clamp(13px, 1.2vw + 8px, 17px);
+  font-weight: 700;
+  border-radius: 50px;
+  background-color: rgb(255, 207, 95);
+  color: #f1f1f1;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: opacity 0.15s;
 }
-.btn:hover {
-    opacity: 0.7;
+.btn:hover { opacity: .7; }
+
+/* ensure no overflow */
+.hero-content img,
+.hero-content * {
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 
@@ -148,21 +181,41 @@
 
 
 .about-us {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    scroll-margin-top: 170px;
-    gap: 50px;
-    flex-direction: row;
-    margin: 120px 103px 70px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+  scroll-margin-top: 170px;
+  margin: 120px 103px 70px;
+  box-sizing: border-box;
+}
+
+/* TEXT: flexible, but with a max width */
+.about-text {
+  max-width: 550px;     /* cap so lines don't get too long */
+  flex: 1 1 300px;      /* can grow and shrink, base ~300px */
+}
+
+/* IMAGE: size driven by viewport, no media query needed */
+.ab-image {
+  width: clamp(250px, 30vw, 350px);
+  /* min 150px, responsive 30vw, max 350px */
+  height: auto;
+  display: block;
+  flex: 0 0 auto;       /* do NOT let flex override the width math */
 }
 
 .about-us h2 {
-    font-size: 36px;
+  font-size: 36px;
+  margin: 0 0 12px;
 }
+
 .about-us p {
-    font-size: 26px;
+  font-size: 26px;
+  margin: 0;
 }
+
 
 .about-cards {
     display: flex;
@@ -192,8 +245,24 @@
 
 
 .featured-recipes {
-    margin: 120px 103px;
+    margin: clamp(40px, 10vw, 120px) clamp(16px, 8vw, 103px);
 }
+
+.fr-head {
+    font-size: clamp(26px, 4vw, 36px);   /* 36 → 22 */
+    margin: 0 0 16px;
+}
+
+.fr-dec {
+    font-size: clamp(14px, 2.2vw, 20px); /* 20 → 14 */
+    margin: 0;
+}
+
+
+.rec-btn {
+    margin-right: 0;
+}
+
 
 .featured-recipe-title {
     display: flex;
@@ -204,17 +273,52 @@
 
 .featured-recipes-cards {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;  /* stack cards vertically */
+    gap: 32px;
     
 }
 
-.fr-card {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    margin-bottom: 20px;
-    gap: 250px;
-    
+.ricipe-img {
+    width: clamp(200px, 40vw, 500px);
+    height: auto;
+    border-radius: 7px;
+    display: block;
 }
+
+.fr-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: clamp(24px, 5vw, 72px);
+  width: 100%;              /* fills the .featured-recipes width (inside 103px margin) */
+  margin-bottom: 32px;
+}
+
+.fr-image {
+  flex: 0 0 auto;           /* image keeps its natural width */
+}
+
+.fr-content {
+  flex: 1 1 0;              /* text takes remaining space */
+  max-width: 550px;         /* optional: to limit line length */
+}
+
+
+.fr-card h4 {
+    font-size: clamp(20px, 3vw, 36px);
+    margin: 0 0 12px;
+}
+
+.fr-card p {
+    font-size: clamp(14px, 2.2vw, 24px);
+    margin: 0 0 12px;
+}
+
+.fr-card .recipe-link {
+    font-size: clamp(14px, 1.8vw, 20px);
+}
+
+
 .recipe-link {
     text-decoration: none;
     color: rgb(255, 242, 95);
@@ -222,20 +326,9 @@
     font-weight: 500;
 }
 .recipe-link:hover {
-    color: rgb(255, 242, 95);
+    color: rgba(255, 242, 95, 0.726);
 }
-.recipe-link::after {
-    content: "";
-    display: block;
-    width: 0;
-    height: 1px;
-    background-color: rgb(255, 242, 95);
-    transition: width .3s;
-}
-.recipe-link:hover::after {
-    width: 21%;
-    transition: width .3s;
-}
+
 
 
 
@@ -243,13 +336,15 @@
     background-color: rgb(255, 254, 236);
     border-radius: 7px;
     padding: 68px;
-    margin: 0 103px;
+    /* responsive margin, same style as other sections */
+    margin: clamp(40px, 10vw, 120px) clamp(16px, 8vw, 103px);
     display: grid;
     align-items: center;
-    justify-content: center;
     grid-template-columns: 0.8fr 1fr;
-    gap: 150px;
+    /* gap shrinks as screen gets smaller */
+    gap: clamp(40px, 8vw, 150px);
 }
+
 
 .subscription-form .input-ne {
     display: block;
@@ -301,25 +396,7 @@ input[type="checkbox"] {
     justify-content: space-between;
 }
 
-
-.hero-img {
-    width: 540px;
-    height: 520px;
-    border-radius: 50% ; 
-}
  
-.ab-image {
-    width: 400px;
-    height: 380px;
-    display: flex;
-    justify-content: center;
-    align-items: end;
-}
-
-.ricipe-img {
-    width: 550px;
-    border-radius: 7px;
-}
 
 
 @media (max-width: 1200px) {
@@ -331,11 +408,13 @@ input[type="checkbox"] {
         flex-direction: column;
         gap: 12px;
         text-align: center;
+        margin: 0;
     }
 
     footer p {
         font-size: 14px;
     }
+
 
     footer div {
         justify-content: center;
@@ -421,4 +500,141 @@ input[type="checkbox"] {
     footer div a {
         font-size: 16px;
     }
+
+
+    .hero-section {
+        grid-template-columns: 1fr;      /* stack */
+        justify-items: center;
+        text-align: center;
+        padding: 130px 16px 40px;
+        margin: 0 18px;                 /* reduce side margin on smaller screens */
+    }
+
+    .hero-img {
+        width: clamp(250px, 100%, 300px); /* min 250px, grows with container, max 540px */
+    }
+    .hero-buttons { justify-content: center; }
+    .hero-content { 
+        width: 100%;
+        max-width: 640px;
+    }
+    .hero-content h1 {
+        font-size: clamp(20px, 4vw + 6px, 44px); /* min 20px, responsive, max 50px */
+    }
+
+    .hero-content p {
+        font-size: clamp(14px, 2.2vw + 2px, 18px); /* min 14px, responsive, max 24px */
+    }
+
+
+
+    .about-us {
+    flex-direction: column;      /* stack vertically */
+    align-items: center;         /* center them */
+    gap: 24px;                   /* smaller gap than 50px */
+    margin: 80px 24px 50px;      /* reduce side margins */
+    text-align: center;          /* center text */
+  }
+
+  /* 2. Move image to top */
+  .about-us .ab-image {
+    order: -1;                   /* this puts the image before the text */
+    max-width: 100%;
+  }
+
+  /* 3. Make cards stack nicely */
+  .about-cards {
+    flex-direction: column;
+    gap: 24px;
+    margin: 0 24px 60px;
+    align-items: stretch;
+  }
+
+  .ab-cards {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+
+  /* (optional) slightly smaller fonts on mobile */
+  .about-us h2 {
+    font-size: 28px;
+  }
+  .about-us p {
+    font-size: 18px;
+  }
+  .ab-cards h4 {
+    font-size: 20px;
+  }
+  .ab-cards p {
+    font-size: 16px;
+  }
+
+  .featured-recipe-title .btn {
+    display: none;
+  }
+
+  /* center the text block */
+  .featured-recipe-title {
+    justify-content: center;   /* centers the text container */
+    text-align: center;         /* centers text inside */
+  }
+
+
+  .subscription-container {
+    grid-template-columns: 1fr;   /*  one column */
+    text-align: center;
+    padding: clamp(32px, 8vw, 48px) 24px;      
+  }
+
+  .subscription-form .input-ne {
+    width: 100%;                  /* inputs fill the column nicely */
+  }
+
+  .submit-btn {
+    width: 100%;                  /* optional: full-width submit button */
+  }
 }
+
+
+@media (max-width: 600px) {
+  .featured-recipes-cards {
+    display: flex;
+    flex-direction: column;  /* stack all cards */
+    gap: 24px;
+  }
+
+  .fr-card {
+    display: flex;           /* switch from grid → flex on small screens */
+    flex-direction: column;  /* stack inside the card */
+    text-align: center;
+    gap: 16px;
+  }
+
+  /* 🔥 Force image first, text second on mobile */
+  .fr-image {
+    order: 0;
+  }
+
+  .fr-content {
+    order: 1;
+  }
+
+  .ricipe-img {
+    width: clamp(180px, 70vw, 350px);
+    margin: 0 auto;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
