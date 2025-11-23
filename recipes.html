@@ -9,12 +9,26 @@
     <title>RECIPES</title>
     <style>
 .container {
-    margin: 25px 103px;
+    margin: clamp(24px, 6vw, 40px) clamp(16px, 8vw, 103px);
     text-align: center;
-        }
+}
+
+/* override inline font-size/margins */
+.container h1 {
+    font-size: clamp(26px, 3.5vw, 40px) !important;
+    margin: 0 0 10px !important;
+}
+
+.container p {
+    font-size: clamp(14px, 2.1vw, 20px) !important;
+    margin: 0 !important;
+    line-height: 1.5;
+}
 .search {
-    margin: 25px 103px;
+    margin: clamp(24px, 6vw, 40px) clamp(16px, 8vw, 103px);
+    text-align: center;
     display: flex;
+    flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
 }
@@ -63,6 +77,26 @@
     margin: 0;
     cursor: pointer;
 }
+
+
+@media (max-width: 992px) {
+
+  /* hide label completely */
+  .search-label {
+      display: none;
+  }
+
+  /* center the bar */
+  .search {
+      justify-content: center;
+  }
+    .search-bar {
+        width: clamp(370px, 40vw, 500px);   /* min 180px, grows with viewport, max 500px */
+    }
+}
+
+
+
         
     </style>
 </head>
@@ -89,8 +123,8 @@
         </div>
     </div>
     <div class="container">
-        <h1 style="font-size: 40px; margin: 0 0 10px;">Recipe Collections</h1>
-        <p style="font-size: 20px; margin: 0;">Discover thousands of tested recipes from simple cookies to show-stopping cakes.
+        <h1>Recipe Collections</h1>
+        <p>Discover thousands of tested recipes from simple cookies to show-stopping cakes.
                       Filter by<br> ingredients, dietary needs, or skill level to find your perfect bake.</p>
     </div>
     <div class="search">
