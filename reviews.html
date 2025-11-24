@@ -187,6 +187,43 @@ input::placeholder, textarea::placeholder {
     opacity: 0.7;
 }
 
+.star-rating {
+    margin: 20px 0 0;
+    text-align: left;
+}
+
+.star-rating label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #343E51;
+    margin-bottom: 10px;
+}
+
+.stars {
+    display: flex;
+    gap: 8px;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+}
+
+.stars input {
+    display: none;
+}
+
+.stars label {
+    font-size: clamp(20px, 4vw, 28px);
+    color: #ddd;
+    cursor: pointer;
+    transition: color 0.2s;
+    margin: 0;
+}
+
+.stars label:hover,
+.stars label:hover ~ label,
+.stars input:checked ~ label {
+    color: #FFD700;
+}
 
 @media (max-width: 992px) {
   .review-form {
@@ -205,6 +242,22 @@ input::placeholder, textarea::placeholder {
   .form-content {
       width: 100%;
   }
+
+  .star-rating {
+    text-align: center;
+  }
+  .star-rating {
+    text-align: center;
+  }
+
+  .star-rating label {
+    text-align: center;
+  }
+
+  .stars {
+    justify-content: center;
+  }
+
 }
 
     </style>
@@ -368,6 +421,28 @@ input::placeholder, textarea::placeholder {
         <form class="js-feedback-form" action="/reviews" method="post" data-confirm-duration="4000">
             <input type="text" placeholder="Enter Your Name..">
             <textarea name="review" id="review" placeholder="Enter your review.."></textarea>
+            
+            <!-- Star Rating -->
+            <div class="star-rating">
+                <label>Rate Your Experience:</label>
+                <div class="stars">
+                    <input type="radio" id="star5" name="rating" value="5">
+                    <label for="star5" class="fa fa-star"></label>
+                    
+                    <input type="radio" id="star4" name="rating" value="4">
+                    <label for="star4" class="fa fa-star"></label>
+                    
+                    <input type="radio" id="star3" name="rating" value="3">
+                    <label for="star3" class="fa fa-star"></label>
+                    
+                    <input type="radio" id="star2" name="rating" value="2">
+                    <label for="star2" class="fa fa-star"></label>
+                    
+                    <input type="radio" id="star1" name="rating" value="1">
+                    <label for="star1" class="fa fa-star"></label>
+                </div>
+            </div>
+            
             <button type="submit" class="review-btn">Submit</button>
             <button type="reset" class="review-btn">reset</button>
         </form>
