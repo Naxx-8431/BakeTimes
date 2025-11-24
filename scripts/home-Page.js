@@ -9,7 +9,7 @@ function renderFeaturedRecipes(recipes = recipeList) {
       <div class="fr-content">
         <h4>${recipe.name}</h4>
         <p>${recipe.description}</p>
-        <a href="#" class="recipe-link">Explore Here</a>
+        <a href="recipe-template.html?id=${recipe.id}" class="recipe-link">Explore Here</a>
       </div>
     `;
 
