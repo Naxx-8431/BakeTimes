@@ -8,7 +8,7 @@ function renderFeaturedRecipes(recipes = recipeList) {
   featuredRecipes.forEach((recipe) => {
     const featuredHTML = `
     <div class="recipe-card">
-        <a href=""><img src="${recipe.image}" alt="${recipe.name}" class="recipe-image"></a>
+        <a href="recipe-template.html?id=${recipe.id}"><img src="${recipe.image}" alt="${recipe.name}" class="recipe-image"></a>
         <div class="recipe-title">
             <p>${recipe.name}</p>
         </div>
@@ -34,7 +34,7 @@ function recipeListHTML(recipes = recipeList) {
   recipes.forEach((recipe) => {
     const html = `
         <div class="recipe-card">
-          <a href=""><img src="${recipe.image}" alt="${recipe.name}" class="recipe-image"></a>
+          <a href="recipe-template.html?id=${recipe.id}"><img src="${recipe.image}" alt="${recipe.name}" class="recipe-image"></a>
           <div class="recipe-title">
               <p>${recipe.name}</p>
           </div>

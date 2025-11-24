@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="styles/general.css">
+  <link rel="stylesheet" href="styles/header.css">
+  <title>Recipe</title>
+  <style>
+    .recipe-container {
+      margin: 0 clamp(16px, 8vw, 103px);
+      max-width: 100%;
+      padding-top: clamp(24px, 6vw, 40px);
+      padding-bottom: clamp(24px, 6vw, 40px);
+    }
+
+    .recipe-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .recipe-header h1 {
+      font-size: clamp(28px, 4vw, 48px) !important;
+      margin: 0 0 12px !important;
+    }
+
+    .recipe-header p {
+      font-size: clamp(16px, 2vw, 20px) !important;
+      margin: 0 !important;
+      color: #60697B;
+    }
+
+    .recipe-image {
+      width: 100%;
+      max-width: 600px;
+      height: auto;
+      border-radius: 8px;
+      display: block;
+      margin: 20px auto 40px;
+    }
+
+    .recipe-meta {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 20px;
+      margin: 30px 0;
+      padding: 20px;
+      background: #f9f9f9;
+      border-radius: 8px;
+    }
+
+    .meta-item {
+      text-align: center;
+    }
+
+    .meta-item h4 {
+      font-size: 14px;
+      color: #60697B;
+      margin: 0 0 8px;
+    }
+
+    .meta-item p {
+      font-size: 18px;
+      color: #343E51;
+      margin: 0;
+      font-weight: 500;
+    }
+
+    .recipe-section {
+      margin: 40px 0;
+    }
+
+    .recipe-section h2 {
+      font-size: clamp(24px, 3vw, 32px) !important;
+      margin: 0 0 20px !important;
+      color: #343E51;
+    }
+
+    .ingredients-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .ingredients-list li {
+      padding: 12px 0;
+      border-bottom: 1px solid #eee;
+      font-size: 16px;
+      color: #60697B;
+    }
+
+    .ingredients-list li:before {
+      content: "✓ ";
+      color: #04AA6D;
+      font-weight: bold;
+      margin-right: 10px;
+    }
+
+    .steps-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      counter-reset: step-counter;
+    }
+
+    .steps-list li {
+      padding: 16px;
+      margin-bottom: 12px;
+      background: #f9f9f9;
+      border-left: 4px solid #04AA6D;
+      counter-increment: step-counter;
+      font-size: 16px;
+      color: #60697B;
+    }
+
+    .steps-list li:before {
+      content: counter(step-counter);
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      background: #04AA6D;
+      color: #fff;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 24px;
+      font-weight: bold;
+      margin-right: 12px;
+    }
+
+    .notes {
+      padding: 16px;
+      background: #e8f5e9;
+      border-left: 4px solid #04AA6D;
+      border-radius: 4px;
+      margin-top: 20px;
+    }
+
+    .notes strong {
+      color: #343E51;
+    }
+
+    .back-button {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #343E51;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 4px;
+      margin-bottom: 20px;
+      transition: background 0.3s;
+    }
+
+    .back-button:hover {
+      background: #04AA6D;
+    }
+
+
+    .qa-form {
+    background-color: #e8f5e9;
+    margin: 30px clamp(16px, 8vw, 103px);
+    display: grid;
+    grid-template-columns: 0.8fr 1fr;
+    justify-content: center;
+    align-items: flex-start;
+    padding: clamp(23px, 4vw, 68px);
+    gap: clamp(40px, 6vw, 150px);
+    line-height: 1.7;
+}
+
+.qa-form-title h2 {
+    font-size: clamp(25px, 4vw, 41px);
+    font-weight: 600;
+}
+.qa-form-title p {
+    font-size: clamp(14px, 2.4vw, 20px);
+    margin: 20px 0;
+    line-height: 1.6;
+    text-align: justify;
+    text-justify: inter-word;
+}
+.form-content, input, textarea {
+    border: none;
+    display: block;
+    outline: none;
+    margin: 0 0 20px 0;
+    padding: 20px;
+    width: 100%;
+    border-radius: 5px;
+}
+input::placeholder, textarea::placeholder {
+    font-size: 16px;
+    font-family: Roboto, Arial;  
+}
+.qa-btn {
+  border: none;
+    padding: 10px 20px;
+    background: #343E51;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    transition: background 0.3s;
+}
+.qa-btn:hover {
+    background: #04AA6D;
+}
+
+@media (max-width: 992px) {
+  .qa-form {
+      grid-template-columns: 1fr;       /* stack title and form */
+      text-align: center;
+      margin: 24px clamp(16px, 1vw, 32px);
+      padding: clamp(20px, 6vw, 36px);
+      gap: 24px;                        /* smaller gap between title and form */
+  }
+
+  .qa-form-title {
+      max-width: 640px;
+      margin: 0 auto;
+  }
+
+  .form-content {
+      width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .recipe-container {
+    margin: 20px 16px;
+  }
+
+  .recipe-meta {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    padding: 16px;
+  }
+
+  .steps-list li {
+    padding: 12px;
+    margin-bottom: 10px;
+  }
+}
+</style>
+</head>
+<body>
+  <div class="header">
+    <div class="header-left">
+      <a href="index.html"><p id="p" style="margin: 0;">BAKE<span style="font-weight: 400; font-size: 25px;">TIMES</span></p></a>
+    </div>
+    <button id="menu-toggle" class="m-btn" aria-label="Open menu" aria-expanded="false" aria-controls="header-nav">☰</button>
+    <div class="header-middle" id="header-nav">
+      <a href="recipes.html">RECIPES</a>
+      <a href="bakingbasics.html">BAKING BASICS</a>
+      <a href="holidays.html">HOLIDAYS</a>
+      <a href="index.html#about">ABOUT US</a>
+      <a href="reviews.html">REVIEWS</a>
+    </div>
+    <div class="header-right">
+      <a href="https://facebook.com" class="fa fa-facebook"></a>
+      <a href="https://twitter.com" class="fa fa-twitter"></a>
+      <a href="https://instagram.com" class="fa fa-instagram"></a>
+    </div>
+  </div>
+
+  <div class="recipe-container">
+    <a href="recipes.html" class="back-button">← Back to Recipes</a>
+    
+    <div id="recipe-content">
+      <!-- Recipe content injected by JS -->
+    </div>
+  </div>
+
+
+
+  <div class="qa-form">
+    <div class="qa-form-title">
+        <h2>Got a Baking Question? We're Here to Help</h2>
+        <p>Whether you're wondering how to adjust the texture, replace an ingredient, or perfect the technique, drop your question below. Your inquiry may be the tip another baker needs to make their next recipe a success.</p>
+    </div>
+    <div class="form-content">
+        <form action="">
+            <input type="text" placeholder="Enter Your Name..">
+            <input type="text" placeholder="Which recipe is your question about?">
+            <textarea name="qa" id="qa" placeholder="Write your question here…"></textarea>
+            <button type="submit" class="qa-btn">Submit</button>
+            <button type="reset" class="qa-btn">reset</button>
+        </form>
+    </div>
+</div>
+
+  <footer>
+    <p style="margin: 0; font-size: 16px;">© 2025 BAKE TIMES. All rights reserved.</p>
+    <div>
+      <a href="https://facebook.com" class="fa fa-facebook footer-link"></a>
+      <a href="https://twitter.com" class="fa fa-twitter footer-link"></a>
+      <a href="https://instagram.com" class="fa fa-instagram footer-link"></a>
+    </div>
+  </footer>
+
+  <script src="scripts/header.js"></script>
+  <script src="scripts/data/recipe-Collections.js"></script>
+  <script src="scripts/recipe-template.js"></script>
+</body>
+</html>

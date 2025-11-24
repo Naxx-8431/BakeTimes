@@ -5,7 +5,7 @@ function renderHolidaysrecipe(recipes = recipeList) {
   recipes.forEach((recipe) => {
     const html = `
         <div class="card">
-            <a href=""><img src="${recipe.image}" alt="${recipe.name}"></a>
+            <a href="recipe-template.html?id=${recipe.id}"><img src="${recipe.image}" alt="${recipe.name}"></a>
             <p>${recipe.name}</p>
         </div>
       `;
@@ -38,7 +38,7 @@ function renderHolidaysrecipe(holidayName, containerSelector, recipes = recipeLi
   var recipeHTML = '';
 
   holidayRecipes.forEach(function (recipe) {
-    var html = '\n    <div class="card">\n      <a href=""><img src="' + (recipe.image || '') + '" alt="' + (recipe.name || '') + '"></a>\n      <p>' + (recipe.name || '') + '</p>\n    </div>\n  ';
+    var html = '\n    <div class="card">\n      <a href="recipe-template.html?id=' + (recipe.id || '') + '"><img src="' + (recipe.image || '') + '" alt="' + (recipe.name || '') + '"></a>\n      <p>' + (recipe.name || '') + '</p>\n    </div>\n  ';
     recipeHTML += html;
   });
 
