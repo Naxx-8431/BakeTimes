@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Manage Recipes</title>
+  <link rel="stylesheet" href="../styles/general.css">
+  <link rel="stylesheet" href="../styles/header.css">
+
+  <style>
+    body { font-family: Roboto, Arial, sans-serif; }
+
+    .admin-wrapper {
+      margin: 40px clamp(16px, 8vw, 103px);
+    }
+
+    .admin-wrapper h1 {
+      margin-bottom: 16px;
+      font-size: clamp(24px, 3vw, 32px);
+    }
+
+    .admin-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 360px) minmax(0, 1fr);
+      gap: clamp(24px, 4vw, 40px);
+      align-items: flex-start;
+    }
+
+    /* ---- form ---- */
+    .recipe-form {
+      background: #fffdf5;
+      border-radius: 8px;
+      padding: 24px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+
+    .recipe-form h2 {
+      margin: 0 0 16px;
+      font-size: clamp(18px, 2.4vw, 24px);
+    }
+
+    .recipe-form label {
+      display: block;
+      font-weight: 500;
+      margin-bottom: 4px;
+      font-size: 14px;
+    }
+
+    .recipe-form input,
+    .recipe-form textarea,
+    .recipe-form select {
+      width: 100%;
+      border-radius: 6px;
+      border: 1px solid #d3d3d3;
+      padding: 10px 12px;
+      margin-bottom: 14px;
+      outline: none;
+      font: inherit;
+    }
+
+    .recipe-form textarea {
+      min-height: 80px;
+      resize: vertical;
+    }
+
+    .recipe-form .inline {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 14px;
+      font-size: 14px;
+    }
+
+    .recipe-form .inline input[type="checkbox"] {
+      width: auto;
+      margin: 0;
+      cursor: pointer;
+    }
+
+    .recipe-form .inline label {
+      margin: 0;
+      font-weight: 400;
+      display: inline;
+    }
+
+    .admin-btn {
+      padding: 10px 18px;
+      border-radius: 999px;
+      border: none;
+      background: rgb(255,207,95);
+      color: #fff;
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity .15s;
+    }
+
+    .admin-btn:hover { opacity: .75; }
+
+    /* ---- list ---- */
+    .recipe-list {
+      background: #ffffff;
+      border-radius: 8px;
+      padding: 24px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+
+    .recipe-list h2 {
+      margin: 0 0 16px;
+      font-size: clamp(18px, 2.4vw, 24px);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    th, td {
+      padding: 8px 10px;
+      border-bottom: 1px solid #eee;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: #fafafa;
+      font-weight: 600;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: #f5f5f5;
+      font-size: 11px;
+      margin-right: 4px;
+    }
+
+    .delete-btn {
+      border: none;
+      background: #ffe5e5;
+      color: #c0392b;
+      padding: 4px 10px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-size: 12px;
+    }
+
+    .delete-btn:hover {
+      background: #ffd1d1;
+    }
+
+    @media (max-width: 900px) {
+      .admin-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- you can reuse your existing header here if you want -->
+
+  <div class="admin-wrapper">
+    <h1>Manage Recipes</h1>
+    <p style="margin:0 0 24px;">Add new recipes, see all recipes, and delete ones you no longer need.</p>
+
+    <div class="admin-layout">
+      <!-- Add / edit form -->
+      <div class="recipe-form">
+        <h2>Add New Recipe</h2>
+
+        <form id="recipe-form">
+          <label for="name">Recipe Name*</label>
+          <input id="name" type="text" required>
+
+          <label for="image">Image URL*</label>
+          <input id="image" type="url" placeholder="images/cake.jpg or https://..." required>
+
+          <label for="description">Short Description</label>
+          <textarea id="description" placeholder="A light, fluffy sponge cake..."></textarea>
+
+          <label for="holiday">Holiday (optional)</label>
+          <select id="holiday">
+            <option value="">None</option>
+            <option value="Christmas">Christmas</option>
+            <option value="Thanksgiving">Thanksgiving</option>
+            <option value="Easter">Easter</option>
+          </select>
+
+          <div class="inline">
+            <input type="checkbox" id="featured">
+            <label for="featured" style="margin:0;">Show in Featured section</label>
+          </div>
+
+          <button type="submit" class="admin-btn">Add Recipe</button>
+        </form>
+      </div>
+
+      <!-- List / delete -->
+      <div class="recipe-list">
+        <h2>Recipe List</h2>
+
+
+        <button id="clear-all" class="delete-btn" style="margin-bottom: 15px;">
+          Clear All Recipes
+        </button>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Holiday</th>
+              <th>Featured</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="recipe-table-body">
+            <!-- filled by JS -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- your base data -->
+  <script src="../scripts/data/recipe-Collections.js"></script>
+  <!-- admin logic -->
+  <script src="scripts/admin-control.js"></script>
+
+</body>
+</html>
