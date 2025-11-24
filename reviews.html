@@ -365,7 +365,7 @@ input::placeholder, textarea::placeholder {
             your words help other bakers find recipes they'll love.</p>
     </div>
     <div class="form-content">
-        <form action="">
+        <form class="js-feedback-form" action="/reviews" method="post" data-confirm-duration="4000">
             <input type="text" placeholder="Enter Your Name..">
             <textarea name="review" id="review" placeholder="Enter your review.."></textarea>
             <button type="submit" class="review-btn">Submit</button>
@@ -385,5 +385,6 @@ input::placeholder, textarea::placeholder {
 
 
     <script src="scripts/header.js"></script>
+    <script src="scripts/form-feedback.js"></script>
 </body>
 </html>

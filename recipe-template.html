@@ -280,7 +280,7 @@ input::placeholder, textarea::placeholder {
         <p>Whether you're wondering how to adjust the texture, replace an ingredient, or perfect the technique, drop your question below. Your inquiry may be the tip another baker needs to make their next recipe a success.</p>
     </div>
     <div class="form-content">
-        <form action="">
+        <form class="js-feedback-form" action="#" method="post" data-confirm-duration="3500">
             <input type="text" placeholder="Enter Your Name..">
             <input type="text" placeholder="Which recipe is your question about?">
             <textarea name="qa" id="qa" placeholder="Write your question here…"></textarea>
@@ -302,5 +302,6 @@ input::placeholder, textarea::placeholder {
   <script src="scripts/header.js"></script>
   <script src="scripts/data/recipe-Collections.js"></script>
   <script src="scripts/recipe-template.js"></script>
+  <script src="scripts/form-feedback.js"></script>
 </body>
 </html>
