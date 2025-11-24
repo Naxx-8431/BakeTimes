@@ -11,82 +11,95 @@
 .holidays-nav {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    width: 40%;
-    margin: auto;
-    margin-top: 30px;
-    
+    justify-content: center;   
+    margin: 30px 103px;
+    gap: clamp(8px, 2vw, 20px);
+    flex-wrap: nowrap;
 }
+
 .holidays-nav a {
     text-decoration: none;
-    padding: 8px 16px;
+    padding: clamp(6px, 1.2vw, 12px) clamp(10px, 2vw, 20px);
     border-radius: 10px;
     font-weight: 500;
     color: #343E51;
+    font-size: clamp(14px, 1.8vw, 18px);
+    white-space: nowrap;         /* ✔ never wraps */
 }
+
 .nav:hover {
     opacity: 0.7;
     transition: opacity 0.15s;
 }
+
+
+
+
+
 .holiday {
-    margin: 0 103px;
+    margin: clamp(24px, 6vw, 40px) clamp(16px, 8vw, 103px);
     scroll-margin-top: 170px;
     display: none;
 }
+
+
 .holiday:target {
-    overflow: hidden;
     display: block;
 }
+
 .holiday-head {
     text-align: center;
-    margin: 60px 0;
+    margin: clamp(24px, 8vw, 60px) 0;
 }
 .holiday-head h2 {
-    font-size: 44px;
+    font-size: clamp(22px, 4vw, 44px);
     margin: 0 15px;
 }
 .holiday-head p {
-    font-size: 20px;
+    font-size: clamp(14px, 2.3vw, 20px);
     margin: 0;
 }
 .cr-cards {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 104px;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));  /* same as recipes */
+    gap: clamp(20px, 3vw, 40px);
+    margin-top: 40px;
 }
 .card {
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
+    align-items: center;
 }
+
 .card img {
-    width: 250px;
+    width: clamp(140px, 18vw, 250px);  
     border-radius: 7px;
     transition: all 0.3s ease-in-out;
 }
 .card img:hover {
     transform: scale(1.05);
 }
+
 .card p {
     text-align: center;
-    font-size: 20px;
+    font-size: clamp(14px, 2vw, 20px);
     font-weight: 500;
     margin: 0;
     cursor: pointer;
 }
 
 .subscription-container {
-    background-color: rgb(236, 255, 240);
+    background-color: rgb(236, 255, 240);   /* keep your holiday color */
     border-radius: 7px;
-    padding: 68px;
-    margin: 60px 103px 0;
+
+    /* responsive padding & margins like index */
+    padding: clamp(32px, 6vw, 68px);
+    margin: clamp(40px, 10vw, 60px) clamp(16px, 8vw, 103px);
+
     display: grid;
     align-items: center;
-    justify-content: center;
     grid-template-columns: 0.8fr 1fr;
-    gap: 150px;
+    gap: clamp(40px, 8vw, 150px);
 }
 
 .subscription-form .input-ne {
@@ -130,8 +143,38 @@ input[type="checkbox"] {
     color: #f1f1f1;
 }
 
+@media (max-width: 1200px) {
+    .cr-cards {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
 
-    </style>
+
+@media (max-width: 992px) {
+  .subscription-container {
+      grid-template-columns: 1fr;   /* stack title + form */
+      text-align: center;
+      padding: clamp(24px, 8vw, 40px) 24px;
+      margin: clamp(32px, 8vw, 48px) clamp(16px, 6vw, 32px);
+      gap: 24px;
+  }
+
+  .subscription-form .input-ne {
+      width: 100%;
+  }
+
+  .submit-btn {
+      width: 100%;  /* full-width button on small screens (like index) */
+  }
+}
+
+@media (max-width: 576px) {
+    .cr-cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+</style>
 </head>
 <body style="line-height: 1.7;">
     <div class="header">
@@ -220,7 +263,7 @@ input[type="checkbox"] {
 <div class="subscription-container">
         <div>
             <h2 style="font-size: 36px; margin: 0;">Celebrate the Holidays with Sweet Treats in Your Inbox</h2>
-            <p style="font-size: 20px;">Join our holiday mailing list and receive delicious recipes, 
+            <p style="font-size: 20px; text-align: justify; text-justify: inter-word;">Join our holiday mailing list and receive delicious recipes, 
                 baking guides, and festive kitchen ideas right in your inbox. 
                 Make every holiday bake warm, joyful, and unforgettable!</p>
         </div>
