@@ -24,7 +24,7 @@
     font-weight: 500;
     color: #343E51;
     font-size: clamp(14px, 1.8vw, 18px);
-    white-space: nowrap;         /* ✔ never wraps */
+    white-space: nowrap;        
 }
 
 .nav:hover {
@@ -61,7 +61,7 @@
 }
 .cr-cards {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));  /* same as recipes */
+    grid-template-columns: repeat(4, minmax(0, 1fr)); 
     gap: clamp(20px, 3vw, 40px);
     margin-top: 40px;
 }
@@ -89,10 +89,10 @@
 }
 
 .subscription-container {
-    background-color: rgb(236, 255, 240);   /* keep your holiday color */
+    background-color: rgb(236, 255, 240);   
     border-radius: 7px;
 
-    /* responsive padding & margins like index */
+    
     padding: clamp(32px, 6vw, 68px);
     margin: clamp(40px, 10vw, 60px) clamp(16px, 8vw, 103px);
 
@@ -152,7 +152,7 @@ input[type="checkbox"] {
 
 @media (max-width: 992px) {
   .subscription-container {
-      grid-template-columns: 1fr;   /* stack title + form */
+      grid-template-columns: 1fr;   
       text-align: center;
       padding: clamp(24px, 8vw, 40px) 24px;
       margin: clamp(32px, 8vw, 48px) clamp(16px, 6vw, 32px);
@@ -164,7 +164,7 @@ input[type="checkbox"] {
   }
 
   .submit-btn {
-      width: 100%;  /* full-width button on small screens (like index) */
+      width: 100%;  
   }
 }
 
@@ -212,55 +212,55 @@ input[type="checkbox"] {
 
 
 
-<div class="holiday" id="holiday1">
-  <div class="holiday-head" id="christmas-head">
-    <h2>🎄Christmas</h2>
-    <p>Christmas is a time for baking delicious treats and spending time with family.</p>
-  </div>
-   
-<div class="christmas-recipes">
-    <div class="cr-cards js-recipes">
-        
+    <div class="holiday" id="holiday1">
+    <div class="holiday-head" id="christmas-head">
+        <h2>🎄Christmas</h2>
+        <p>Christmas is a time for baking delicious treats and spending time with family.</p>
     </div>
-</div>
-</div>
-
-
-
-
-                                                            <!-- Thanksgiving Recipes Section -->
-
-<div class="holiday" id="holiday2">
-  <div class="holiday-head" id="thanksgiving-head">
-    <h2>🦃Thanksgiving</h2>
-    <p>Thanksgiving is all about gratitude and enjoying a feast with loved ones.</p>
-    </div>
-
-    <div class="thanksgiving-recipes">
+    
+    <div class="christmas-recipes">
         <div class="cr-cards js-recipes">
-           
-        </div>
-</div>
-</div>
-
-
-
-                                                                <!-- Easter Recipes Section -->
-
-<div class="holiday" id="holiday3">
-  <div class="holiday-head" id="easter-head">
-    <h2>🐰Easter</h2>
-    <p>Easter is a joyful celebration, often marked by baking sweet treats and decorating eggs.</p>
-  </div>
-
-    <div class="easter-recipes">
-        <div class="cr-cards js-recipes">
-
+            
         </div>
     </div>
-</div>
+    </div>
 
-<div class="subscription-container">
+
+
+
+                                                                <!-- Thanksgiving Recipes Section -->
+
+    <div class="holiday" id="holiday2">
+    <div class="holiday-head" id="thanksgiving-head">
+        <h2>🦃Thanksgiving</h2>
+        <p>Thanksgiving is all about gratitude and enjoying a feast with loved ones.</p>
+        </div>
+
+        <div class="thanksgiving-recipes">
+            <div class="cr-cards js-recipes">
+            
+            </div>
+    </div>
+    </div>
+
+
+
+                                                                    <!-- Easter Recipes Section -->
+
+    <div class="holiday" id="holiday3">
+    <div class="holiday-head" id="easter-head">
+        <h2>🐰Easter</h2>
+        <p>Easter is a joyful celebration, often marked by baking sweet treats and decorating eggs.</p>
+    </div>
+
+        <div class="easter-recipes">
+            <div class="cr-cards js-recipes">
+
+            </div>
+        </div>
+    </div>
+
+    <div class="subscription-container">
         <div>
             <h2 style="font-size: 36px; margin: 0;">Celebrate the Holidays with Sweet Treats in Your Inbox</h2>
             <p style="font-size: 20px; text-align: justify; text-justify: inter-word;">Join our holiday mailing list and receive delicious recipes, 
@@ -274,7 +274,7 @@ input[type="checkbox"] {
                     <input class="input-ne" type="email" placeholder="Email*" required>
                     <input type="checkbox" id="checbox"><label for="checbox" style="color: #343E51; font-weight: 400; cursor: pointer;">Receive fresh baking ideas and recipes weekly.</label>
                 </div>
-                <input class="submit-btn" type="submit">
+                <input class="submit-btn" type="submit" value="Submit">
             </form>
         </div>
     </div>

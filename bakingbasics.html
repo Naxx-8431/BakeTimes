@@ -12,7 +12,7 @@
     display: grid;
     align-items: center;
     grid-template-columns: 1fr 1fr;
-    gap: clamp(30px, 6vw, 100px);            /* responsive gap */
+    gap: clamp(30px, 6vw, 100px);            
     margin: 0 clamp(16px, 8vw, 103px);    
     padding: 25px 0;
 }  
@@ -43,7 +43,7 @@
     text-justify: inter-word;
 }
 
-/* outer wrapper that currently has style="margin: 0 103px;" */
+
 .sections {
   margin: 0 clamp(16px, 8vw, 103px);  /* 103px on large screens, less on small */
 }
@@ -95,7 +95,7 @@
 
 @media (max-width: 992px) {
     .baking-basics-hero {
-        grid-template-columns: 1fr;          /* STACK */
+        grid-template-columns: 1fr;          
         justify-items: center;
         text-align: center;
         
@@ -103,7 +103,7 @@
     }
 
     .hero-img {
-        order: -1;                           /* image FIRST */
+        order: -1;                     
     }
 
     .hero-content {
@@ -112,7 +112,7 @@
 
 
     .section-content {
-    flex-direction: column;     /* stack vertically */
+    flex-direction: column;  
     align-items: center;
     text-align: center;
     gap: 24px;

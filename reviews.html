@@ -15,7 +15,6 @@
     text-align: center;
 }
 
-/* override inline font-size/margins */
 .container h1 {
     font-size: clamp(26px, 3.5vw, 40px) !important;
     margin: 0 0 10px !important;
@@ -57,10 +56,10 @@ div {
 
 .rows {
   display: grid;
-  grid-template-columns: auto 1fr auto;  /* text | bar | number */
+  grid-template-columns: auto 1fr auto; 
   column-gap: 12px;
   row-gap: 8px;
-  align-items: center;                   /* vertically center everything */
+  align-items: center;                   
   margin-top: 10px;
 }
 
@@ -87,7 +86,6 @@ div {
   width: 100%;
 }
 
-/* bar track */
 .bar-container {
   width: 100%;
   background-color: #e4e4e4;
@@ -130,9 +128,6 @@ div {
 .card-contents .fa-star {
     font-size: clamp(14px, 2vw, 18px);
 }
-
-
-
 
 .review-form {
     background-color: rgb(255, 248, 236);
@@ -365,89 +360,89 @@ input::placeholder, textarea::placeholder {
         </div>
     </div>
 
-<div class="review-card">
-  <div class="card-contents">
-      <h3>Marcus</h3>
-      <p class="fa fa-star checked"></p>
-      <p class="fa fa-star checked"></p>
-      <p class="fa fa-star checked"></p>
-      <p class="fa fa-star checked"></p>
-      <p class="fa fa-star checked"></p>
-      <p>Best cookies ever! Super easy to follow and came out perfect. Will bake again!</p>
-      <p class="review-date">Reviewed on: 2025-01-15</p>
-  </div>
-  <div class="card-contents">
-      <h3>Sarah</h3>
-      <p class="fa fa-star checked"></p>
-      <p class="fa fa-star checked"></p>
-      <p class="fa fa-star checked"></p>
-      <p class="fa fa-star checked"></p>
-      <p class="fa fa-star checked"></p>
-      <p>Great for beginners! The banana bread was a hit. Clear and simple instructions.</p>
-      <p class="review-date">Reviewed on: 2025-01-10</p>
-  </div>
-  <div class="card-contents">
-      <h3>John</h3>
-      <p class="fa fa-star checked"></p>
-      <p class="fa fa-star checked"></p>
-      <p class="fa fa-star checked"></p>
-      <p class="fa fa-star checked"></p>
-      <p class="fa fa-star "></p> 
-      <p>Loved the cake recipe, but more photos would help. Still turned out great!</p>
-      <p class="review-date">Reviewed on: 2025-01-05</p>
-  </div>
-  <div class="card-contents">
-      <h3>Emily</h3>
-      <p class="fa fa-star checked"></p>
-      <p class="fa fa-star checked"></p>
-      <p class="fa fa-star checked"></p>
-      <p class="fa fa-star checked"></p>
-      <p class="fa fa-star "></p>
-      <p>Recipes are tasty, but had to tweak one or two ingredients. Worth it though!</p>
-      <p class="review-date">Reviewed on: 2025-01-01</p>
-  </div>
-</div>
-
-
-
-<div class="review-form">
-    <div class="review-form-title">
-        <h2>Share Your Baking Story</h2>
-        <p>Leave a review and tell us about your baking experience. 
-            Whether it was a cake that brightened your day or bread that brought comfort to your table, 
-            your words help other bakers find recipes they'll love.</p>
+    <div class="review-card">
+    <div class="card-contents">
+        <h3>Marcus</h3>
+        <p class="fa fa-star checked"></p>
+        <p class="fa fa-star checked"></p>
+        <p class="fa fa-star checked"></p>
+        <p class="fa fa-star checked"></p>
+        <p class="fa fa-star checked"></p>
+        <p>Best cookies ever! Super easy to follow and came out perfect. Will bake again!</p>
+        <p class="review-date">Reviewed on: 2025-01-15</p>
     </div>
-    <div class="form-content">
-        <form class="js-feedback-form" action="/reviews" method="post" data-confirm-duration="4000">
-            <input type="text" placeholder="Enter Your Name.." required>
-            <textarea name="review" id="review" placeholder="Enter your review.." required></textarea>
-            
-            <!-- Star Rating -->
-            <div class="star-rating">
-                <label>Rate Your Experience:</label>
-                <div class="stars">
-                    <input type="radio" id="star5" name="rating" value="5">
-                    <label for="star5" class="fa fa-star"></label>
-                    
-                    <input type="radio" id="star4" name="rating" value="4">
-                    <label for="star4" class="fa fa-star"></label>
-                    
-                    <input type="radio" id="star3" name="rating" value="3">
-                    <label for="star3" class="fa fa-star"></label>
-                    
-                    <input type="radio" id="star2" name="rating" value="2">
-                    <label for="star2" class="fa fa-star"></label>
-                    
-                    <input type="radio" id="star1" name="rating" value="1">
-                    <label for="star1" class="fa fa-star"></label>
+    <div class="card-contents">
+        <h3>Sarah</h3>
+        <p class="fa fa-star checked"></p>
+        <p class="fa fa-star checked"></p>
+        <p class="fa fa-star checked"></p>
+        <p class="fa fa-star checked"></p>
+        <p class="fa fa-star checked"></p>
+        <p>Great for beginners! The banana bread was a hit. Clear and simple instructions.</p>
+        <p class="review-date">Reviewed on: 2025-01-10</p>
+    </div>
+    <div class="card-contents">
+        <h3>John</h3>
+        <p class="fa fa-star checked"></p>
+        <p class="fa fa-star checked"></p>
+        <p class="fa fa-star checked"></p>
+        <p class="fa fa-star checked"></p>
+        <p class="fa fa-star "></p> 
+        <p>Loved the cake recipe, but more photos would help. Still turned out great!</p>
+        <p class="review-date">Reviewed on: 2025-01-05</p>
+    </div>
+    <div class="card-contents">
+        <h3>Emily</h3>
+        <p class="fa fa-star checked"></p>
+        <p class="fa fa-star checked"></p>
+        <p class="fa fa-star checked"></p>
+        <p class="fa fa-star checked"></p>
+        <p class="fa fa-star "></p>
+        <p>Recipes are tasty, but had to tweak one or two ingredients. Worth it though!</p>
+        <p class="review-date">Reviewed on: 2025-01-01</p>
+    </div>
+    </div>
+
+
+
+    <div class="review-form">
+        <div class="review-form-title">
+            <h2>Share Your Baking Story</h2>
+            <p>Leave a review and tell us about your baking experience. 
+                Whether it was a cake that brightened your day or bread that brought comfort to your table, 
+                your words help other bakers find recipes they'll love.</p>
+        </div>
+        <div class="form-content">
+            <form class="js-feedback-form" action="/reviews" method="post" data-confirm-duration="4000">
+                <input type="text" placeholder="Enter Your Name.." required>
+                <textarea name="review" id="review" placeholder="Enter your review.." required></textarea>
+                
+                <!-- Star Rating -->
+                <div class="star-rating">
+                    <label>Rate Your Experience:</label>
+                    <div class="stars">
+                        <input type="radio" id="star5" name="rating" value="5">
+                        <label for="star5" class="fa fa-star"></label>
+                        
+                        <input type="radio" id="star4" name="rating" value="4">
+                        <label for="star4" class="fa fa-star"></label>
+                        
+                        <input type="radio" id="star3" name="rating" value="3">
+                        <label for="star3" class="fa fa-star"></label>
+                        
+                        <input type="radio" id="star2" name="rating" value="2">
+                        <label for="star2" class="fa fa-star"></label>
+                        
+                        <input type="radio" id="star1" name="rating" value="1">
+                        <label for="star1" class="fa fa-star"></label>
+                    </div>
                 </div>
-            </div>
-            
-            <button type="submit" class="review-btn">Submit</button>
-            <button type="reset" class="review-btn">reset</button>
-        </form>
+                
+                <button type="submit" class="review-btn">Submit</button>
+                <button type="reset" class="review-btn">reset</button>
+            </form>
+        </div>
     </div>
-</div>
     <footer>
         <p style="margin: 0; font-size: 16px;">© 2025 BAKE TIMES. All rights reserved.</p>
         <div>

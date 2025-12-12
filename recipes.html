@@ -13,7 +13,6 @@
     text-align: center;
 }
 
-/* override inline font-size/margins */
 .container h1 {
     font-size: clamp(26px, 3.5vw, 40px) !important;
     margin: 0 0 10px !important;
@@ -72,12 +71,12 @@
 }
 
 
-/* each card */
+
 .recipe-card {
     display: flex;
     flex-direction: column;
     align-items: center;
-    flex: 0 1 250px;                     /* allows wrapping nicely */
+    flex: 0 1 250px;                     
 }
 .recipe-title {
     text-align: center;
@@ -96,7 +95,7 @@
 
 @media (max-width: 992px) {
 
-  /* hide label completely */
+
   .search-label {
       display: none;
   }
@@ -106,7 +105,7 @@
       justify-content: center;
   }
     .search-bar {
-        width: clamp(340px, 40vw, 500px);   /* min 180px, grows with viewport, max 500px */
+        width: clamp(340px, 40vw, 500px);   
     }
 }
 

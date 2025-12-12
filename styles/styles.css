@@ -1,97 +1,108 @@
 .bg {
-    background-color: #f1f1f1;
+  background-color: #f1f1f1;
 }
 
 .header {
-    background-color: rgb(255, 255, 255);
-    height: 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: row;
-    margin: 0;
-    top: 20px;
-    left: 50%;
-    padding: 45px 30px;
-    position: fixed;
-    transform: translateX(-50%);
-    width: 90%;
-    border-radius: 12px;
-    box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.15);
-    z-index: 300;
+  background-color: rgb(255, 255, 255);
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  margin: 0;
+  top: 20px;
+  left: 50%;
+  padding: 45px 30px;
+  position: fixed;
+  transform: translateX(-50%);
+  width: 90%;
+  border-radius: 12px;
+  box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.15);
+  z-index: 300;
 }
+
 .header-left {
-    font-family:"Lexend", sans-serif;
-    font-weight: 700;
-    font-size: 35px;   
+  font-family: "Lexend", sans-serif;
+  font-weight: 700;
+  font-size: 35px;
 }
+
 .header-left a {
-    text-decoration: none;
+  text-decoration: none;
 }
+
 .header-left a:hover #p {
-  color: #60697B; 
+  color: #60697B;
   transition: color 0.3s ease;
 }
 
 .header-middle {
-    display: flex;
-    justify-content: space-between;
-    width: 600px;
+  display: flex;
+  justify-content: space-between;
+  width: 600px;
 }
 
 .header-middle a {
-    text-decoration: none;
-    color: #343E51;
-    font-weight: 500;
+  text-decoration: none;
+  color: #343E51;
+  font-weight: 500;
 }
+
 .header-middle a:hover {
-    color: #343E51;
+  color: #343E51;
 }
+
 .header-middle a::after {
-    content: "";
-    display: block;
-    width: 0;
-    height: 1px;
-    background-color: #60697B;
-    transition: width .3s;
+  content: "";
+  display: block;
+  width: 0;
+  height: 1px;
+  background-color: #60697B;
+  transition: width .3s;
 }
+
 .header-middle a:hover::after {
-    width: 100%;
-    transition: width .3s;
+  width: 100%;
+  transition: width .3s;
 }
 
 .header-right {
-    display: flex;;
-    justify-content: flex-end;
-     
-}
-.header-right a, .footer-link {
-    text-decoration: none;
-    margin-left: 25px;
-    font-size: 20px;
-    color: #343E51;
-    transition: bottom 1s;
-    position: relative;
-}
-.header-right a:hover, .footer-link:hover {
-    color: #60697B;
-    bottom: 2px;
-    transition: color 0.15s;
+  display: flex;
+  ;
+  justify-content: flex-end;
+
 }
 
-.fa-twitter::before{
-	content:"𝕏";
+.header-right a,
+.footer-link {
+  text-decoration: none;
+  margin-left: 25px;
+  font-size: 20px;
+  color: #343E51;
+  transition: bottom 1s;
+  position: relative;
+}
+
+.header-right a:hover,
+.footer-link:hover {
+  color: #60697B;
+  bottom: 2px;
+  transition: color 0.15s;
+}
+
+.fa-twitter::before {
+  content: "𝕏";
 }
 
 
 
 .m-btn {
-    display: none;
-    border: none;
-    padding: 10px;
-    background-color: #00000000;
-    color: #343E51;
-    font-size: 25px;
+  display: none;
+  border: none;
+  padding: 10px;
+  background-color: #00000000;
+  color: #343E51;
+  font-size: 25px;
 }
 
 .hero-section {
@@ -102,17 +113,19 @@
   padding: 160px 0 50px;
   margin: 0 103px;
   box-sizing: border-box;
-  justify-items: end; 
+  justify-items: end;
 }
 
-.hero-image { /* helps center image on small screens */
+.hero-image {
+  /* helps center image on small screens */
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .hero-img {
-  width: clamp(250px, 100%, 540px); /* min 250px, grows with container, max 540px */
+  width: clamp(250px, 100%, 540px);
+  /* min 250px, grows with container, max 540px */
   height: auto;
   border-radius: 50%;
   display: block;
@@ -120,15 +133,18 @@
 }
 
 
-/* --- content container --- */
+
 .hero-content {
-  width: clamp(150px, 100%, 528px); /* min 150px, preferred full column, max 528px */
+  width: clamp(150px, 100%, 528px);
+  /* min 150px, preferred full column, max 528px */
   box-sizing: border-box;
 }
-/* responsive type scales */
+
+
 .hero-content h1 {
   margin: 0 0 12px 0;
-  font-size: clamp(20px, 4vw + 6px, 50px); /* min 20px, responsive, max 50px */
+  font-size: clamp(20px, 4vw + 6px, 50px);
+  /* min 20px, responsive, max 50px */
   line-height: 1.05;
 }
 
@@ -136,8 +152,9 @@
   margin: 0 0 18px 0;
   font-size: clamp(14px, 2.2vw + 2px, 24px);
   text-align: justify;
-  text-justify: inter-word; /* min 14px, responsive, max 24px */
-  
+  text-justify: inter-word;
+  /* min 14px, responsive, max 24px */
+
 }
 
 .hero-buttons {
@@ -159,7 +176,10 @@
   cursor: pointer;
   transition: opacity 0.15s;
 }
-.btn:hover { opacity: .7; }
+
+.btn:hover {
+  opacity: .7;
+}
 
 /* ensure no overflow */
 .hero-content img,
@@ -170,15 +190,16 @@
 
 
 .cu {
-    background-color: #f1f1f1;
-    border: 2px solid rgb(255, 207, 95);
-    color: rgb(255, 207, 95);
-    transition: background-color 0.15s, color 0.15s;
+  background-color: #f1f1f1;
+  border: 2px solid rgb(255, 207, 95);
+  color: rgb(255, 207, 95);
+  transition: background-color 0.15s, color 0.15s;
 }
+
 .cu:hover {
-    opacity: none;
-    background-color: rgb(255, 207, 95);
-    color: #f1f1f1;
+  opacity: none;
+  background-color: rgb(255, 207, 95);
+  color: #f1f1f1;
 }
 
 
@@ -193,19 +214,21 @@
   box-sizing: border-box;
 }
 
-/* TEXT: flexible, but with a max width */
+
 .about-text {
-  max-width: 550px;     /* cap so lines don't get too long */
-  flex: 1 1 300px;      /* can grow and shrink, base ~300px */
+  max-width: 550px;
+  /* cap so lines don't get too long */
+  flex: 1 1 300px;
+  /* can grow and shrink, base ~300px */
 }
 
-/* IMAGE: size driven by viewport, no media query needed */
+
 .ab-image {
   width: clamp(250px, 30vw, 350px);
   /* min 150px, responsive 30vw, max 350px */
   height: auto;
   display: block;
-  flex: 0 0 auto;       /* do NOT let flex override the width math */
+  flex: 0 0 auto;
 }
 
 .about-us h2 {
@@ -222,71 +245,76 @@
 
 
 .about-cards {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    align-items: center;
-    flex-direction: row;
-    gap: 200px;
-    margin: 0px 103px;
-    vertical-align:top;
-    
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: center;
+  flex-direction: row;
+  gap: 200px;
+  margin: 0px 103px;
+  vertical-align: top;
+
 }
-    
+
 .ab-cards {
-    width: 300px;
-    height: 160px;
-    text-align: center;
+  width: 300px;
+  height: 160px;
+  text-align: center;
 }
+
 .ab-cards h4 {
-    font-size: 26px;
-    margin: 0 0 10px;
+  font-size: 26px;
+  margin: 0 0 10px;
 }
+
 .ab-cards p {
-    font-size: 18px;
-    margin: 0;
-}  
+  font-size: 18px;
+  margin: 0;
+}
 
 
 .featured-recipes {
-    margin: clamp(40px, 10vw, 120px) clamp(16px, 8vw, 103px);
+  margin: clamp(40px, 10vw, 120px) clamp(16px, 8vw, 103px);
 }
 
 .fr-head {
-    font-size: clamp(26px, 4vw, 36px);   /* 36 → 22 */
-    margin: 0 0 16px;
+  font-size: clamp(26px, 4vw, 36px);
+  /* 36 → 22 */
+  margin: 0 0 16px;
 }
 
 .fr-dec {
-    font-size: clamp(14px, 2.2vw, 20px); /* 20 → 14 */
-    margin: 0;
+  font-size: clamp(14px, 2.2vw, 20px);
+  /* 20 → 14 */
+  margin: 0;
 }
 
 
 .rec-btn {
-    margin-right: 0;
+  margin-right: 0;
 }
 
 
 .featured-recipe-title {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
 .featured-recipes-cards {
-    display: flex;
-    flex-direction: column;  /* stack cards vertically */
-    gap: 32px;
-    
+  display: flex;
+  flex-direction: column;
+  /* stack cards vertically */
+  gap: 32px;
+
 }
 
 .ricipe-img {
-    width: clamp(200px, 40vw, 500px);
-    height: auto;
-    border-radius: 7px;
-    display: block;
+  width: clamp(200px, 40vw, 500px);
+  height: auto;
+  border-radius: 7px;
+  display: block;
 }
 
 .fr-card {
@@ -294,144 +322,149 @@
   justify-content: space-between;
   align-items: center;
   gap: clamp(24px, 5vw, 72px);
-  width: 100%;              /* fills the .featured-recipes width (inside 103px margin) */
+  width: 100%;
+
   margin-bottom: 32px;
 }
 
 .fr-image {
-  flex: 0 0 auto;           /* image keeps its natural width */
+  flex: 0 0 auto;
+
 }
 
 .fr-content {
-  flex: 1 1 0;              /* text takes remaining space */
-  max-width: 550px;         /* optional: to limit line length */
+  flex: 1 1 0;
+  /* text takes remaining space */
+  max-width: 550px;
 }
 
 
 .fr-card h4 {
-    font-size: clamp(20px, 3vw, 36px);
-    margin: 0 0 12px;
+  font-size: clamp(20px, 3vw, 36px);
+  margin: 0 0 12px;
 }
 
 .fr-card p {
-    font-size: clamp(14px, 2.2vw, 24px);
-    text-align: justify;
-    text-justify: inter-word;
-    margin: 0 0 12px;
+  font-size: clamp(14px, 2.2vw, 24px);
+  text-align: justify;
+  text-justify: inter-word;
+  margin: 0 0 12px;
 }
 
 .fr-card .recipe-link {
-    font-size: clamp(14px, 1.8vw, 20px);
+  font-size: clamp(14px, 1.8vw, 20px);
 }
 
 
 .recipe-link {
-    text-decoration: none;
-    color: rgb(255, 242, 95);
-    font-size: 20px;
-    font-weight: 500;
+  text-decoration: none;
+  color: rgb(255, 242, 95);
+  font-size: 20px;
+  font-weight: 500;
 }
+
 .recipe-link:hover {
-    color: rgba(255, 242, 95, 0.726);
+  color: rgba(255, 242, 95, 0.726);
 }
 
 
 
 
 .subscription-container {
-    background-color: rgb(255, 254, 236);
-    border-radius: 7px;
-    padding: 68px;
-    /* responsive margin, same style as other sections */
-    margin: clamp(40px, 10vw, 120px) clamp(16px, 8vw, 103px);
-    display: grid;
-    align-items: center;
-    grid-template-columns: 0.8fr 1fr;
-    /* gap shrinks as screen gets smaller */
-    gap: clamp(40px, 8vw, 150px);
+  background-color: rgb(255, 254, 236);
+  border-radius: 7px;
+  padding: 68px;
+  margin: clamp(40px, 10vw, 120px) clamp(16px, 8vw, 103px);
+  display: grid;
+  align-items: center;
+  grid-template-columns: 0.8fr 1fr;
+  /* gap shrinks as screen gets smaller */
+  gap: clamp(40px, 8vw, 150px);
 }
 
 
 .subscription-form .input-ne {
-    display: block;
-    border: none;
-    outline: none;
-    padding: 20px;
-    margin-bottom: 20px;
-    width: 100%;
-    border-radius: 5px;
+  display: block;
+  border: none;
+  outline: none;
+  padding: 20px;
+  margin-bottom: 20px;
+  width: 100%;
+  border-radius: 5px;
 }
 
 .input-ne::placeholder {
-    font-size: 16px;
-    
+  font-size: 16px;
+
 }
 
 input[type="checkbox"] {
-    width: 18px;
-    height: 18px;
-    accent-color: #60697B; 
-    cursor: pointer;
-    margin: 0 5px 0 0;
-    vertical-align: middle;
-}
-  .submit-btn {
-    padding: 10px 15px;
-    border: 2px solid rgb(255, 207, 95);
-    font-size: 17px;
-    font-weight: 700;
-    border-radius: 5px;
-    background-color: rgba(255, 255, 255, 0.388);
-    color: rgb(255, 207, 95);
-    margin-right: 10px;
-    cursor: pointer;
-    margin-top: 20px;
-    transition: background-color 0.15s, color 0.15s;
-    
-}
-  .submit-btn:hover {
-    background-color: rgb(255, 207, 95);
-    color: #f1f1f1;
-  }
-
-  footer {
-    margin: 0 103px;
-    padding: 40px 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  width: 18px;
+  height: 18px;
+  accent-color: #60697B;
+  cursor: pointer;
+  margin: 0 5px 0 0;
+  vertical-align: middle;
 }
 
- 
+.submit-btn {
+  padding: 10px 15px;
+  border: 2px solid rgb(255, 207, 95);
+  font-size: 17px;
+  font-weight: 700;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.388);
+  color: rgb(255, 207, 95);
+  margin-right: 10px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.15s, color 0.15s;
+
+}
+
+.submit-btn:hover {
+  background-color: rgb(255, 207, 95);
+  color: #f1f1f1;
+}
+
+footer {
+  margin: 0 103px;
+  padding: 40px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
 
 
 @media (max-width: 1200px) {
-    .header-right {
-        display: none;
-    }
+  .header-right {
+    display: none;
+  }
 
-    footer {
-        flex-direction: column;
-        gap: 12px;
-        text-align: center;
-        margin: 0;
-    }
+  footer {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+    margin: 0;
+  }
 
-    footer p {
-        font-size: 14px;
-    }
+  footer p {
+    font-size: 14px;
+  }
 
 
-    footer div {
-        justify-content: center;
-    }
+  footer div {
+    justify-content: center;
+  }
 }
 
 
 @media (max-width: 992px) {
-  
+
   .m-btn {
-    display: block; /* previously hidden */
+    display: block;
     background: transparent;
     border: none;
     font-size: 26px;
@@ -440,11 +473,11 @@ input[type="checkbox"] {
     margin-left: 10px;
   }
 
-  .header-middle, .header-right {
+  .header-middle,
+  .header-right {
     display: none;
   }
 
-  /* when menu is opened (JS adds .menu-open to .header) */
   .header.menu-open .header-middle {
     display: flex;
     flex-direction: column;
@@ -457,7 +490,7 @@ input[type="checkbox"] {
     max-width: 1100px;
     padding: 16px 20px;
     background: #fff;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
     z-index: 999;
     border-radius: 8px;
   }
@@ -468,7 +501,7 @@ input[type="checkbox"] {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    top: calc(100% + 56px); /* place below the nav dropdown */
+    top: calc(100% + 56px);
     width: 90%;
     max-width: 1100px;
     padding: 12px 20px;
@@ -484,71 +517,76 @@ input[type="checkbox"] {
   }
 
   .header-middle a::after {
-    content: none !important;     /* remove underline element */
-    display: none !important;     /* ensure it doesn’t render */
+    content: none !important;
+    display: none !important;
     width: 0 !important;
     height: 0 !important;
-    transition: none !important;  /* stop animation */
+    transition: none !important;
   }
 
   .header-middle a:hover::after {
-    width: 0 !important;          /* prevent hover underline */
+    width: 0 !important;
   }
 
   footer {
-        padding: 16px 12px;
-    }
-
-    footer p {
-        font-size: 12px;
-    }
-
-    footer div a {
-        font-size: 16px;
-    }
-
-
-    .hero-section {
-        grid-template-columns: 1fr;      /* stack */
-        justify-items: center;
-        text-align: center;
-        padding: 130px 16px 40px;
-        margin: 0 18px;                 /* reduce side margin on smaller screens */
-    }
-
-    .hero-img {
-        width: clamp(250px, 100%, 300px); /* min 250px, grows with container, max 540px */
-    }
-    .hero-buttons { justify-content: center; }
-    .hero-content { 
-        width: 100%;
-        max-width: 640px;
-    }
-    .hero-content h1 {
-        font-size: clamp(20px, 4vw + 6px, 44px); /* min 20px, responsive, max 50px */
-    }
-
-    .hero-content p {
-        font-size: clamp(14px, 2.2vw + 2px, 18px); /* min 14px, responsive, max 24px */
-    }
-
-
-
-    .about-us {
-    flex-direction: column;      /* stack vertically */
-    align-items: center;         /* center them */
-    gap: 24px;                   /* smaller gap than 50px */
-    margin: 80px 24px 50px;      /* reduce side margins */
-    text-align: center;          /* center text */
+    padding: 16px 12px;
   }
 
-  /* 2. Move image to top */
+  footer p {
+    font-size: 12px;
+  }
+
+  footer div a {
+    font-size: 16px;
+  }
+
+
+  .hero-section {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+    padding: 130px 16px 40px;
+    margin: 0 18px;
+  }
+
+  .hero-img {
+    width: clamp(250px, 100%, 300px);
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .hero-content {
+    width: 100%;
+    max-width: 640px;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(20px, 4vw + 6px, 44px);
+  }
+
+  .hero-content p {
+    font-size: clamp(14px, 2.2vw + 2px, 18px);
+  }
+
+
+
+  .about-us {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    margin: 80px 24px 50px;
+    text-align: center;
+  }
+
+
   .about-us .ab-image {
-    order: -1;                   /* this puts the image before the text */
+    order: -1;
     max-width: 100%;
   }
 
-  /* 3. Make cards stack nicely */
+
   .about-cards {
     flex-direction: column;
     gap: 24px;
@@ -563,16 +601,19 @@ input[type="checkbox"] {
   }
 
 
-  /* (optional) slightly smaller fonts on mobile */
+
   .about-us h2 {
     font-size: 28px;
   }
+
   .about-us p {
     font-size: 18px;
   }
+
   .ab-cards h4 {
     font-size: 20px;
   }
+
   .ab-cards p {
     font-size: 16px;
   }
@@ -583,23 +624,27 @@ input[type="checkbox"] {
 
   /* center the text block */
   .featured-recipe-title {
-    justify-content: center;   /* centers the text container */
-    text-align: center;         /* centers text inside */
+    justify-content: center;
+    /* centers the text container */
+    text-align: center;
+    /* centers text inside */
   }
 
 
   .subscription-container {
-    grid-template-columns: 1fr;   /*  one column */
+    grid-template-columns: 1fr;
+    /*  one column */
     text-align: center;
-    padding: clamp(32px, 8vw, 48px) 24px;      
+    padding: clamp(32px, 8vw, 48px) 24px;
   }
 
   .subscription-form .input-ne {
-    width: 100%;                  /* inputs fill the column nicely */
+    width: 100%;
+    /* inputs fill the column nicely */
   }
 
   .submit-btn {
-    width: 100%;                  /* optional: full-width submit button */
+    width: 100%;
   }
 }
 
@@ -607,18 +652,21 @@ input[type="checkbox"] {
 @media (max-width: 600px) {
   .featured-recipes-cards {
     display: flex;
-    flex-direction: column;  /* stack all cards */
+    flex-direction: column;
+    /* stack all cards */
     gap: 24px;
   }
 
   .fr-card {
-    display: flex;           /* switch from grid → flex on small screens */
-    flex-direction: column;  /* stack inside the card */
+    display: flex;
+    /* switch from grid → flex on small screens */
+    flex-direction: column;
+    /* stack inside the card */
     text-align: center;
     gap: 16px;
   }
 
-  /* 🔥 Force image first, text second on mobile */
+  /* Force image first, text second on mobile */
   .fr-image {
     order: 0;
   }
@@ -632,15 +680,3 @@ input[type="checkbox"] {
     margin: 0 auto;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-

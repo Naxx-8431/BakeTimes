@@ -1,11 +1,6 @@
-// scripts/form-feedback.js
-// Lightweight: show "SENT" centered on a form for a short time when submitted.
-// Usage: add class "js-feedback-form" to any form you want this behavior on.
-// Optionally set data-confirm-duration (ms) on the form. Default 3500 ms.
 
 document.addEventListener('DOMContentLoaded', function () {
 
-  // Create overlay element for reuse (we clone per form)
   function createOverlay() {
     var o = document.createElement('div');
     o.className = 'form-sent-overlay';
