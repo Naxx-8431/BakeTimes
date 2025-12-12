@@ -36,44 +36,23 @@ p {
 
 }
 
-.form-sent-overlay {
-  opacity: 0;
-  transition: opacity .25s ease;
-  -webkit-transition: opacity .25s ease;
-}
-
-.form-sent-overlay--visible {
-  opacity: 1;
-}
-
-.form-sent-overlay .form-sent-text {
-  font-family: "Poppins", Arial, sans-serif;
-  font-weight: 600;
-  font-size: 28px;
-  color: #1a1a1a;
-  background: rgba(255, 255, 255, 0.0);
-  padding: 8px 18px;
-  border-radius: 6px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
-  letter-spacing: 1px;
-}
 
 
 
-/* Toast styles for form-feedback.js toast */
+/* Toast styles — fully centered on all screen sizes */
 .form-toast {
   position: fixed;
   left: 50%;
   bottom: 28px;
-  transform: translateX(-50%) translateY(12px);
+  transform: translateX(-50%);
   z-index: 11000;
   pointer-events: auto;
   opacity: 0;
-  transition: opacity .28s ease, transform .28s cubic-bezier(.2, .9, .3, 1);
-  will-change: opacity, transform;
-  font-family: Roboto, Arial, sans-serif;
-  min-width: 220px;
-  max-width: calc(100% - 40px);
+  transition: opacity .28s ease, transform .28s ease;
+  width: max-content;
+  /* ENSURES TRUE WIDTH for accurate centering */
+  max-width: 90%;
+  /* prevents overflow on tiny screens */
   box-sizing: border-box;
 }
 
@@ -83,42 +62,37 @@ p {
   transform: translateX(-50%) translateY(0);
 }
 
-/* hide state (fade out) */
+/* hide state */
 .form-toast--hide {
   opacity: 0;
   transform: translateX(-50%) translateY(12px);
 }
 
-/* inner bubble */
-.form-toast .form-toast-inner {
+/* inner content */
+.form-toast-inner {
   display: inline-block;
   background: #343E51;
-  /* dark bg (matches your theme) */
   color: #fff;
   padding: 12px 18px;
-  border-radius: 4px;
+  border-radius: 5px;
   box-shadow: 0 10px 28px rgba(16, 24, 40, 0.18);
   font-weight: 600;
-  letter-spacing: 0.2px;
   text-align: center;
   font-size: 15px;
 }
 
-/* responsive: smaller on very small devices */
+/* small screens */
 @media (max-width: 420px) {
-  .form-toast .form-toast-inner {
-    padding: 10px 14px;
+  .form-toast {
+    max-width: 95%;
+  }
+
+  .form-toast-inner {
     font-size: 14px;
-    border-radius: 20px;
+    padding: 10px 14px;
   }
 }
 
-
-@media (max-width: 600px) {
-  .form-sent-overlay .form-sent-text {
-    font-size: 20px;
-  }
-}
 
 
 @media (min-width: 1200px) {
