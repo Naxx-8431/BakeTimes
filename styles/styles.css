@@ -368,13 +368,11 @@
 }
 
 
-
-
 .subscription-container {
   background-color: rgb(255, 254, 236);
   border-radius: 7px;
   padding: 68px;
-  margin: clamp(40px, 10vw, 120px) clamp(16px, 8vw, 103px);
+  margin: clamp(40px, 10vw, 120px) clamp(16px, 8vw, 103px) 0;
   display: grid;
   align-items: center;
   grid-template-columns: 0.8fr 1fr;

@@ -111,7 +111,6 @@ p {
   .back-button {
     display: block;
     margin-left: clamp(16px, 6vw, 160px);
-
     margin-right: 0;
   }
 
@@ -122,20 +121,4 @@ p {
     padding-right: clamp(16px, 6vw, 160px);
     box-sizing: border-box;
   }
-
-
-  .baking-basics-hero>.hero-content,
-  .baking-basics-hero .hero-left,
-  .baking-basics-hero .hero-right {
-    margin-left: 0 !important;
-    padding-left: 0 !important;
-  }
-
-
-  .baking-basics-hero h1,
-  .baking-basics-hero p {
-    margin-left: 0 !important;
-    padding-left: 0 !important;
-  }
-
 }
