@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <title>Manage Recipes</title>
+  <title>Manage Recipes - MongoDB Backend</title>
   <link rel="stylesheet" href="../styles/general.css">
   <link rel="stylesheet" href="../styles/header.css">
 
   <style>
-    body { font-family: Roboto, Arial, sans-serif; }
+    body {
+      font-family: Roboto, Arial, sans-serif;
+    }
 
     .admin-wrapper {
       margin: 40px clamp(16px, 8vw, 103px);
@@ -20,7 +23,7 @@
 
     .admin-layout {
       display: grid;
-      grid-template-columns: minmax(0, 360px) minmax(0, 1fr);
+      grid-template-columns: minmax(0, 420px) minmax(0, 1fr);
       gap: clamp(24px, 4vw, 40px);
       align-items: flex-start;
     }
@@ -30,7 +33,7 @@
       background: #fffdf5;
       border-radius: 8px;
       padding: 24px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
     }
 
     .recipe-form h2 {
@@ -62,45 +65,54 @@
       resize: vertical;
     }
 
-    .recipe-form .inline {
-      display: flex;
-      align-items: center;
-      gap: 8px;
+    .recipe-form small {
+      display: block;
+      margin-top: -10px;
       margin-bottom: 14px;
-      font-size: 14px;
-    }
-
-    .recipe-form .inline input[type="checkbox"] {
-      width: auto;
-      margin: 0;
-      cursor: pointer;
-    }
-
-    .recipe-form .inline label {
-      margin: 0;
-      font-weight: 400;
-      display: inline;
+      color: #666;
+      font-size: 12px;
     }
 
     .admin-btn {
       padding: 10px 18px;
       border-radius: 999px;
       border: none;
-      background: rgb(255,207,95);
+      background: rgb(255, 207, 95);
       color: #fff;
       font-weight: 600;
       cursor: pointer;
       transition: opacity .15s;
     }
 
-    .admin-btn:hover { opacity: .75; }
+    .admin-btn:hover {
+      opacity: .75;
+    }
+
+    .admin-btn:disabled {
+      opacity: .5;
+      cursor: not-allowed;
+    }
+
+    #form-status {
+      margin-left: 12px;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    #form-status.success {
+      color: #27ae60;
+    }
+
+    #form-status.error {
+      color: #c0392b;
+    }
 
     /* ---- list ---- */
     .recipe-list {
       background: #ffffff;
       border-radius: 8px;
       padding: 24px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
     }
 
     .recipe-list h2 {
@@ -114,7 +126,8 @@
       font-size: 14px;
     }
 
-    th, td {
+    th,
+    td {
       padding: 8px 10px;
       border-bottom: 1px solid #eee;
       text-align: left;
@@ -149,6 +162,13 @@
       background: #ffd1d1;
     }
 
+    .recipe-image {
+      width: 50px;
+      height: 50px;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+
     @media (max-width: 900px) {
       .admin-layout {
         grid-template-columns: 1fr;
@@ -156,43 +176,75 @@
     }
   </style>
 </head>
-<body>
 
-  <!-- you can reuse your existing header here if you want -->
+<body>
 
   <div class="admin-wrapper">
     <h1>Manage Recipes</h1>
-    <p style="margin:0 0 24px;">Add new recipes, see all recipes, and delete ones you no longer need.</p>
+    <p style="margin:0 0 24px;">Add new recipes to MongoDB database, view all recipes, and delete ones you no longer
+      need.</p>
 
     <div class="admin-layout">
-      <!-- Add / edit form -->
+      <!-- Add form -->
       <div class="recipe-form">
         <h2>Add New Recipe</h2>
 
-        <form id="recipe-form">
-          <label for="name">Recipe Name*</label>
-          <input id="name" type="text" required>
+        <form id="recipe-form" enctype="multipart/form-data">
+          <label for="title">Recipe Title*</label>
+          <input id="title" type="text" placeholder="Chocolate Chip Cookies" required>
 
-          <label for="image">Image URL*</label>
-          <input id="image" type="url" placeholder="images/cake.jpg or https://..." required>
+          <label for="description">Description*</label>
+          <textarea id="description" placeholder="A delicious homemade cookie recipe..." required></textarea>
 
-          <label for="description">Short Description</label>
-          <textarea id="description" placeholder="A light, fluffy sponge cake..."></textarea>
+          <label for="ingredients">Ingredients* (one per line)</label>
+          <textarea id="ingredients" placeholder="2 cups flour&#10;1 cup sugar&#10;1 cup chocolate chips"
+            required></textarea>
 
-          <label for="holiday">Holiday (optional)</label>
-          <select id="holiday">
-            <option value="">None</option>
-            <option value="Christmas">Christmas</option>
-            <option value="Thanksgiving">Thanksgiving</option>
-            <option value="Easter">Easter</option>
+          <label for="instructions">Cooking Instructions*</label>
+          <textarea id="instructions"
+            placeholder="Mix dry ingredients. Cream butter and sugar. Combine all. Bake at 350°F for 12 minutes."
+            required></textarea>
+
+          <label for="prepTime">Prep Time (minutes)*</label>
+          <input id="prepTime" type="number" min="1" placeholder="15" required>
+
+          <label for="cookTime">Cook Time (minutes)*</label>
+          <input id="cookTime" type="number" min="0" placeholder="12" required>
+
+          <label for="servings">Servings*</label>
+          <input id="servings" type="number" min="1" placeholder="24" required>
+
+          <label for="difficulty">Difficulty*</label>
+          <select id="difficulty" required>
+            <option value="">Select difficulty</option>
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
           </select>
 
-          <div class="inline">
-            <input type="checkbox" id="featured">
-            <label for="featured" style="margin:0;">Show in Featured section</label>
-          </div>
+          <label for="category">Category*</label>
+          <select id="category" required>
+            <option value="">Select category</option>
+            <option value="dessert">Dessert</option>
+            <option value="main course">Main Course</option>
+            <option value="appetizer">Appetizer</option>
+            <option value="breakfast">Breakfast</option>
+            <option value="snack">Snack</option>
+            <option value="beverage">Beverage</option>
+          </select>
+
+          <label for="image">Recipe Image*</label>
+          <input id="image" type="file" accept="image/*" required>
+          <small>Max 5MB - JPG, PNG, GIF, WebP</small>
+
+          <label for="author">Author (optional)</label>
+          <input id="author" type="text" placeholder="Your name">
+
+          <label for="tags">Tags (optional, comma-separated)</label>
+          <input id="tags" type="text" placeholder="vegetarian, gluten-free, quick">
 
           <button type="submit" class="admin-btn">Add Recipe</button>
+          <span id="form-status"></span>
         </form>
       </div>
 
@@ -200,31 +252,34 @@
       <div class="recipe-list">
         <h2>Recipe List</h2>
 
-
-        <button id="clear-all" class="delete-btn" style="margin-bottom: 15px;">
-          Clear All Recipes
+        <button id="refresh-list" class="admin-btn" style="margin-bottom: 15px;">
+          Refresh List
         </button>
+
         <table>
           <thead>
             <tr>
-              <th>Name</th>
-              <th>Holiday</th>
-              <th>Featured</th>
+              <th>Image</th>
+              <th>Title</th>
+              <th>Category</th>
+              <th>Difficulty</th>
+              <th>Time</th>
               <th>Actions</th>
             </tr>
           </thead>
           <tbody id="recipe-table-body">
-            <!-- filled by JS -->
+            <tr>
+              <td colspan="6">Loading recipes...</td>
+            </tr>
           </tbody>
         </table>
       </div>
     </div>
   </div>
 
-  <!-- your base data -->
-  <script src="../scripts/data/recipe-Collections.js"></script>
   <!-- admin logic -->
   <script src="scripts/admin-control.js"></script>
 
 </body>
+
 </html>
