@@ -1,300 +1,344 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="w3.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3pro.css">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="styles/general.css">
     <link rel="stylesheet" href="styles/header.css">
     <title>REVIEWS</title>
     <style>
-.container {
-    margin: clamp(24px, 6vw, 40px) clamp(16px, 8vw, 103px);
-    text-align: center;
-}
+        .container {
+            margin: clamp(24px, 6vw, 40px) clamp(16px, 8vw, 103px);
+            text-align: center;
+        }
 
-.container h1 {
-    font-size: clamp(26px, 3.5vw, 40px) !important;
-    margin: 0 0 10px !important;
-}
+        .container h1 {
+            font-size: clamp(26px, 3.5vw, 40px) !important;
+            margin: 0 0 10px !important;
+        }
 
-.container p {
-    font-size: clamp(14px, 2.1vw, 20px) !important;
-    margin: 0 !important;
-    line-height: 1.5;
-}
+        .container p {
+            font-size: clamp(14px, 2.1vw, 20px) !important;
+            margin: 0 !important;
+            line-height: 1.5;
+        }
 
-.tr-container {
-    margin: 30px clamp(16px, 8vw, 103px);  
-    padding: clamp(1px, 3vw, 30px);
-    background-color: #ffffff;
-    border-radius: 7px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-div {
-    color: #343E51;
-}
+        .tr-container {
+            margin: 30px clamp(16px, 8vw, 103px);
+            padding: clamp(1px, 3vw, 30px);
+            background-color: #ffffff;
+            border-radius: 7px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
 
-.bar-5 {width: 50%; height: clamp(10px, 2vw, 18px); background-color: #04AA6D;}
-.bar-4 {width: 30%; height: clamp(10px, 2vw, 18px); background-color: #2196F3;}
-.bar-3 {width: 11%; height: clamp(10px, 2vw, 18px); background-color: #00bcd4;}
-.bar-2 {width: 4%; height: clamp(10px, 2vw, 18px); background-color: #ff9800;}
-.bar-1 {width: 6%; height: clamp(10px, 2vw, 18px); background-color: #f44336;}
+        div {
+            color: #343E51;
+        }
 
-.r-heading{
-    font-size: clamp(18px, 2.4vw, 25px);   
-    margin-right: 25px;  
-}
-.fa-star{
-    font-size: clamp(18px, 2.4vw, 25px);
-}
-.checked {
-  color: orange;
-}
+        .bar-5 {
+            width: 50%;
+            height: clamp(10px, 2vw, 18px);
+            background-color: #04AA6D;
+        }
 
-.rows {
-  display: grid;
-  grid-template-columns: auto 1fr auto; 
-  column-gap: 12px;
-  row-gap: 8px;
-  align-items: center;                   
-  margin-top: 10px;
-}
+        .bar-4 {
+            width: 30%;
+            height: clamp(10px, 2vw, 18px);
+            background-color: #2196F3;
+        }
 
-/* left and right cells */
-.side,
-.right,
-.middle {
-  margin-top: 0;
-}
+        .bar-3 {
+            width: 11%;
+            height: clamp(10px, 2vw, 18px);
+            background-color: #00bcd4;
+        }
 
-/* left label (“5 Star”) */
-.side {
-  font-size: 14px;
-}
+        .bar-2 {
+            width: 4%;
+            height: clamp(10px, 2vw, 18px);
+            background-color: #ff9800;
+        }
 
-/* number on the right */
-.right {
-  text-align: right;
-  font-size: 14px;
-}
+        .bar-1 {
+            width: 6%;
+            height: clamp(10px, 2vw, 18px);
+            background-color: #f44336;
+        }
 
-/* bar column */
-.middle {
-  width: 100%;
-}
+        .r-heading {
+            font-size: clamp(18px, 2.4vw, 25px);
+            margin-right: 25px;
+        }
 
-.bar-container {
-  width: 100%;
-  background-color: #e4e4e4;
-  text-align: left;
-  color: white;
-  border-radius: 4px;
-  overflow: hidden;
-}
+        .fa-star {
+            font-size: clamp(18px, 2.4vw, 25px);
+        }
 
-.review-card {
-    margin: 30px clamp(16px, 8vw, 103px);
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: clamp(16px, 3vw, 32px);
-}
-.card-contents {
-    padding: clamp(12px, 2vw, 20px);
-    border-radius: 7px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    background-color: #fff;
-}
-.card-contents h3,
-.card-contents p {
-    margin: 5px;
-}
+        .checked {
+            color: orange;
+        }
 
-.card-contents h3 {
-    font-size: clamp(16px, 2.4vw, 20px);
-}
+        .rows {
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            column-gap: 12px;
+            row-gap: 8px;
+            align-items: center;
+            margin-top: 10px;
+        }
 
-.card-contents p {
-    font-size: clamp(13px, 2vw, 16px);
-    line-height: 1.5;
-    text-align: justify;
-    text-justify: inter-word;
-}
+        /* left and right cells */
+        .side,
+        .right,
+        .middle {
+            margin-top: 0;
+        }
 
-.card-contents .fa-star {
-    font-size: clamp(14px, 2vw, 18px);
-}
+        /* left label (“5 Star”) */
+        .side {
+            font-size: 14px;
+        }
 
-.review-form {
-    background-color: rgb(255, 248, 236);
-    margin: 30px clamp(16px, 8vw, 103px);
-    display: grid;
-    grid-template-columns: 0.8fr 1fr;
-    justify-content: center;
-    align-items: flex-start;
-    padding: clamp(23px, 4vw, 68px);
-    gap: clamp(40px, 6vw, 150px);
-    line-height: 1.7;
-}
+        /* number on the right */
+        .right {
+            text-align: right;
+            font-size: 14px;
+        }
 
-.review-form-title h2 {
-    font-size: clamp(25px, 4vw, 41px);
-    font-weight: 600;
-}
-.review-form-title p {
-    font-size: clamp(14px, 2.4vw, 20px);
-    margin: 20px 0;
-    line-height: 1.6;
-    text-align: justify;
-    text-justify: inter-word;
-}
-.form-content, input, textarea {
-    border: none;
-    display: block;
-    outline: none;
-    margin: 0 0 20px 0;
-    padding: 20px;
-    width: 100%;
-    border-radius: 5px;
-}
-input::placeholder, textarea::placeholder {
-    font-size: 16px;
-    font-family: Roboto, Arial;  
-}
-.review-btn {
-    padding: 8px 15px;
-    border: none;
-    font-size: 14px;
-    font-weight: 600;
-    border-radius: 5px;
-    background-color: rgb(255, 220, 138);
-    color: white;
-    margin-right: 10px;
-    cursor: pointer;
-    margin-top: 20px;
-    transition: opacity 0.15s;
-}
-.review-btn:hover {
-    opacity: 0.7;
-}
+        /* bar column */
+        .middle {
+            width: 100%;
+        }
 
-.star-rating {
-    margin: 20px 0 0;
-    text-align: left;
-}
+        .bar-container {
+            width: 100%;
+            background-color: #e4e4e4;
+            text-align: left;
+            color: white;
+            border-radius: 4px;
+            overflow: hidden;
+        }
 
-.star-rating label {
-    display: block;
-    font-size: 14px;
-    font-weight: 600;
-    color: #343E51;
-    margin-bottom: 10px;
-}
+        .review-card {
+            margin: 30px clamp(16px, 8vw, 103px);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: clamp(16px, 3vw, 32px);
+        }
 
-.stars {
-    display: flex;
-    gap: 8px;
-    flex-direction: row-reverse;
-    justify-content: flex-end;
-}
+        .card-contents {
+            padding: clamp(12px, 2vw, 20px);
+            border-radius: 7px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+        }
 
-.stars input {
-    display: none;
-}
+        .card-contents h3,
+        .card-contents p {
+            margin: 5px;
+        }
 
-.stars label {
-    font-size: clamp(20px, 4vw, 28px);
-    color: #ddd;
-    cursor: pointer;
-    transition: color 0.2s;
-    margin: 0;
-}
+        .card-contents h3 {
+            font-size: clamp(16px, 2.4vw, 20px);
+        }
 
-.stars label:hover,
-.stars label:hover ~ label,
-.stars input:checked ~ label {
-    color: #FFD700;
-}
+        .card-contents p {
+            font-size: clamp(13px, 2vw, 16px);
+            line-height: 1.5;
+            text-align: justify;
+            text-justify: inter-word;
+        }
 
-@media (max-width: 992px) {
-  .review-form {
-      grid-template-columns: 1fr;       /* stack title and form */
-      text-align: center;
-      margin: 24px clamp(16px, 6vw, 32px);
-      padding: clamp(20px, 6vw, 36px);
-      gap: 24px;                        /* smaller gap between title and form */
-  }
+        .card-contents .fa-star {
+            font-size: clamp(14px, 2vw, 18px);
+        }
 
-  .review-form-title {
-      max-width: 640px;
-      margin: 0 auto;
-  }
+        .review-form {
+            background-color: rgb(255, 248, 236);
+            margin: 30px clamp(16px, 8vw, 103px);
+            display: grid;
+            grid-template-columns: 0.8fr 1fr;
+            justify-content: center;
+            align-items: flex-start;
+            padding: clamp(23px, 4vw, 68px);
+            gap: clamp(40px, 6vw, 150px);
+            line-height: 1.7;
+        }
 
-  .form-content {
-      width: 100%;
-  }
+        .review-form-title h2 {
+            font-size: clamp(25px, 4vw, 41px);
+            font-weight: 600;
+        }
 
-  .star-rating {
-    text-align: center;
-  }
-  .star-rating {
-    text-align: center;
-  }
+        .review-form-title p {
+            font-size: clamp(14px, 2.4vw, 20px);
+            margin: 20px 0;
+            line-height: 1.6;
+            text-align: justify;
+            text-justify: inter-word;
+        }
 
-  .star-rating label {
-    text-align: center;
-  }
+        .form-content,
+        input,
+        textarea {
+            border: none;
+            display: block;
+            outline: none;
+            margin: 0 0 20px 0;
+            padding: 20px;
+            width: 100%;
+            border-radius: 5px;
+        }
 
-  .stars {
-    justify-content: center;
-  }
+        input::placeholder,
+        textarea::placeholder {
+            font-size: 16px;
+            font-family: Roboto, Arial;
+        }
 
-}
+        .review-btn {
+            padding: 8px 15px;
+            border: none;
+            font-size: 14px;
+            font-weight: 600;
+            border-radius: 5px;
+            background-color: rgb(255, 220, 138);
+            color: white;
+            margin-right: 10px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: opacity 0.15s;
+        }
 
+        .review-btn:hover {
+            opacity: 0.7;
+        }
+
+        .star-rating {
+            margin: 20px 0 0;
+            text-align: left;
+        }
+
+        .star-rating label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            color: #343E51;
+            margin-bottom: 10px;
+        }
+
+        .stars {
+            display: flex;
+            gap: 8px;
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+        }
+
+        .stars input {
+            display: none;
+        }
+
+        .stars label {
+            font-size: clamp(20px, 4vw, 28px);
+            color: #ddd;
+            cursor: pointer;
+            transition: color 0.2s;
+            margin: 0;
+        }
+
+        .stars label:hover,
+        .stars label:hover~label,
+        .stars input:checked~label {
+            color: #FFD700;
+        }
+
+        @media (max-width: 992px) {
+            .review-form {
+                grid-template-columns: 1fr;
+                /* stack title and form */
+                text-align: center;
+                margin: 24px clamp(16px, 6vw, 32px);
+                padding: clamp(20px, 6vw, 36px);
+                gap: 24px;
+                /* smaller gap between title and form */
+            }
+
+            .review-form-title {
+                max-width: 640px;
+                margin: 0 auto;
+            }
+
+            .form-content {
+                width: 100%;
+            }
+
+            .star-rating {
+                text-align: center;
+            }
+
+            .star-rating {
+                text-align: center;
+            }
+
+            .star-rating label {
+                text-align: center;
+            }
+
+            .stars {
+                justify-content: center;
+            }
+
+        }
     </style>
 </head>
+
 <body>
     <div class="header">
         <div class="header-left">
-           <a href="index.html"><p id="p" style="margin: 0;">BAKE<span style="font-weight: 400; font-size: 25px;">TIMES</span></p></a> 
+            <a href="index.html">
+                <p id="p" style="margin: 0;">BAKE<span style="font-weight: 400; font-size: 25px;">TIMES</span></p>
+            </a>
         </div>
 
 
-        <button id="menu-toggle" class="m-btn" aria-label="Open menu" aria-expanded="false" aria-controls="header-nav">☰</button>
+        <button id="menu-toggle" class="m-btn" aria-label="Open menu" aria-expanded="false"
+            aria-controls="header-nav">☰</button>
 
 
         <div class="header-middle">
-                <a href="recipes.html">RECIPES</a>
-                <a href="bakingbasics.html">BAKING BASICS</a>
-                <a href="holidays.html">HOLIDAYS</a>
-                <a href="index.html#about">ABOUT US</a>
-                <a href="reviews.html">REVIEWS</a>       
+            <a href="recipes.html">RECIPES</a>
+            <a href="bakingbasics.html">BAKING BASICS</a>
+            <a href="holidays.html">HOLIDAYS</a>
+            <a href="index.html#about">ABOUT US</a>
+            <a href="reviews.html">REVIEWS</a>
         </div>
         <div class="header-right">
-                <a href="https://facebook.com" class="fa fa-facebook"></a>
-                <a href="https://twitter.com" class="fa fa-twitter"></a>
-                <a href="https://instagram.com" class="fa fa-instagram"></a>
+            <a href="https://facebook.com" class="fa fa-facebook"></a>
+            <a href="https://twitter.com" class="fa fa-twitter"></a>
+            <a href="https://instagram.com" class="fa fa-instagram"></a>
         </div>
     </div>
-    
-    <div class="container">
+
+    <div class="container" data-aos="zoom-in">
         <h1>Sweet Words from Our Bakers</h1>
         <p>Baking is love made visible — and our community's feedback is the icing on the cake!</p>
     </div>
 
-    <div class="tr-container">
+    <div class="tr-container" data-aos="fade-up" data-aos-delay="100">
         <div class="total-reviews-container">
-        <span class="r-heading">User Ratings</span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star "></span>
-        <p>4.1 average based on 305 reviews.</p>
-        <hr style="border: 1px solid #60697B; margin: 10px 0;">
+            <span class="r-heading">User Ratings</span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star "></span>
+            <p>4.1 average based on 305 reviews.</p>
+            <hr style="border: 1px solid #60697B; margin: 10px 0;">
         </div>
         <div class="rows">
             <div class="side">
@@ -360,83 +404,83 @@ input::placeholder, textarea::placeholder {
     </div>
 
     <div class="review-card">
-    <div class="card-contents">
-        <h3>Marcus</h3>
-        <p class="fa fa-star checked"></p>
-        <p class="fa fa-star checked"></p>
-        <p class="fa fa-star checked"></p>
-        <p class="fa fa-star checked"></p>
-        <p class="fa fa-star checked"></p>
-        <p>Best cookies ever! Super easy to follow and came out perfect. Will bake again!</p>
-        <p class="review-date">Reviewed on: 2025-01-15</p>
-    </div>
-    <div class="card-contents">
-        <h3>Sarah</h3>
-        <p class="fa fa-star checked"></p>
-        <p class="fa fa-star checked"></p>
-        <p class="fa fa-star checked"></p>
-        <p class="fa fa-star checked"></p>
-        <p class="fa fa-star checked"></p>
-        <p>Great for beginners! The banana bread was a hit. Clear and simple instructions.</p>
-        <p class="review-date">Reviewed on: 2025-01-10</p>
-    </div>
-    <div class="card-contents">
-        <h3>John</h3>
-        <p class="fa fa-star checked"></p>
-        <p class="fa fa-star checked"></p>
-        <p class="fa fa-star checked"></p>
-        <p class="fa fa-star checked"></p>
-        <p class="fa fa-star "></p> 
-        <p>Loved the cake recipe, but more photos would help. Still turned out great!</p>
-        <p class="review-date">Reviewed on: 2025-01-05</p>
-    </div>
-    <div class="card-contents">
-        <h3>Emily</h3>
-        <p class="fa fa-star checked"></p>
-        <p class="fa fa-star checked"></p>
-        <p class="fa fa-star checked"></p>
-        <p class="fa fa-star checked"></p>
-        <p class="fa fa-star "></p>
-        <p>Recipes are tasty, but had to tweak one or two ingredients. Worth it though!</p>
-        <p class="review-date">Reviewed on: 2025-01-01</p>
-    </div>
+        <div class="card-contents" data-aos="fade-up" data-aos-delay="0">
+            <h3>Marcus</h3>
+            <p class="fa fa-star checked"></p>
+            <p class="fa fa-star checked"></p>
+            <p class="fa fa-star checked"></p>
+            <p class="fa fa-star checked"></p>
+            <p class="fa fa-star checked"></p>
+            <p>Best cookies ever! Super easy to follow and came out perfect. Will bake again!</p>
+            <p class="review-date">Reviewed on: 2025-01-15</p>
+        </div>
+        <div class="card-contents" data-aos="fade-up" data-aos-delay="100">
+            <h3>Sarah</h3>
+            <p class="fa fa-star checked"></p>
+            <p class="fa fa-star checked"></p>
+            <p class="fa fa-star checked"></p>
+            <p class="fa fa-star checked"></p>
+            <p class="fa fa-star checked"></p>
+            <p>Great for beginners! The banana bread was a hit. Clear and simple instructions.</p>
+            <p class="review-date">Reviewed on: 2025-01-10</p>
+        </div>
+        <div class="card-contents" data-aos="fade-up" data-aos-delay="200">
+            <h3>John</h3>
+            <p class="fa fa-star checked"></p>
+            <p class="fa fa-star checked"></p>
+            <p class="fa fa-star checked"></p>
+            <p class="fa fa-star checked"></p>
+            <p class="fa fa-star "></p>
+            <p>Loved the cake recipe, but more photos would help. Still turned out great!</p>
+            <p class="review-date">Reviewed on: 2025-01-05</p>
+        </div>
+        <div class="card-contents" data-aos="fade-up" data-aos-delay="300">
+            <h3>Emily</h3>
+            <p class="fa fa-star checked"></p>
+            <p class="fa fa-star checked"></p>
+            <p class="fa fa-star checked"></p>
+            <p class="fa fa-star checked"></p>
+            <p class="fa fa-star "></p>
+            <p>Recipes are tasty, but had to tweak one or two ingredients. Worth it though!</p>
+            <p class="review-date">Reviewed on: 2025-01-01</p>
+        </div>
     </div>
 
 
 
-    <div class="review-form">
+    <div class="review-form" data-aos="fade-up">
         <div class="review-form-title">
             <h2>Share Your Baking Story</h2>
-            <p>Leave a review and tell us about your baking experience. 
-                Whether it was a cake that brightened your day or bread that brought comfort to your table, 
+            <p>Leave a review and tell us about your baking experience.
+                Whether it was a cake that brightened your day or bread that brought comfort to your table,
                 your words help other bakers find recipes they'll love.</p>
         </div>
         <div class="form-content">
             <form class="js-feedback-form" action="/reviews" method="post" data-confirm-duration="4000">
                 <input type="text" placeholder="Enter Your Name.." required>
                 <textarea name="review" id="review" placeholder="Enter your review.." required></textarea>
-                
+
                 <!-- Star Rating -->
                 <div class="star-rating">
                     <label>Rate Your Experience:</label>
                     <div class="stars">
                         <input type="radio" id="star5" name="rating" value="5">
                         <label for="star5" class="fa fa-star"></label>
-                        
+
                         <input type="radio" id="star4" name="rating" value="4">
                         <label for="star4" class="fa fa-star"></label>
-                        
+
                         <input type="radio" id="star3" name="rating" value="3">
                         <label for="star3" class="fa fa-star"></label>
-                        
+
                         <input type="radio" id="star2" name="rating" value="2">
                         <label for="star2" class="fa fa-star"></label>
-                        
+
                         <input type="radio" id="star1" name="rating" value="1">
                         <label for="star1" class="fa fa-star"></label>
                     </div>
                 </div>
-                
+
                 <button type="submit" class="review-btn">Submit</button>
                 <button type="reset" class="review-btn">reset</button>
             </form>
@@ -452,11 +496,16 @@ input::placeholder, textarea::placeholder {
     </footer>
 
 
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <script>
-    AOS.init();
+        AOS.init({
+            duration: 700,
+            easing: 'ease-out-cubic',
+            once: true
+        });
     </script>
     <script src="scripts/header.js"></script>
     <script src="scripts/form-feedback.js"></script>
 </body>
+
 </html>

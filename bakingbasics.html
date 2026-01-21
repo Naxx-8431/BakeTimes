@@ -1,259 +1,280 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="styles/general.css">
     <link rel="stylesheet" href="styles/header.css">
     <title>BAKING-BASICS</title>
     <style>
-.baking-basics-hero {
-    display: grid;
-    align-items: center;
-    grid-template-columns: 1fr 1fr;
-    gap: clamp(30px, 6vw, 100px);            
-    margin: 0 clamp(16px, 8vw, 103px);    
-    padding: 25px 0;
-}  
+        .baking-basics-hero {
+            display: grid;
+            align-items: center;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(30px, 6vw, 100px);
+            margin: 0 clamp(16px, 8vw, 103px);
+            padding: 25px 0;
+        }
 
-.bb-img {
-    width: clamp(260px, 30vw, 480px);        /* SHRINKS smoothly */
-    height: auto;                            /* no fixed height → no overlap */
-    border-radius: 5px;
-    display: block;
-    object-fit: cover;
-    justify-self: end; 
-}
+        .bb-img {
+            width: clamp(260px, 30vw, 480px);
+            /* SHRINKS smoothly */
+            height: auto;
+            /* no fixed height → no overlap */
+            border-radius: 5px;
+            display: block;
+            object-fit: cover;
+            justify-self: end;
+        }
 
-.hero-img {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-}
-.hero-content {
-    max-width: 528px;
-}
+        .hero-img {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
 
-.hero-content h1 {
-    font-size: clamp(26px, 4vw, 50px);
-    margin: 0 0 12px;
-    line-height: 1.1;
-}
+        .hero-content {
+            max-width: 528px;
+        }
 
-.hero-content p {
-    font-size: clamp(14px, 2vw, 25px);
-    margin: 0;
-    line-height: 1.5;
-    text-align: justify;
-    text-justify: inter-word;
-}
+        .hero-content h1 {
+            font-size: clamp(26px, 4vw, 50px);
+            margin: 0 0 12px;
+            line-height: 1.1;
+        }
 
-
-.sections {
-  margin: 0 clamp(16px, 8vw, 103px);  /* 103px on large screens, less on small */
-}
-
-/* each section block */
-.sec {
-  margin-top: clamp(60px, 8vw, 120px);
-}
-
-/* headings */
-.section-title {
-  font-size: clamp(24px, 3vw, 35px);
-  margin: 25px 0 30px;
-}
-
-/* image + text row */
-.section-content {
-  margin-top: 50px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  gap: clamp(24px, 5vw, 50px);  /* gap shrinks with screen */
-}
-
-/* image */
-.section-image {
-  width: clamp(220px, 26vw, 300px);  /* responsive image width */
-  height: auto;
-  display: block;
-  border-radius: 5px;
-}
-
-/* text column */
-.section-text {
-  flex: 1;
-  text-align: justify;
-  text-justify: inter-word;
-}
-
-/* override the inline font-size on <p> */
-.section-text p {
-  font-size: clamp(16px, 2.3vw, 20px) !important;
-  line-height: 1.6;
-  margin: 0;
-}
+        .hero-content p {
+            font-size: clamp(14px, 2vw, 25px);
+            margin: 0;
+            line-height: 1.5;
+            text-align: justify;
+            text-justify: inter-word;
+        }
 
 
+        .sections {
+            margin: 0 clamp(16px, 8vw, 103px);
+            /* 103px on large screens, less on small */
+        }
 
-@media (max-width: 992px) {
-    .baking-basics-hero {
-        grid-template-columns: 1fr;          
-        justify-items: center;
-        text-align: center;
-        
-        margin: 0 clamp(12px, 6vw, 32px);
-    }
+        /* each section block */
+        .sec {
+            margin-top: clamp(60px, 8vw, 120px);
+        }
 
-    .hero-img {
-        order: -1;                     
-    }
+        /* headings */
+        .section-title {
+            font-size: clamp(24px, 3vw, 35px);
+            margin: 25px 0 30px;
+        }
 
-    .hero-content {
-        max-width: 600px;
-    }
+        /* image + text row */
+        .section-content {
+            margin-top: 50px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            gap: clamp(24px, 5vw, 50px);
+            /* gap shrinks with screen */
+        }
+
+        /* image */
+        .section-image {
+            width: clamp(220px, 26vw, 300px);
+            /* responsive image width */
+            height: auto;
+            display: block;
+            border-radius: 5px;
+        }
+
+        /* text column */
+        .section-text {
+            flex: 1;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        /* override the inline font-size on <p> */
+        .section-text p {
+            font-size: clamp(16px, 2.3vw, 20px) !important;
+            line-height: 1.6;
+            margin: 0;
+        }
 
 
-    .section-content {
-    flex-direction: column;  
-    align-items: center;
-    text-align: center;
-    gap: 24px;
-    margin-top: 32px;
-  }
 
-  .section-title {
-    text-align: center;
-  }
+        @media (max-width: 992px) {
+            .baking-basics-hero {
+                grid-template-columns: 1fr;
+                justify-items: center;
+                text-align: center;
 
-  /* ensure image comes FIRST, text SECOND */
-  .section-content > .section-text {
-    order: 1;
-    max-width: 640px;
-  }
+                margin: 0 clamp(12px, 6vw, 32px);
+            }
 
-  .section-content > div:not(.section-text) {
-    order: 0;                   /* these are the image wrappers */
-  }
-}
-</style>
+            .hero-img {
+                order: -1;
+            }
+
+            .hero-content {
+                max-width: 600px;
+            }
+
+
+            .section-content {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 24px;
+                margin-top: 32px;
+            }
+
+            .section-title {
+                text-align: center;
+            }
+
+            /* ensure image comes FIRST, text SECOND */
+            .section-content>.section-text {
+                order: 1;
+                max-width: 640px;
+            }
+
+            .section-content>div:not(.section-text) {
+                order: 0;
+                /* these are the image wrappers */
+            }
+        }
+    </style>
 </head>
+
 <body>
     <div class="header">
         <div class="header-left">
-           <a href="index.html"><p id="p" style="margin: 0;">BAKE<span style="font-weight: 400; font-size: 25px;">TIMES</span></p></a> 
+            <a href="index.html">
+                <p id="p" style="margin: 0;">BAKE<span style="font-weight: 400; font-size: 25px;">TIMES</span></p>
+            </a>
         </div>
 
 
-        <button id="menu-toggle" class="m-btn" aria-label="Open menu" aria-expanded="false" aria-controls="header-nav">☰</button>
+        <button id="menu-toggle" class="m-btn" aria-label="Open menu" aria-expanded="false"
+            aria-controls="header-nav">☰</button>
 
 
         <div class="header-middle">
-                <a href="recipes.html">RECIPES</a>
-                <a href="bakingbasics.html">BAKING BASICS</a>
-                <a href="holidays.html">HOLIDAYS</a>
-                <a href="index.html#about">ABOUT US</a>
-                <a href="reviews.html">REVIEWS</a>       
+            <a href="recipes.html">RECIPES</a>
+            <a href="bakingbasics.html">BAKING BASICS</a>
+            <a href="holidays.html">HOLIDAYS</a>
+            <a href="index.html#about">ABOUT US</a>
+            <a href="reviews.html">REVIEWS</a>
         </div>
         <div class="header-right">
-                <a href="https://facebook.com" class="fa fa-facebook"></a>
-                <a href="https://twitter.com" class="fa fa-twitter"></a>
-                <a href="https://instagram.com" class="fa fa-instagram"></a>
+            <a href="https://facebook.com" class="fa fa-facebook"></a>
+            <a href="https://twitter.com" class="fa fa-twitter"></a>
+            <a href="https://instagram.com" class="fa fa-instagram"></a>
         </div>
     </div>
 
     <div class="baking-basics-hero">
         <div class="hero-content">
-            <h1>Bake with Ease and Joy</h1>
-            <p>Discover the joy of baking with simple tips and trusted techniques.
-               From measuring ingredients to mastering dough, 
-               Bake Times helps you build confidence and creativity in every recipe.</p>
+            <h1 data-aos="fade-up">Bake with Ease and Joy</h1>
+            <p data-aos="fade-up" data-aos-delay="100">Discover the joy of baking with simple tips and trusted
+                techniques.
+                From measuring ingredients to mastering dough,
+                Bake Times helps you build confidence and creativity in every recipe.</p>
         </div>
 
         <div class="hero-img">
-            <img src="tumbnail-images/baking-basics-hero.png" alt="hero-image" class="bb-img">
+            <img src="tumbnail-images/baking-basics-hero.png" alt="hero-image" class="bb-img" data-aos="fade-up"
+                data-aos-delay="200">
         </div>
     </div>
 
     <div class="container">
         <div class="sections">
             <div class="sec">
-                <h2 class="section-title">Essential Baking Techniques</h2>
-            <div class="section-content">
-                <div>
-                    <img src="tumbnail-images/techniques.png" alt="techniques" class="section-image">
+                <h2 class="section-title" data-aos="fade-up">Essential Baking Techniques</h2>
+                <div class="section-content">
+                    <div data-aos="fade-up" data-aos-delay="100">
+                        <img src="tumbnail-images/techniques.png" alt="techniques" class="section-image">
+                    </div>
+                    <div class="section-text" data-aos="fade-up" data-aos-delay="200">
+                        <p>Once you've mastered the basics, techniques become your best tools.
+                            Knowing when to cream butter and sugar for a light sponge or when to
+                            gently fold egg whites into a batter makes all the difference in texture.
+                            Kneading bread dough until it becomes smooth and elastic is a skill that comes with
+                            practice,
+                            while piping frosting or cookie dough opens up creative ways to decorate and impress.
+                            Paying attention to baking times and oven temperatures will help you avoid overbaking or
+                            undercooking,
+                            and a good kitchen thermometer ensures precision every time.</p>
+                    </div>
                 </div>
-                <div class="section-text">
-                    <p>Once you've mastered the basics, techniques become your best tools. 
-                    Knowing when to cream butter and sugar for a light sponge or when to 
-                    gently fold egg whites into a batter makes all the difference in texture. 
-                    Kneading bread dough until it becomes smooth and elastic is a skill that comes with practice, 
-                    while piping frosting or cookie dough opens up creative ways to decorate and impress. 
-                    Paying attention to baking times and oven temperatures will help you avoid overbaking or undercooking,
-                    and a good kitchen thermometer ensures precision every time.</p>
-                </div>
-            </div>
-            </div>
-            
-
-            <div class="sec">
-                <h2 class="section-title">Your Baking Guides</h2>
-            <div class="section-content">
-                <div class="section-text">
-                    <p>Guides are here to support you as you grow more confident. 
-                        Understanding the unique qualities of different flours helps you choose the right one for cakes, 
-                        breads, or pastries. Learning how to measure correctly can save a recipe from disaster, 
-                        and knowing how to adjust when baking at high altitudes can make challenging environments 
-                        easier to navigate. Having the right tools, from sturdy mixing bowls to accurate scales, 
-                        also makes your baking smoother and more enjoyable. And because mistakes happen, 
-                        we'll show you how to spot common missteps and how to fix or avoid them.</p>
-                </div>
-                <div>
-                    <img src="tumbnail-images/guides.png" alt="techniques" class="section-image">
-                </div>
-            </div>
             </div>
 
 
             <div class="sec">
-                <h2 class="section-title">Baking Resources to Keep You Inspired</h2>
-            <div class="section-content">
-                <div>
-                    <img src="tumbnail-images/resource.png" alt="techniques" class="section-image">
+                <h2 class="section-title" data-aos="fade-up">Your Baking Guides</h2>
+                <div class="section-content">
+                    <div class="section-text" data-aos="fade-up" data-aos-delay="100">
+                        <p>Guides are here to support you as you grow more confident.
+                            Understanding the unique qualities of different flours helps you choose the right one for
+                            cakes,
+                            breads, or pastries. Learning how to measure correctly can save a recipe from disaster,
+                            and knowing how to adjust when baking at high altitudes can make challenging environments
+                            easier to navigate. Having the right tools, from sturdy mixing bowls to accurate scales,
+                            also makes your baking smoother and more enjoyable. And because mistakes happen,
+                            we'll show you how to spot common missteps and how to fix or avoid them.</p>
+                    </div>
+                    <div data-aos="fade-up" data-aos-delay="200">
+                        <img src="tumbnail-images/guides.png" alt="techniques" class="section-image">
+                    </div>
                 </div>
-                <div class="section-text">
-                    <p>Beyond the basics, there's a whole world of resources to keep you inspired. 
-                        From books and cookbooks packed with timeless recipes to online courses and video tutorials 
-                        that walk you through advanced techniques, you'll never run out of ways to learn. Our favorite baking blogs 
-                        and websites offer endless ideas, while community groups give you a chance to share, ask questions, 
-                        and celebrate your successes with others who love baking as much as you do. And of course, our recommended 
-                        tools and equipment lists will help you build a kitchen setup that supports your creativity.</p>
-                </div>
-            </div>
             </div>
 
 
             <div class="sec">
-                <h2 class="section-title">Bake, Create, and Share</h2>
-            <div class="section-content">
-                <div class="section-text">
-                    <p>Baking is not only about the recipes you follow,
-                         but also about the joy that comes from creating and sharing. Every loaf, 
-                         cake, or cookie is an opportunity to learn and to bring something special to the table. 
-                         As you continue, take time to notice the small improvements you make and embrace the 
-                         lessons from the occasional mistake. Sharing your creations with family and friends 
-                         makes the experience even more rewarding, because at its heart,
-                         baking is about connection and the simple pleasure of bringing people together.</p>
-                </div>
-                <div>
-                    <img src="tumbnail-images/closing.png" alt="techniques" class="section-image">
+                <h2 class="section-title" data-aos="fade-up">Baking Resources to Keep You Inspired</h2>
+                <div class="section-content">
+                    <div data-aos="fade-up" data-aos-delay="100">
+                        <img src="tumbnail-images/resource.png" alt="techniques" class="section-image">
+                    </div>
+                    <div class="section-text" data-aos="fade-up" data-aos-delay="200">
+                        <p>Beyond the basics, there's a whole world of resources to keep you inspired.
+                            From books and cookbooks packed with timeless recipes to online courses and video tutorials
+                            that walk you through advanced techniques, you'll never run out of ways to learn. Our
+                            favorite baking blogs
+                            and websites offer endless ideas, while community groups give you a chance to share, ask
+                            questions,
+                            and celebrate your successes with others who love baking as much as you do. And of course,
+                            our recommended
+                            tools and equipment lists will help you build a kitchen setup that supports your creativity.
+                        </p>
+                    </div>
                 </div>
             </div>
-            </div>   
+
+
+            <div class="sec">
+                <h2 class="section-title" data-aos="fade-up">Bake, Create, and Share</h2>
+                <div class="section-content">
+                    <div class="section-text" data-aos="fade-up" data-aos-delay="100">
+                        <p>Baking is not only about the recipes you follow,
+                            but also about the joy that comes from creating and sharing. Every loaf,
+                            cake, or cookie is an opportunity to learn and to bring something special to the table.
+                            As you continue, take time to notice the small improvements you make and embrace the
+                            lessons from the occasional mistake. Sharing your creations with family and friends
+                            makes the experience even more rewarding, because at its heart,
+                            baking is about connection and the simple pleasure of bringing people together.</p>
+                    </div>
+                    <div data-aos="fade-up" data-aos-delay="200">
+                        <img src="tumbnail-images/closing.png" alt="techniques" class="section-image">
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -267,10 +288,15 @@
     </footer>
 
 
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <script>
-    AOS.init();
+        AOS.init({
+            duration: 700,
+            easing: 'ease-out-cubic',
+            once: true
+        });
     </script>
     <script src="scripts/header.js"></script>
 </body>
+
 </html>
