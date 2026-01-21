@@ -200,10 +200,11 @@
           <textarea id="ingredients" placeholder="2 cups flour&#10;1 cup sugar&#10;1 cup chocolate chips"
             required></textarea>
 
-          <label for="instructions">Cooking Instructions*</label>
+          <label for="instructions">Cooking Instructions* (one step per line)</label>
           <textarea id="instructions"
-            placeholder="Mix dry ingredients. Cream butter and sugar. Combine all. Bake at 350°F for 12 minutes."
+            placeholder="Preheat oven to 350°F. Make sure rack is in middle position.&#10;Mix dry ingredients in a large bowl. Whisk well to combine everything evenly.&#10;Add wet ingredients and stir until just combined. Don't overmix.&#10;Bake for 12 minutes until golden brown."
             required></textarea>
+          <small>Each line is one step. Steps can be multiple sentences!</small>
 
           <label for="prepTime">Prep Time (minutes)*</label>
           <input id="prepTime" type="number" min="1" placeholder="15" required>
@@ -242,6 +243,23 @@
 
           <label for="tags">Tags (optional, comma-separated)</label>
           <input id="tags" type="text" placeholder="vegetarian, gluten-free, quick">
+          <small>Tip: Add "christmas", "thanksgiving", or "easter" to show on holidays page</small>
+
+          <label for="holiday">Holiday (optional)</label>
+          <select id="holiday">
+            <option value="">None</option>
+            <option value="christmas">🎄 Christmas</option>
+            <option value="thanksgiving">🦃 Thanksgiving</option>
+            <option value="easter">🐰 Easter</option>
+          </select>
+          <small>Select if this recipe is for a specific holiday</small>
+
+          <div style="margin: 14px 0;">
+            <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+              <input type="checkbox" id="featured" style="width: auto; margin: 0;">
+              <span>Mark as Featured Recipe (shows on homepage)</span>
+            </label>
+          </div>
 
           <button type="submit" class="admin-btn">Add Recipe</button>
           <span id="form-status"></span>

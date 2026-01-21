@@ -313,8 +313,10 @@
         });
     </script>
     <script src="scripts/header.js"></script>
-    <script src="scripts/data/recipe-Collections.js"></script>
-    <script src="scripts/holidays.js"></script>
+    <!-- Load API integration first to fetch recipes from MongoDB -->
+    <script src="scripts/api-integration.js"></script>
+    <!-- Updated holidays script that uses API data -->
+    <script src="scripts/holidays-api.js"></script>
     <script src="scripts/form-feedback.js"></script>
 </body>
 

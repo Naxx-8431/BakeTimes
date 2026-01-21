@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,147 +10,159 @@
     <link rel="stylesheet" href="styles/header.css">
     <title>RECIPES</title>
     <style>
-.container {
-    margin: clamp(24px, 6vw, 40px) clamp(16px, 8vw, 103px);
-    text-align: center;
-}
+        .container {
+            margin: clamp(24px, 6vw, 40px) clamp(16px, 8vw, 103px);
+            text-align: center;
+        }
 
-.container h1 {
-    font-size: clamp(26px, 3.5vw, 40px) !important;
-    margin: 0 0 10px !important;
-}
+        .container h1 {
+            font-size: clamp(26px, 3.5vw, 40px) !important;
+            margin: 0 0 10px !important;
+        }
 
-.container p {
-    font-size: clamp(14px, 2.1vw, 20px) !important;
-    margin: 0 !important;
-    line-height: 1.5;
-}
-.search {
-    margin: clamp(24px, 6vw, 40px) clamp(16px, 8vw, 103px);
-    text-align: center;
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
-}
-.search-bar {
-    border: 2px solid #60697B;
-    outline: none;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 250px;
-    width: 500px;
-    
-}
-.search-bar::placeholder {
-    font-size: 16px;    
-}
-.search-label {
-    font-size: 22px;
-    margin-right: 5px;
-    color: #60697B;
-    vertical-align: middle;
-}
+        .container p {
+            font-size: clamp(14px, 2.1vw, 20px) !important;
+            margin: 0 !important;
+            line-height: 1.5;
+        }
 
+        .search {
+            margin: clamp(24px, 6vw, 40px) clamp(16px, 8vw, 103px);
+            text-align: center;
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: center;
+            align-items: center;
+        }
 
+        .search-bar {
+            border: 2px solid #60697B;
+            outline: none;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 250px;
+            width: 500px;
 
-.recipe-image {
-    width: clamp(140px, 18vw, 250px);  /* shrinks on small screens, max 250px */
-    border-radius: 7px;
-    transition: all 0.3s ease-in-out;
-}
+        }
 
-.recipe-image:hover {
-    transform: scale(1.05);
-}
+        .search-bar::placeholder {
+            font-size: 16px;
+        }
 
-/* wrapper for all cards */
-.recipes {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));  /* 4 per row on large screens */
-    margin: 0 clamp(16px, 8vw, 103px);
-    gap: clamp(20px, 3vw, 40px);
-}
+        .search-label {
+            font-size: 22px;
+            margin-right: 5px;
+            color: #60697B;
+            vertical-align: middle;
+        }
 
 
 
-.recipe-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex: 0 1 250px;                     
-}
-.recipe-title {
-    text-align: center;
-}
+        .recipe-image {
+            width: clamp(140px, 18vw, 250px);
+            /* shrinks on small screens, max 250px */
+            border-radius: 7px;
+            transition: all 0.3s ease-in-out;
+        }
 
-.recipeText, .allRecipeText {
-    margin: 0 clamp(16px, 8vw, 103px) 25px !important;
-    font-size: clamp(24px, 3vw, 32px) !important;
-}
+        .recipe-image:hover {
+            transform: scale(1.05);
+        }
 
-@media (max-width: 1200px) {
-    .recipes {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-}
-
-@media (max-width: 992px) {
+        /* wrapper for all cards */
+        .recipes {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            /* 4 per row on large screens */
+            margin: 0 clamp(16px, 8vw, 103px);
+            gap: clamp(20px, 3vw, 40px);
+        }
 
 
-  .search-label {
-      display: none;
-  }
 
-  /* center the bar */
-  .search {
-      justify-content: center;
-  }
-    .search-bar {
-        width: clamp(340px, 40vw, 500px);   
-    }
-}
+        .recipe-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: 0 1 250px;
+        }
 
-@media (max-width: 576px) {
-  .recipes {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
+        .recipe-title {
+            text-align: center;
+        }
 
-        
+        .recipeText,
+        .allRecipeText {
+            margin: 0 clamp(16px, 8vw, 103px) 25px !important;
+            font-size: clamp(24px, 3vw, 32px) !important;
+        }
+
+        @media (max-width: 1200px) {
+            .recipes {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 992px) {
+
+
+            .search-label {
+                display: none;
+            }
+
+            /* center the bar */
+            .search {
+                justify-content: center;
+            }
+
+            .search-bar {
+                width: clamp(340px, 40vw, 500px);
+            }
+        }
+
+        @media (max-width: 576px) {
+            .recipes {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
     </style>
 </head>
+
 <body>
     <div class="header">
         <div class="header-left">
-           <a href="index.html"><p id="p" style="margin: 0;">BAKE<span style="font-weight: 400; font-size: 25px;">TIMES</span></p></a> 
+            <a href="index.html">
+                <p id="p" style="margin: 0;">BAKE<span style="font-weight: 400; font-size: 25px;">TIMES</span></p>
+            </a>
         </div>
 
-        <button id="menu-toggle" class="m-btn" aria-label="Open menu" aria-expanded="false" aria-controls="header-nav">☰</button>
+        <button id="menu-toggle" class="m-btn" aria-label="Open menu" aria-expanded="false"
+            aria-controls="header-nav">☰</button>
 
 
         <div class="header-middle">
-                <a href="recipes.html">RECIPES</a>
-                <a href="bakingbasics.html">BAKING BASICS</a>
-                <a href="holidays.html">HOLIDAYS</a>
-                <a href="index.html#about">ABOUT US</a>
-                <a href="reviews.html">REVIEWS</a>       
+            <a href="recipes.html">RECIPES</a>
+            <a href="bakingbasics.html">BAKING BASICS</a>
+            <a href="holidays.html">HOLIDAYS</a>
+            <a href="index.html#about">ABOUT US</a>
+            <a href="reviews.html">REVIEWS</a>
         </div>
         <div class="header-right">
-                <a href="https://facebook.com" class="fa fa-facebook"></a>
-                <a href="https://twitter.com" class="fa fa-twitter"></a>
-                <a href="https://instagram.com" class="fa fa-instagram"></a>
+            <a href="https://facebook.com" class="fa fa-facebook"></a>
+            <a href="https://twitter.com" class="fa fa-twitter"></a>
+            <a href="https://instagram.com" class="fa fa-instagram"></a>
         </div>
     </div>
     <div class="container" data-aos="zoom-in">
         <h1>Recipe Collections</h1>
         <p>Discover thousands of tested recipes from simple cookies to show-stopping cakes.
-                      Filter by<br> ingredients, dietary needs, or skill level to find your perfect bake.</p>
+            Filter by<br> ingredients, dietary needs, or skill level to find your perfect bake.</p>
     </div>
     <div class="search" data-aos="zoom-in" data-aos-delay="50">
         <form action="/action_page.php">
             <label for="bar" class="search-label">Search baking recipes:</label>
-            <input type="text" id="bar" class="search-bar" placeholder="Search recipes, ingredients, or techniques..." name="search">
+            <input type="text" id="bar" class="search-bar" placeholder="Search recipes, ingredients, or techniques..."
+                name="search">
 
             <div id="suggestions-box"></div>
         </form>
@@ -160,22 +173,22 @@
         <h2 class="js-recipeText recipeText">Featured Collections</h2>
 
         <div class="recipes js-Featured-Recipes" id="featured-Section">
-        
+
         </div>
         <hr style="border: 0; height: 1px; background: #eee; margin: 40px 0;" class="js-line">
     </div>
 
 
-    
+
 
     <div>
         <h2 class="js-allRecipeText allRecipeText">All Recipes</h2>
 
-    <div class="recipes js-recipes">
-        
-    </div>
-    
-    
+        <div class="recipes js-recipes">
+
+        </div>
+
+
     </div>
 
     <footer>
@@ -187,25 +200,20 @@
         </div>
     </footer>
 
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script>
-AOS.init({
-    duration: 700,
-    easing: 'ease-out-cubic',
-    once: true
-});
-</script>
-<script src="scripts/header.js"></script>
-<script src="scripts/data/recipe-Collections.js"></script>
-<script src="scripts/recipe.js"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 700,
+            easing: 'ease-out-cubic',
+            once: true
+        });
+    </script>
+    <script src="scripts/header.js"></script>
+    <!-- Load API integration first to fetch recipes from MongoDB -->
+    <script src="scripts/api-integration.js"></script>
+    <!-- Updated recipes page script that uses API data -->
+    <script src="scripts/recipe-api.js"></script>
 
 </body>
+
 </html>
-
-
-
-
-
-
-
-

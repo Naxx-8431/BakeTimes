@@ -90,6 +90,7 @@
       border-bottom: 1px solid #eee;
       font-size: 16px;
       color: #60697B;
+      line-height: 1.6;
     }
 
     .ingredients-list li:before {
@@ -114,12 +115,15 @@
       counter-increment: step-counter;
       font-size: 16px;
       color: #60697B;
+      line-height: 1.6;
+      display: flex;
+      align-items: flex-start;
     }
 
     .steps-list li:before {
       content: counter(step-counter);
       display: inline-block;
-      width: 24px;
+      min-width: 24px;
       height: 24px;
       background: #04AA6D;
       color: #fff;
@@ -128,6 +132,7 @@
       line-height: 24px;
       font-weight: bold;
       margin-right: 12px;
+      flex-shrink: 0;
     }
 
     .notes {
@@ -325,8 +330,10 @@
     });
   </script>
   <script src="scripts/header.js"></script>
-  <script src="scripts/data/recipe-Collections.js"></script>
-  <script src="scripts/recipe-template.js"></script>
+  <!-- Load API integration first to fetch recipes from MongoDB -->
+  <script src="scripts/api-integration.js"></script>
+  <!-- Updated recipe template script that uses API data -->
+  <script src="scripts/recipe-template-api.js"></script>
   <script src="scripts/form-feedback.js"></script>
 </body>
 

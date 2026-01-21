@@ -34,7 +34,8 @@ async function loadRecipesFromAPI() {
                 rating: recipe.rating,
                 reviewCount: recipe.reviewCount,
                 tags: recipe.tags || [],
-                featured: recipe.category === 'dessert' || recipe.rating >= 4, // Auto-feature desserts or high-rated recipes
+                // Check if recipe has 'featured' tag, or is dessert, or has high rating
+                featured: recipe.tags?.includes('featured') || recipe.category === 'dessert' || recipe.rating >= 4,
                 holidays: recipe.tags?.includes('christmas') ? 'Christmas' :
                     recipe.tags?.includes('thanksgiving') ? 'Thanksgiving' :
                         recipe.tags?.includes('easter') ? 'Easter' : null

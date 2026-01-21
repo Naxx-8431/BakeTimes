@@ -15,7 +15,7 @@ function renderFeaturedRecipes(recipes = recipeList) {
     if (featuredRecipes.length === 0) {
         console.warn('No featured recipes found');
         document.querySelector('.featured-recipes-cards').innerHTML =
-            '<p style="text-align:center; color:#666;">No featured recipes available yet. Add some recipes through the Admin UI!</p>';
+            '<p style="text-align:center; color:#666;">Our featured recipes are coming soon. Check back for delicious inspiration!</p>';
         return;
     }
 

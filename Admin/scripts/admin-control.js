@@ -103,6 +103,8 @@ if (form) {
       const imageFile = document.getElementById('image').files[0];
       const author = document.getElementById('author').value.trim();
       const tagsText = document.getElementById('tags').value.trim();
+      const holiday = document.getElementById('holiday').value;
+      const featured = document.getElementById('featured').checked;
 
       // Convert ingredients (one per line) to array
       const ingredients = ingredientsText
@@ -111,9 +113,19 @@ if (form) {
         .filter(line => line.length > 0);
 
       // Convert tags (comma-separated) to array
-      const tags = tagsText
+      let tags = tagsText
         ? tagsText.split(',').map(tag => tag.trim()).filter(tag => tag.length > 0)
         : [];
+
+      // Automatically add holiday to tags if selected
+      if (holiday && !tags.includes(holiday)) {
+        tags.push(holiday);
+      }
+
+      // Add 'featured' tag if checkbox is checked
+      if (featured && !tags.includes('featured')) {
+        tags.push('featured');
+      }
 
       // Validate
       if (!title || !description || ingredients.length === 0 || !instructions) {

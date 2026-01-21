@@ -49,7 +49,7 @@ function recipeListHTML(recipes = recipeList) {
 
     if (recipes.length === 0) {
         document.querySelector('.js-recipes').innerHTML =
-            '<p style="text-align:center; color:#666; grid-column: 1/-1;">No recipes found. Try a different search or add recipes through the Admin UI!</p>';
+            '<p style="text-align:center; color:#666; grid-column: 1/-1;">No recipes found. Try a different search term!</p>';
         return;
     }
 
