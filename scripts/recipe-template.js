@@ -5,11 +5,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const recipe = recipeList.find(r => r.id === recipeId);
   if (!recipe) {
     document.getElementById('recipe-content').innerHTML = '<p>Recipe not found.</p>';
+    if (typeof AOS !== 'undefined') { AOS.refresh(); }
     return;
   }
 
-  const ingredientsHTML = recipe.ingredients.map(ing => `<li>${ing}</li>`).join('');
-  const stepsHTML = recipe.steps.map(step => `<li>${step}</li>`).join('');
+  const ingredientsHTML = recipe.ingredients.map((ing, i) => `<li data-aos="fade-up" data-aos-delay="${i * 100}">${ing}</li>`).join('');
+  const stepsHTML = recipe.steps.map((step, i) => `<li data-aos="fade-up" data-aos-delay="${i * 100}">${step}</li>`).join('');
   const notesHTML = recipe.notes ? `<div class="notes"><strong>Chef's Note:</strong> ${recipe.notes}</div>` : '';
 
   document.getElementById('recipe-content').innerHTML = `
@@ -55,4 +56,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
     ${notesHTML}
   `;
+  if (typeof AOS !== 'undefined') { AOS.refresh(); }
 });

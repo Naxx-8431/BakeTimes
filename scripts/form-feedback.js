@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
     t.setAttribute('role', 'status');
     t.setAttribute('aria-live', 'polite');
     t.innerHTML = '<div class="form-toast-inner">' + text + '</div>';
+    if (typeof AOS !== 'undefined') { AOS.refresh(); }
     return t;
   }
 
@@ -36,6 +37,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // append to body
     document.body.appendChild(toast);
+    if (typeof AOS !== 'undefined') { AOS.refresh(); }
 
     // force reflow then show
     // eslint-disable-next-line no-unused-expressions

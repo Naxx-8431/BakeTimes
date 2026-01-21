@@ -4,6 +4,7 @@ function renderFeaturedRecipes(recipes = recipeList) {
   let featuredRecipeHTML = '';
 
   featuredRecipes.forEach((recipe, index) => {
+    const aos = index % 2 === 0 ? 'fade-right' : 'fade-left';
     const imageDiv = `<div class="fr-image"><img class="ricipe-img" src="${recipe.image}" alt="${recipe.name}"></div>`;
     const contentDiv = `
       <div class="fr-content">
@@ -16,11 +17,12 @@ function renderFeaturedRecipes(recipes = recipeList) {
     // Alternate layout: odd index = image first, even index = content first
     const layout = index % 2 === 1 ? imageDiv + contentDiv : contentDiv + imageDiv;
 
-    const cardHTML = `<div class="fr-card">${layout}</div>`;
+    const cardHTML = `<div class="fr-card" data-aos="${aos}" data-aos-delay="${index * 100}">${layout}</div>`;
     featuredRecipeHTML += cardHTML;
   });
 
   document.querySelector('.featured-recipes-cards').innerHTML = featuredRecipeHTML;
+  if (typeof AOS !== 'undefined') { AOS.refresh(); }
 }
 
 renderFeaturedRecipes();
@@ -68,6 +70,7 @@ function createContactPopup() {
       @media (min-width:420px){ #contact-popup .modal { max-width:380px; } }
     `;
     document.head.appendChild(style);
+    if (typeof AOS !== 'undefined') { AOS.refresh(); }
   }
 
   const wrapper = document.createElement('div');
@@ -83,6 +86,7 @@ function createContactPopup() {
       </ul>
     </div>
   `;
+  if (typeof AOS !== 'undefined') { AOS.refresh(); }
 
   // close handlers
   const modal = wrapper.querySelector('.modal');
@@ -99,6 +103,7 @@ function createContactPopup() {
   }
 
   document.body.appendChild(wrapper);
+  if (typeof AOS !== 'undefined') { AOS.refresh(); }
   // focus first link
   const firstLink = wrapper.querySelector('.links a');
   if (firstLink) firstLink.focus();

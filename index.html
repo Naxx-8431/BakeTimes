@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="styles/styles.css">
     <link rel="stylesheet" href="styles/general.css">
     <title>BAKE TIMES</title>
@@ -48,15 +48,15 @@
     <div class="container">
         <div class="hero-section">
             <div class="hero-image">
-                <img class="hero-img"  src="tumbnail-images/hero.png" alt="hero image">
+                <img class="hero-img" data-aos="fade-up" src="tumbnail-images/hero.png" alt="hero image">
             </div>
             <div class="hero-content">
-                <h1>Freshly Baked, Just for You</h1>
-                <p>Hello! We bake cakes and desserts with love, using fresh ingredients and timeless recipes.
+                <h1 data-aos="fade-up">Freshly Baked, Just for You</h1>
+                <p data-aos="fade-up" data-aos-delay="100">Hello! We bake cakes and desserts with love, using fresh ingredients and timeless recipes.
                 Each creation is made to bring joy, flavor, and sweetness to your day.</p>
                 <div class="hero-buttons">
-                    <button class="btn js-recipe-button">Explore Recipes</button>
-                    <button class="btn cu">Contact Us</button>
+                    <button class="btn js-recipe-button" data-aos="fade-up" data-aos-delay="150">Explore Recipes</button>
+                    <button class="btn cu" data-aos="fade-up" data-aos-delay="200">Contact Us</button>
                 </div>
             </div>
         </div>
@@ -64,7 +64,7 @@
 </div>
     <div class="container">
     <div class="about-us" id="about">
-        <div class="about-text">
+        <div class="about-text" data-aos="fade-up" data-aos-delay="0">
             <h2>About Us</h2>
             <p>
             At our bakery, we believe every cake tells a story.
@@ -75,24 +75,24 @@
             </p>
         </div>
 
-        <img class="ab-image" src="tumbnail-images/about-us-img.png" alt="about-us">
+        <img class="ab-image" data-aos="fade-up" data-aos-delay="100" src="tumbnail-images/about-us-img.png" alt="about-us">
     </div>
 
        
     <div class="about-cards">
-        <div class="ab-cards">
+        <div class="ab-cards" data-aos="fade-up" data-aos-delay="0">
             <h4>Trusted by Customers</h4>
             <p>We deliver quality and consistency,
                earning the trust of customers for every special moment.</p>
         </div>
 
-        <div class="ab-cards">
+        <div class="ab-cards" data-aos="fade-up" data-aos-delay="100">
             <h4>Creative Designs</h4>
             <p>We craft cakes with unique styles and details,
                turning every bake into a centerpiece worth celebrating.</p>
         </div>
 
-        <div class="ab-cards">
+        <div class="ab-cards" data-aos="fade-up" data-aos-delay="200">
             <h4>Made with Passion</h4>
             <p>Every recipe is baked with dedication and care, 
                bringing you desserts that truly come from the heart.</p>
@@ -103,11 +103,11 @@
     <div class="container">
     <div class="featured-recipes">
         <div class="featured-recipe-title">
-            <div class="fr-title">
+            <div class="fr-title" data-aos="zoom-in-up" data-aos-delay="50">
                 <h2 class="fr-head">Handpicked Delights</h2>
                 <p class="fr-dec">Delicious creations baked fresh to perfection daily.</p>
             </div>
-            <button class="btn js-recipe-button rec-btn" style="color: white;">See all recipes</button>
+            <button class="btn js-recipe-button rec-btn" style="color: white;" data-aos="zoom-in-up" data-aos-delay="100">See all recipes</button>
         </div>
 
         <div class="featured-recipes-cards">
@@ -118,13 +118,13 @@
     
     <div class="container">
     <div class="subscription-container">
-        <div>
+        <div data-aos="slide-right">
             <h2 style="font-size: 36px; margin: 0;">Weekly Recipes Delivered to Your Inbox</h2>
             <p style="font-size: 20px; text-align: justify; text-justify: inter-word;">Subscribe today and get delightful baking recipes,
                 handy tips, and kitchen inspiration sent directly to your inbox.
                 Discover new ways to make every bake extra special!</p>
         </div>
-        <div>
+        <div data-aos="slide-left">
             <form action="#" class="subscription-form js-feedback-form" method="post" data-confirm-duration="3500">
                 <div>
                     <input class="input-ne" type="text" placeholder="Name*" required>
@@ -148,7 +148,14 @@
     </footer>
     </div>
 
-    
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+    AOS.init({
+        duration: 700,
+        easing: 'ease-out-cubic',
+        once: true
+    });
+    </script>
     <script src="scripts/header.js"></script>
     <script src="scripts/data/recipe-Collections.js"></script>
     <script src="scripts/home-Page.js"></script>

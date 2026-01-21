@@ -2,9 +2,9 @@
 function renderHolidaysrecipe(recipes = recipeList) {
   let recipeHTML = '';
 
-  recipes.forEach((recipe) => {
+  recipes.forEach((recipe, index) => {
     const html = `
-        <div class="card">
+        <div class="card" data-aos="zoom-in" data-aos-delay="${index * 100}">
             <a href="recipe-template.html?id=${recipe.id}"><img src="${recipe.image}" alt="${recipe.name}"></a>
             <p>${recipe.name}</p>
         </div>
@@ -14,6 +14,7 @@ function renderHolidaysrecipe(recipes = recipeList) {
   });
 
   document.querySelector('.js-recipes').innerHTML = recipeHTML;
+  if (typeof AOS !== 'undefined') { AOS.refresh(); }
 
 }
 
@@ -37,14 +38,15 @@ function renderHolidaysrecipe(holidayName, containerSelector, recipes = recipeLi
   var holidayRecipes = getHolidayRecipes(holidayName, recipes);
   var recipeHTML = '';
 
-  holidayRecipes.forEach(function (recipe) {
-    var html = '\n    <div class="card">\n      <a href="recipe-template.html?id=' + (recipe.id || '') + '"><img src="' + (recipe.image || '') + '" alt="' + (recipe.name || '') + '"></a>\n      <p>' + (recipe.name || '') + '</p>\n    </div>\n  ';
+  holidayRecipes.forEach(function (recipe, index) {
+    var html = `\n    <div class="card" data-aos="zoom-in" data-aos-delay="${index * 100}">\n      <a href="recipe-template.html?id=${recipe.id || ''}"><img src="${recipe.image || ''}" alt="${recipe.name || ''}"></a>\n      <p>${recipe.name || ''}</p>\n    </div>\n  `;
     recipeHTML += html;
   });
 
   var container = document.querySelector(containerSelector);
   if (!container) return;
   container.innerHTML = recipeHTML || '<p>No recipes yet.</p>';
+  if (typeof AOS !== 'undefined') { AOS.refresh(); }
 }
 
 // render each holiday (selectors based on your holidays.html)

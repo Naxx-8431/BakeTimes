@@ -5,9 +5,10 @@ function renderFeaturedRecipes(recipes = recipeList) {
 
   let featuredRecipeHTML = '';
 
-  featuredRecipes.forEach((recipe) => {
+  featuredRecipes.forEach((recipe, index) => {
+    const aos = index % 2 === 0 ? 'fade-up' : 'fade-up';
     const featuredHTML = `
-    <div class="recipe-card">
+    <div class="recipe-card" data-aos="${aos}" data-aos-delay="${index * 100}">
         <a href="recipe-template.html?id=${recipe.id}"><img src="${recipe.image}" alt="${recipe.name}" class="recipe-image"></a>
         <div class="recipe-title">
             <p>${recipe.name}</p>
@@ -18,7 +19,8 @@ function renderFeaturedRecipes(recipes = recipeList) {
   featuredRecipeHTML += featuredHTML;
   });
 
-  document.querySelector('.js-Featured-Recipes').innerHTML = featuredRecipeHTML
+  document.querySelector('.js-Featured-Recipes').innerHTML = featuredRecipeHTML;
+  if (typeof AOS !== 'undefined') { AOS.refresh(); }
 
 };
 
@@ -31,9 +33,9 @@ function recipeListHTML(recipes = recipeList) {
   
   let recipeHTML = '';
 
-  recipes.forEach((recipe) => {
+  recipes.forEach((recipe, index) => {
     const html = `
-        <div class="recipe-card">
+        <div class="recipe-card" data-aos="fade-up" data-aos-delay="${index * 100}">
           <a href="recipe-template.html?id=${recipe.id}"><img src="${recipe.image}" alt="${recipe.name}" class="recipe-image"></a>
           <div class="recipe-title">
               <p>${recipe.name}</p>
@@ -45,6 +47,7 @@ function recipeListHTML(recipes = recipeList) {
   });
 
   document.querySelector('.js-recipes').innerHTML = recipeHTML;
+  if (typeof AOS !== 'undefined') { AOS.refresh(); }
 
 };
 

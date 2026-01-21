@@ -149,3 +149,10 @@ p {
     box-sizing: border-box;
   }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  [data-aos] {
+    animation:  none !important;
+    transition:  none !important;
+  }
+}

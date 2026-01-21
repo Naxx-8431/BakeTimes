@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="styles/general.css">
     <link rel="stylesheet" href="styles/header.css">
     <title>RECIPES</title>
@@ -141,12 +141,12 @@
                 <a href="https://instagram.com" class="fa fa-instagram"></a>
         </div>
     </div>
-    <div class="container">
+    <div class="container" data-aos="zoom-in">
         <h1>Recipe Collections</h1>
         <p>Discover thousands of tested recipes from simple cookies to show-stopping cakes.
                       Filter by<br> ingredients, dietary needs, or skill level to find your perfect bake.</p>
     </div>
-    <div class="search">
+    <div class="search" data-aos="zoom-in" data-aos-delay="50">
         <form action="/action_page.php">
             <label for="bar" class="search-label">Search baking recipes:</label>
             <input type="text" id="bar" class="search-bar" placeholder="Search recipes, ingredients, or techniques..." name="search">
@@ -187,6 +187,14 @@
         </div>
     </footer>
 
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+AOS.init({
+    duration: 700,
+    easing: 'ease-out-cubic',
+    once: true
+});
+</script>
 <script src="scripts/header.js"></script>
 <script src="scripts/data/recipe-Collections.js"></script>
 <script src="scripts/recipe.js"></script>

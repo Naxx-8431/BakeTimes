@@ -41,6 +41,7 @@ function renderTable() {
     tableBody.innerHTML = `
       <tr><td colspan="4">No recipes yet. Add one using the form.</td></tr>
     `;
+    if (typeof AOS !== 'undefined') { AOS.refresh(); }
     return;
   }
 
@@ -57,6 +58,7 @@ function renderTable() {
       </tr>
     `;
   }).join('');
+  if (typeof AOS !== 'undefined') { AOS.refresh(); }
 }
 
 // ------ add new recipe ------
