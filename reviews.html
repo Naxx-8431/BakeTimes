@@ -407,45 +407,9 @@
     </div>
 
     <div class="review-card">
-        <div class="card-contents" data-aos="fade-up" data-aos-delay="0">
-            <h3>Marcus</h3>
-            <p class="fa fa-star checked"></p>
-            <p class="fa fa-star checked"></p>
-            <p class="fa fa-star checked"></p>
-            <p class="fa fa-star checked"></p>
-            <p class="fa fa-star checked"></p>
-            <p>Best cookies ever! Super easy to follow and came out perfect. Will bake again!</p>
-            <p class="review-date">Reviewed on: 2025-01-15</p>
-        </div>
-        <div class="card-contents" data-aos="fade-up" data-aos-delay="100">
-            <h3>Sarah</h3>
-            <p class="fa fa-star checked"></p>
-            <p class="fa fa-star checked"></p>
-            <p class="fa fa-star checked"></p>
-            <p class="fa fa-star checked"></p>
-            <p class="fa fa-star checked"></p>
-            <p>Great for beginners! The banana bread was a hit. Clear and simple instructions.</p>
-            <p class="review-date">Reviewed on: 2025-01-10</p>
-        </div>
-        <div class="card-contents" data-aos="fade-up" data-aos-delay="200">
-            <h3>John</h3>
-            <p class="fa fa-star checked"></p>
-            <p class="fa fa-star checked"></p>
-            <p class="fa fa-star checked"></p>
-            <p class="fa fa-star checked"></p>
-            <p class="fa fa-star "></p>
-            <p>Loved the cake recipe, but more photos would help. Still turned out great!</p>
-            <p class="review-date">Reviewed on: 2025-01-05</p>
-        </div>
-        <div class="card-contents" data-aos="fade-up" data-aos-delay="300">
-            <h3>Emily</h3>
-            <p class="fa fa-star checked"></p>
-            <p class="fa fa-star checked"></p>
-            <p class="fa fa-star checked"></p>
-            <p class="fa fa-star checked"></p>
-            <p class="fa fa-star "></p>
-            <p>Recipes are tasty, but had to tweak one or two ingredients. Worth it though!</p>
-            <p class="review-date">Reviewed on: 2025-01-01</p>
+        <!-- Reviews will be loaded here dynamically -->
+        <div style="grid-column: 1/-1; text-align: center; padding: 40px; color: #666;">
+            <p>Loading reviews...</p>
         </div>
     </div>
 
@@ -459,8 +423,9 @@
                 your words help other bakers find recipes they'll love.</p>
         </div>
         <div class="form-content" data-aos="slide-left">
-            <form class="js-feedback-form" action="/reviews" method="post" data-confirm-duration="4000">
+            <form class="js-feedback-form" action="#" method="post" data-confirm-duration="4000">
                 <input type="text" placeholder="Enter Your Name.." required>
+                <input type="email" placeholder="Enter Your Email.." required>
                 <textarea name="review" id="review" placeholder="Enter your review.." required></textarea>
 
                 <!-- Star Rating -->
@@ -508,7 +473,8 @@
         });
     </script>
     <script src="scripts/header.js"></script>
-    <script src="scripts/form-feedback.js"></script>
+    <!-- Reviews API Integration -->
+    <script src="scripts/reviews-api.js"></script>
 </body>
 
 </html>

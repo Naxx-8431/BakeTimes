@@ -96,6 +96,7 @@ app.get('/', (req, res) => {
         version: '1.0.0',
         endpoints: {
             recipes: '/api/recipes',
+            reviews: '/api/reviews',
             stats: '/api/recipes/stats',
             health: '/health'
         }
@@ -120,6 +121,27 @@ app.get('/health', (req, res) => {
  * All recipe-related endpoints are prefixed with /api/recipes
  */
 app.use('/api/recipes', recipeRoutes);
+
+/**
+ * Review Routes
+ * All review-related endpoints are prefixed with /api/reviews
+ */
+const reviewRoutes = require('./routes/reviews');
+app.use('/api/reviews', reviewRoutes);
+
+/**
+ * Subscriber Routes
+ * Newsletter subscription endpoints
+ */
+const subscriberRoutes = require('./routes/subscribers');
+app.use('/api/subscribers', subscriberRoutes);
+
+/**
+ * Question Routes
+ * Q&A form endpoints
+ */
+const questionRoutes = require('./routes/questions');
+app.use('/api/questions', questionRoutes);
 
 // ============================================
 // ERROR HANDLING MIDDLEWARE

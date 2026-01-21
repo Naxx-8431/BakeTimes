@@ -302,12 +302,13 @@
         question below. Your inquiry may be the tip another baker needs to make their next recipe a success.</p>
     </div>
     <div class="form-content" data-aos="slide-left">
-      <form class="js-feedback-form" action="#" method="post" data-confirm-duration="3500">
-        <input type="text" placeholder="Enter Your Name.." required>
-        <input type="text" placeholder="Which recipe is your question about?" required>
-        <textarea name="qa" id="qa" placeholder="Write your question here…" required></textarea>
+      <form id="qa-form" action="#" method="post">
+        <input type="text" id="qa-name" placeholder="Enter Your Name.." required>
+        <input type="email" id="qa-email" placeholder="Enter Your Email.." required>
+        <input type="text" id="qa-recipe" placeholder="Which recipe is your question about?" required>
+        <textarea name="qa" id="qa-text" placeholder="Write your question here…" required></textarea>
         <button type="submit" class="qa-btn">Submit</button>
-        <button type="reset" class="qa-btn">reset</button>
+        <button type="reset" class="qa-btn">Reset</button>
       </form>
     </div>
   </div>
@@ -334,6 +335,7 @@
   <script src="scripts/api-integration.js"></script>
   <!-- Updated recipe template script that uses API data -->
   <script src="scripts/recipe-template-api.js"></script>
+  <script src="scripts/qa-api.js"></script>
   <script src="scripts/form-feedback.js"></script>
 </body>
 
