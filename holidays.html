@@ -1,203 +1,214 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="styles/general.css">
     <link rel="stylesheet" href="styles/header.css">
     <title>HOLIDAYS SECTION</title>
     <style>
-.holidays-nav {
-    display: flex;
-    align-items: center;
-    justify-content: center;   
-    margin: 30px 103px;
-    gap: clamp(8px, 2vw, 20px);
-    flex-wrap: nowrap;
-}
+        .holidays-nav {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 30px 103px;
+            gap: clamp(8px, 2vw, 20px);
+            flex-wrap: nowrap;
+        }
 
-.holidays-nav a {
-    text-decoration: none;
-    padding: clamp(6px, 1.2vw, 12px) clamp(10px, 2vw, 20px);
-    border-radius: 10px;
-    font-weight: 500;
-    color: #343E51;
-    font-size: clamp(14px, 1.8vw, 18px);
-    white-space: nowrap;        
-}
+        .holidays-nav a {
+            text-decoration: none;
+            padding: clamp(6px, 1.2vw, 12px) clamp(10px, 2vw, 20px);
+            border-radius: 10px;
+            font-weight: 500;
+            color: #343E51;
+            font-size: clamp(14px, 1.8vw, 18px);
+            white-space: nowrap;
+        }
 
-.nav:hover {
-    opacity: 0.7;
-    transition: opacity 0.15s;
-}
-
-
+        .nav:hover {
+            opacity: 0.7;
+            transition: opacity 0.15s;
+        }
 
 
 
-.holiday {
-    margin: clamp(24px, 6vw, 40px) clamp(16px, 8vw, 103px);
-    scroll-margin-top: 170px;
-    display: none;
-}
 
 
-.holiday:target {
-    display: block;
-}
-
-.holiday-head {
-    text-align: center;
-    margin: clamp(24px, 8vw, 60px) 0;
-}
-.holiday-head h2 {
-    font-size: clamp(22px, 4vw, 44px);
-    margin: 0 15px;
-}
-.holiday-head p {
-    font-size: clamp(14px, 2.3vw, 20px);
-    margin: 0;
-}
-.cr-cards {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr)); 
-    gap: clamp(20px, 3vw, 40px);
-    margin-top: 40px;
-}
-.card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.card img {
-    width: clamp(140px, 18vw, 250px);  
-    border-radius: 7px;
-    transition: all 0.3s ease-in-out;
-}
-.card img:hover {
-    transform: scale(1.05);
-}
-
-.card p {
-    text-align: center;
-    font-size: clamp(14px, 2vw, 20px);
-    font-weight: 500;
-    margin: 0;
-    cursor: pointer;
-}
-
-.subscription-container {
-    background-color: rgb(236, 255, 240);   
-    border-radius: 7px;
-
-    
-    padding: clamp(32px, 6vw, 68px);
-    margin: clamp(40px, 10vw, 60px) clamp(16px, 8vw, 103px);
-
-    display: grid;
-    align-items: center;
-    grid-template-columns: 0.8fr 1fr;
-    gap: clamp(40px, 8vw, 150px);
-}
-
-.subscription-form .input-ne {
-    display: block;
-    border: none;
-    outline: none;
-    padding: 20px;
-    margin-bottom: 20px;
-    width: 100%;
-    border-radius: 5px;
-}
-
-.input-ne::placeholder {
-    font-size: 16px;
-    
-}
-
-input[type="checkbox"] {
-    width: 18px;
-    height: 18px;
-    accent-color: #60697B; 
-    cursor: pointer;
-    margin: 0 5px 0 0;
-    vertical-align: middle;
-}
-.submit-btn {
-    padding: 10px 15px;
-    border: 2px solid rgb(255, 207, 95);
-    font-size: 17px;
-    font-weight: 700;
-    border-radius: 5px;
-    background-color: rgba(255, 255, 255, 0.388);
-    color: rgb(255, 207, 95);
-    margin-right: 10px;
-    cursor: pointer;
-    margin-top: 20px;
-    transition: background-color 0.15s, color 0.15s;
-}
-.submit-btn:hover {
-    background-color: rgb(255, 207, 95);
-    color: #f1f1f1;
-}
-
-@media (max-width: 1200px) {
-    .cr-cards {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-}
+        .holiday {
+            margin: clamp(24px, 6vw, 40px) clamp(16px, 8vw, 103px);
+            scroll-margin-top: 170px;
+            display: none;
+        }
 
 
-@media (max-width: 992px) {
-  .subscription-container {
-      grid-template-columns: 1fr;   
-      text-align: center;
-      padding: clamp(24px, 8vw, 40px) 24px;
-      margin: clamp(32px, 8vw, 48px) clamp(16px, 6vw, 32px);
-      gap: 24px;
-  }
+        .holiday:target {
+            display: block;
+        }
 
-  .subscription-form .input-ne {
-      width: 100%;
-  }
+        .holiday-head {
+            text-align: center;
+            margin: clamp(24px, 8vw, 60px) 0;
+        }
 
-  .submit-btn {
-      width: 100%;  
-  }
-}
+        .holiday-head h2 {
+            font-size: clamp(22px, 4vw, 44px);
+            margin: 0 15px;
+        }
 
-@media (max-width: 576px) {
-    .cr-cards {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-}
+        .holiday-head p {
+            font-size: clamp(14px, 2.3vw, 20px);
+            margin: 0;
+        }
 
-</style>
+        .cr-cards {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: clamp(20px, 3vw, 40px);
+            margin-top: 40px;
+        }
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .card img {
+            width: clamp(140px, 18vw, 250px);
+            border-radius: 7px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .card img:hover {
+            transform: scale(1.05);
+        }
+
+        .card p {
+            text-align: center;
+            font-size: clamp(14px, 2vw, 20px);
+            font-weight: 500;
+            margin: 0;
+            cursor: pointer;
+        }
+
+        .subscription-container {
+            background-color: rgb(236, 255, 240);
+            border-radius: 7px;
+
+
+            padding: clamp(32px, 6vw, 68px);
+            margin: clamp(40px, 10vw, 60px) clamp(16px, 8vw, 103px);
+
+            display: grid;
+            align-items: center;
+            grid-template-columns: 0.8fr 1fr;
+            gap: clamp(40px, 8vw, 150px);
+        }
+
+        .subscription-form .input-ne {
+            display: block;
+            border: none;
+            outline: none;
+            padding: 20px;
+            margin-bottom: 20px;
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        .input-ne::placeholder {
+            font-size: 16px;
+
+        }
+
+        input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            accent-color: #60697B;
+            cursor: pointer;
+            margin: 0 5px 0 0;
+            vertical-align: middle;
+        }
+
+        .submit-btn {
+            padding: 10px 15px;
+            border: 2px solid rgb(255, 207, 95);
+            font-size: 17px;
+            font-weight: 700;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.388);
+            color: rgb(255, 207, 95);
+            margin-right: 10px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.15s, color 0.15s;
+        }
+
+        .submit-btn:hover {
+            background-color: rgb(255, 207, 95);
+            color: #f1f1f1;
+        }
+
+        @media (max-width: 1200px) {
+            .cr-cards {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+        }
+
+
+        @media (max-width: 992px) {
+            .subscription-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+                padding: clamp(24px, 8vw, 40px) 24px;
+                margin: clamp(32px, 8vw, 48px) clamp(16px, 6vw, 32px);
+                gap: 24px;
+            }
+
+            .subscription-form .input-ne {
+                width: 100%;
+            }
+
+            .submit-btn {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .cr-cards {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+    </style>
 </head>
+
 <body style="line-height: 1.7;">
     <div class="header">
         <div class="header-left">
-           <a href="index.html"><p id="p" style="margin: 0;">BAKE<span style="font-weight: 400; font-size: 25px;">TIMES</span></p></a> 
+            <a href="index.html">
+                <p id="p" style="margin: 0;">BAKE<span style="font-weight: 400; font-size: 25px;">TIMES</span></p>
+            </a>
         </div>
 
 
-        <button id="menu-toggle" class="m-btn" aria-label="Open menu" aria-expanded="false" aria-controls="header-nav">☰</button>
+        <button id="menu-toggle" class="m-btn" aria-label="Open menu" aria-expanded="false"
+            aria-controls="header-nav">☰</button>
 
 
         <div class="header-middle">
-                <a href="recipes.html">RECIPES</a>
-                <a href="bakingbasics.html">BAKING BASICS</a>
-                <a href="holidays.html">HOLIDAYS</a>
-                <a href="index.html#about">ABOUT US</a>
-                <a href="reviews.html">REVIEWS</a>       
+            <a href="recipes.html">RECIPES</a>
+            <a href="bakingbasics.html">BAKING BASICS</a>
+            <a href="holidays.html">HOLIDAYS</a>
+            <a href="index.html#about">ABOUT US</a>
+            <a href="reviews.html">REVIEWS</a>
         </div>
         <div class="header-right">
-                <a href="https://facebook.com" class="fa fa-facebook"></a>
-                <a href="https://twitter.com" class="fa fa-twitter"></a>
-                <a href="https://instagram.com" class="fa fa-instagram"></a>
+            <a href="https://facebook.com" class="fa fa-facebook"></a>
+            <a href="https://twitter.com" class="fa fa-twitter"></a>
+            <a href="https://instagram.com" class="fa fa-instagram"></a>
         </div>
     </div>
 
@@ -209,50 +220,50 @@ input[type="checkbox"] {
 
 
 
-                                                                <!-- Christmas Recipes Section -->
+    <!-- Christmas Recipes Section -->
 
 
 
     <div class="holiday" id="holiday1">
-    <div class="holiday-head" id="christmas-head">
-        <h2>🎄Christmas</h2>
-        <p>Christmas is a time for baking delicious treats and spending time with family.</p>
-    </div>
-    
-    <div class="christmas-recipes">
-        <div class="cr-cards js-recipes">
-            
+        <div class="holiday-head" id="christmas-head">
+            <h2>🎄Christmas</h2>
+            <p>Christmas is a time for baking delicious treats and spending time with family.</p>
+        </div>
+
+        <div class="christmas-recipes">
+            <div class="cr-cards js-recipes">
+
+            </div>
         </div>
     </div>
-    </div>
 
 
 
 
-                                                                <!-- Thanksgiving Recipes Section -->
+    <!-- Thanksgiving Recipes Section -->
 
     <div class="holiday" id="holiday2">
-    <div class="holiday-head" id="thanksgiving-head">
-        <h2>🦃Thanksgiving</h2>
-        <p>Thanksgiving is all about gratitude and enjoying a feast with loved ones.</p>
+        <div class="holiday-head" id="thanksgiving-head">
+            <h2>🦃Thanksgiving</h2>
+            <p>Thanksgiving is all about gratitude and enjoying a feast with loved ones.</p>
         </div>
 
         <div class="thanksgiving-recipes">
             <div class="cr-cards js-recipes">
-            
+
             </div>
+        </div>
     </div>
-    </div>
 
 
 
-                                                                    <!-- Easter Recipes Section -->
+    <!-- Easter Recipes Section -->
 
     <div class="holiday" id="holiday3">
-    <div class="holiday-head" id="easter-head">
-        <h2>🐰Easter</h2>
-        <p>Easter is a joyful celebration, often marked by baking sweet treats and decorating eggs.</p>
-    </div>
+        <div class="holiday-head" id="easter-head">
+            <h2>🐰Easter</h2>
+            <p>Easter is a joyful celebration, often marked by baking sweet treats and decorating eggs.</p>
+        </div>
 
         <div class="easter-recipes">
             <div class="cr-cards js-recipes">
@@ -262,18 +273,21 @@ input[type="checkbox"] {
     </div>
 
     <div class="subscription-container">
-        <div>
+        <div data-aos="slide-right">
             <h2 style="font-size: 36px; margin: 0;">Celebrate the Holidays with Sweet Treats in Your Inbox</h2>
-            <p style="font-size: 20px; text-align: justify; text-justify: inter-word;">Join our holiday mailing list and receive delicious recipes, 
-                baking guides, and festive kitchen ideas right in your inbox. 
+            <p style="font-size: 20px; text-align: justify; text-justify: inter-word;">Join our holiday mailing list and
+                receive delicious recipes,
+                baking guides, and festive kitchen ideas right in your inbox.
                 Make every holiday bake warm, joyful, and unforgettable!</p>
         </div>
-        <div>
+        <div data-aos="slide-left">
             <form action="#" class="subscription-form js-feedback-form" method="post" data-confirm-duration="3500">
                 <div>
                     <input class="input-ne" type="text" placeholder="Name*" required>
                     <input class="input-ne" type="email" placeholder="Email*" required>
-                    <input type="checkbox" id="checbox"><label for="checbox" style="color: #343E51; font-weight: 400; cursor: pointer;">Receive fresh baking ideas and recipes weekly.</label>
+                    <input type="checkbox" id="checbox"><label for="checbox"
+                        style="color: #343E51; font-weight: 400; cursor: pointer;">Receive fresh baking ideas and
+                        recipes weekly.</label>
                 </div>
                 <input class="submit-btn" type="submit" value="Submit">
             </form>
@@ -290,13 +304,18 @@ input[type="checkbox"] {
     </footer>
 
 
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <script>
-    if (typeof AOS !== 'undefined') { AOS.init(); }
+        AOS.init({
+            duration: 700,
+            easing: 'ease-out-cubic',
+            once: true
+        });
     </script>
     <script src="scripts/header.js"></script>
     <script src="scripts/data/recipe-Collections.js"></script>
     <script src="scripts/holidays.js"></script>
     <script src="scripts/form-feedback.js"></script>
 </body>
+
 </html>

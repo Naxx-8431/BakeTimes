@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="styles/general.css">
   <link rel="stylesheet" href="styles/header.css">
   <title>Recipe</title>
@@ -157,100 +158,114 @@
     }
 
 
-.qa-form {
-    background-color: #e8f5e9;
-    margin: 30px clamp(16px, 8vw, 103px);
-    display: grid;
-    grid-template-columns: 0.8fr 1fr;
-    justify-content: center;
-    align-items: flex-start;
-    padding: clamp(23px, 4vw, 68px);
-    gap: clamp(40px, 6vw, 150px);
-    line-height: 1.7;
-    border-radius: 4px;
-}
+    .qa-form {
+      background-color: #e8f5e9;
+      margin: 30px clamp(16px, 8vw, 103px);
+      display: grid;
+      grid-template-columns: 0.8fr 1fr;
+      justify-content: center;
+      align-items: flex-start;
+      padding: clamp(23px, 4vw, 68px);
+      gap: clamp(40px, 6vw, 150px);
+      line-height: 1.7;
+      border-radius: 4px;
+    }
 
-.qa-form-title h2 {
-    font-size: clamp(25px, 4vw, 41px);
-    font-weight: 600;
-}
-.qa-form-title p {
-    font-size: clamp(14px, 2.4vw, 20px);
-    margin: 20px 0;
-    line-height: 1.6;
-    text-align: justify;
-    text-justify: inter-word;
-}
-.form-content, input, textarea {
-    border: none;
-    display: block;
-    outline: none;
-    margin: 0 0 20px 0;
-    padding: 20px;
-    width: 100%;
-    border-radius: 5px;
-}
-input::placeholder, textarea::placeholder {
-    font-size: 16px;
-    font-family: Roboto, Arial;  
-}
-.qa-btn {
-  border: none;
-    padding: 10px 20px;
-    background: #343E51;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 4px;
-    margin-bottom: 20px;
-    transition: background 0.3s;
-}
-.qa-btn:hover {
-    background: #04AA6D;
-}
+    .qa-form-title h2 {
+      font-size: clamp(25px, 4vw, 41px);
+      font-weight: 600;
+    }
 
-@media (max-width: 992px) {
-  .qa-form {
-      grid-template-columns: 1fr;       /* stack title and form */
-      text-align: center;
-      margin: 24px clamp(16px, 1vw, 32px);
-      padding: clamp(20px, 6vw, 36px);
-      gap: 24px;                        /* smaller gap between title and form */
-  }
+    .qa-form-title p {
+      font-size: clamp(14px, 2.4vw, 20px);
+      margin: 20px 0;
+      line-height: 1.6;
+      text-align: justify;
+      text-justify: inter-word;
+    }
 
-  .qa-form-title {
-      max-width: 640px;
-      margin: 0 auto;
-  }
-
-  .form-content {
+    .form-content,
+    input,
+    textarea {
+      border: none;
+      display: block;
+      outline: none;
+      margin: 0 0 20px 0;
+      padding: 20px;
       width: 100%;
-  }
-}
+      border-radius: 5px;
+    }
 
-@media (max-width: 768px) {
-  .recipe-container {
-    margin: 20px 16px;
-  }
+    input::placeholder,
+    textarea::placeholder {
+      font-size: 16px;
+      font-family: Roboto, Arial;
+    }
 
-  .recipe-meta {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
-    padding: 16px;
-  }
+    .qa-btn {
+      border: none;
+      padding: 10px 20px;
+      background: #343E51;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 4px;
+      margin-bottom: 20px;
+      transition: background 0.3s;
+    }
 
-  .steps-list li {
-    padding: 12px;
-    margin-bottom: 10px;
-  }
-}
-</style>
+    .qa-btn:hover {
+      background: #04AA6D;
+    }
+
+    @media (max-width: 992px) {
+      .qa-form {
+        grid-template-columns: 1fr;
+        /* stack title and form */
+        text-align: center;
+        margin: 24px clamp(16px, 1vw, 32px);
+        padding: clamp(20px, 6vw, 36px);
+        gap: 24px;
+        /* smaller gap between title and form */
+      }
+
+      .qa-form-title {
+        max-width: 640px;
+        margin: 0 auto;
+      }
+
+      .form-content {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .recipe-container {
+        margin: 20px 16px;
+      }
+
+      .recipe-meta {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+        padding: 16px;
+      }
+
+      .steps-list li {
+        padding: 12px;
+        margin-bottom: 10px;
+      }
+    }
+  </style>
 </head>
+
 <body>
   <div class="header">
     <div class="header-left">
-      <a href="index.html"><p id="p" style="margin: 0;">BAKE<span style="font-weight: 400; font-size: 25px;">TIMES</span></p></a>
+      <a href="index.html">
+        <p id="p" style="margin: 0;">BAKE<span style="font-weight: 400; font-size: 25px;">TIMES</span></p>
+      </a>
     </div>
-    <button id="menu-toggle" class="m-btn" aria-label="Open menu" aria-expanded="false" aria-controls="header-nav">☰</button>
+    <button id="menu-toggle" class="m-btn" aria-label="Open menu" aria-expanded="false"
+      aria-controls="header-nav">☰</button>
     <div class="header-middle" id="header-nav">
       <a href="recipes.html">RECIPES</a>
       <a href="bakingbasics.html">BAKING BASICS</a>
@@ -267,7 +282,7 @@ input::placeholder, textarea::placeholder {
 
   <div class="recipe-container">
     <a href="recipes.html" class="back-button">← Back to Recipes</a>
-    
+
     <div id="recipe-content">
       <!-- Recipe content injected by JS -->
     </div>
@@ -276,20 +291,21 @@ input::placeholder, textarea::placeholder {
 
 
   <div class="qa-form">
-    <div class="qa-form-title">
-        <h2>Got a Baking Question? We're Here to Help</h2>
-        <p>Whether you're wondering how to adjust the texture, replace an ingredient, or perfect the technique, drop your question below. Your inquiry may be the tip another baker needs to make their next recipe a success.</p>
+    <div class="qa-form-title" data-aos="slide-right">
+      <h2>Got a Baking Question? We're Here to Help</h2>
+      <p>Whether you're wondering how to adjust the texture, replace an ingredient, or perfect the technique, drop your
+        question below. Your inquiry may be the tip another baker needs to make their next recipe a success.</p>
     </div>
-    <div class="form-content">
-        <form class="js-feedback-form" action="#" method="post" data-confirm-duration="3500">
-            <input type="text" placeholder="Enter Your Name.." required>
-            <input type="text" placeholder="Which recipe is your question about?" required>
-            <textarea name="qa" id="qa" placeholder="Write your question here…" required></textarea>
-            <button type="submit" class="qa-btn">Submit</button>
-            <button type="reset" class="qa-btn">reset</button>
-        </form>
+    <div class="form-content" data-aos="slide-left">
+      <form class="js-feedback-form" action="#" method="post" data-confirm-duration="3500">
+        <input type="text" placeholder="Enter Your Name.." required>
+        <input type="text" placeholder="Which recipe is your question about?" required>
+        <textarea name="qa" id="qa" placeholder="Write your question here…" required></textarea>
+        <button type="submit" class="qa-btn">Submit</button>
+        <button type="reset" class="qa-btn">reset</button>
+      </form>
     </div>
-</div>
+  </div>
 
   <footer>
     <p style="margin: 0; font-size: 16px;">© 2025 BAKE TIMES. All rights reserved.</p>
@@ -300,13 +316,18 @@ input::placeholder, textarea::placeholder {
     </div>
   </footer>
 
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script>
-    AOS.init();
+    AOS.init({
+      duration: 700,
+      easing: 'ease-out-cubic',
+      once: true
+    });
   </script>
   <script src="scripts/header.js"></script>
   <script src="scripts/data/recipe-Collections.js"></script>
   <script src="scripts/recipe-template.js"></script>
   <script src="scripts/form-feedback.js"></script>
 </body>
+
 </html>

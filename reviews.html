@@ -187,6 +187,9 @@
         input,
         textarea {
             border: none;
+            resize: none;
+            overflow-y: auto;
+            overflow-x: hidden;
             display: block;
             outline: none;
             margin: 0 0 20px 0;
@@ -448,14 +451,14 @@
 
 
 
-    <div class="review-form" data-aos="fade-up">
-        <div class="review-form-title">
+    <div class="review-form">
+        <div class="review-form-title" data-aos="slide-right">
             <h2>Share Your Baking Story</h2>
             <p>Leave a review and tell us about your baking experience.
                 Whether it was a cake that brightened your day or bread that brought comfort to your table,
                 your words help other bakers find recipes they'll love.</p>
         </div>
-        <div class="form-content">
+        <div class="form-content" data-aos="slide-left">
             <form class="js-feedback-form" action="/reviews" method="post" data-confirm-duration="4000">
                 <input type="text" placeholder="Enter Your Name.." required>
                 <textarea name="review" id="review" placeholder="Enter your review.." required></textarea>
