@@ -2,7 +2,7 @@
 // REVIEWS PAGE - API Integration
 // ============================================
 
-const API_BASE = 'http://localhost:5000/api/reviews';
+const API_BASE = CONFIG.API_BASE_URL + '/api/reviews';
 
 // ============================================
 // LOAD APPROVED REVIEWS

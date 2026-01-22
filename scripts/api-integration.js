@@ -3,7 +3,7 @@
 // ============================================
 // This file replaces the static recipe-Collections.js with dynamic API calls
 
-const API_BASE = 'http://localhost:5000/api/recipes';
+const API_BASE = CONFIG.API_BASE_URL + '/api/recipes';
 
 // Global variable to store recipes (maintains compatibility with existing code)
 let recipeList = [];

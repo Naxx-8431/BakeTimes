@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         try {
-            const response = await fetch('http://localhost:5000/api/subscribers', {
+            const response = await fetch(`${CONFIG.API_BASE_URL}/api/subscribers`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
