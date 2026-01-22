@@ -4,8 +4,8 @@
 // This file contains all the logic for handling recipe-related requests
 
 const Recipe = require('../models/Recipe');
-const path = require('path');
-const fs = require('fs');
+// const path = require('path'); // Not needed for Base64
+// const fs = require('fs');     // Not needed for Base64
 
 // ============================================
 // GET ALL RECIPES
@@ -148,8 +148,12 @@ exports.createRecipe = async (req, res) => {
         };
 
         // Add image path if file was uploaded
+        // Add image as Base64 string if file was uploaded
         if (req.file) {
-            recipeData.image = req.file.filename;  // Store only filename, not full path
+            // Convert buffer to Base64
+            const b64 = Buffer.from(req.file.buffer).toString('base64');
+            const dataURI = 'data:' + req.file.mimetype + ';base64,' + b64;
+            recipeData.image = dataURI;
         }
 
         // Create new recipe in database
@@ -166,12 +170,7 @@ exports.createRecipe = async (req, res) => {
         console.error('Error creating recipe:', error);
 
         // Delete uploaded image if recipe creation failed
-        if (req.file) {
-            const imagePath = path.join(__dirname, '../uploads/recipes', req.file.filename);
-            fs.unlink(imagePath, (err) => {
-                if (err) console.error('Error deleting image:', err);
-            });
-        }
+        // No file cleanup needed for memory storage
 
         // Handle validation errors
         if (error.name === 'ValidationError') {
@@ -234,16 +233,10 @@ exports.updateRecipe = async (req, res) => {
 
         // Handle image update
         if (req.file) {
-            // Delete old image if it exists and is not the default
-            if (recipe.image && recipe.image !== 'default-recipe.jpg') {
-                const oldImagePath = path.join(__dirname, '../uploads/recipes', recipe.image);
-                fs.unlink(oldImagePath, (err) => {
-                    if (err) console.error('Error deleting old image:', err);
-                });
-            }
-
-            // Set new image
-            updateData.image = req.file.filename;
+            // Convert buffer to Base64
+            const b64 = Buffer.from(req.file.buffer).toString('base64');
+            const dataURI = 'data:' + req.file.mimetype + ';base64,' + b64;
+            updateData.image = dataURI;
         }
 
         // Update recipe with new data
@@ -266,12 +259,7 @@ exports.updateRecipe = async (req, res) => {
         console.error('Error updating recipe:', error);
 
         // Delete uploaded image if update failed
-        if (req.file) {
-            const imagePath = path.join(__dirname, '../uploads/recipes', req.file.filename);
-            fs.unlink(imagePath, (err) => {
-                if (err) console.error('Error deleting image:', err);
-            });
-        }
+        // No file cleanup needed for memory storage
 
         if (error.name === 'ValidationError') {
             const messages = Object.values(error.errors).map(err => err.message);
@@ -310,12 +298,7 @@ exports.deleteRecipe = async (req, res) => {
         }
 
         // Delete associated image file (if not default)
-        if (recipe.image && recipe.image !== 'default-recipe.jpg') {
-            const imagePath = path.join(__dirname, '../uploads/recipes', recipe.image);
-            fs.unlink(imagePath, (err) => {
-                if (err) console.error('Error deleting image:', err);
-            });
-        }
+        // No file deletion needed (image is in DB)
 
         // Delete recipe from database
         await Recipe.findByIdAndDelete(req.params.id);

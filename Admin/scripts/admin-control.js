@@ -45,9 +45,9 @@ async function renderTable() {
 
   tableBody.innerHTML = recipes.map(recipe => {
     const totalTime = (recipe.prepTime || 0) + (recipe.cookTime || 0);
-    const imageUrl = recipe.image
-      ? `${CONFIG.API_BASE_URL}/uploads/recipes/${recipe.image}`
-      : 'https://via.placeholder.com/50';
+    const imageUrl = (recipe.image && (recipe.image.startsWith('data:') || recipe.image.startsWith('http')))
+      ? recipe.image
+      : `${CONFIG.API_BASE_URL}/uploads/recipes/${recipe.image}`;
 
     return `
       <tr data-id="${recipe._id}">

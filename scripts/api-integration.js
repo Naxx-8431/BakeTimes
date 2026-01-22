@@ -21,7 +21,9 @@ async function loadRecipesFromAPI() {
             recipeList = data.data.map(recipe => ({
                 id: recipe._id,
                 name: recipe.title,
-                image: `http://localhost:5000/uploads/recipes/${recipe.image}`,
+                image: (recipe.image && (recipe.image.startsWith('data:') || recipe.image.startsWith('http')))
+                    ? recipe.image
+                    : `${CONFIG.API_BASE_URL}/uploads/recipes/${recipe.image}`,
                 description: recipe.description,
                 ingredients: recipe.ingredients,
                 instructions: recipe.instructions,

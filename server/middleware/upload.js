@@ -12,26 +12,7 @@ const path = require('path');
 /**
  * Configure where and how uploaded files are stored
  */
-const storage = multer.diskStorage({
-
-    // Set destination folder for uploaded files
-    destination: function (req, file, cb) {
-        // Store images in the 'uploads/recipes' folder
-        // This folder should exist or be created
-        cb(null, 'uploads/recipes/');
-    },
-
-    // Generate unique filename for each upload
-    filename: function (req, file, cb) {
-        // Create unique filename: recipe-{timestamp}-{random}.{extension}
-        // Example: recipe-1642345678901-abc123.jpg
-        const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
-        const fileExtension = path.extname(file.originalname);  // Get file extension (.jpg, .png, etc.)
-        const fileName = 'recipe-' + uniqueSuffix + fileExtension;
-
-        cb(null, fileName);
-    }
-});
+const storage = multer.memoryStorage();
 
 // ============================================
 // FILE FILTER (VALIDATION)
