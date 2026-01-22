@@ -1,6 +1,6 @@
 const CONFIG = {
     // API_BASE_URL: 'http://localhost:5000' // Local Development
-    API_BASE_URL: 'https://baketimes.onrender.com' // Production (Update this after backend deployment)
+    API_BASE_URL: 'https://baketimes-backend.onrender.com' // Production (Update this after backend deployment)
 };
 
 // Auto-detect environment (optional, but good for hybrid setups)
