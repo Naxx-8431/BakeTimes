@@ -1,6 +1,6 @@
 // Admin Control - MongoDB Backend Integration
 // API Base URL
-const API_BASE = 'http://localhost:5000/api/recipes';
+const API_BASE = CONFIG.API_BASE_URL + '/api/recipes';
 
 // ============================================
 // FETCH ALL RECIPES FROM BACKEND
@@ -46,7 +46,7 @@ async function renderTable() {
   tableBody.innerHTML = recipes.map(recipe => {
     const totalTime = (recipe.prepTime || 0) + (recipe.cookTime || 0);
     const imageUrl = recipe.image
-      ? `http://localhost:5000/uploads/recipes/${recipe.image}`
+      ? `${CONFIG.API_BASE_URL}/uploads/recipes/${recipe.image}`
       : 'https://via.placeholder.com/50';
 
     return `
@@ -239,7 +239,7 @@ renderTable();
 // ============================================
 // ============================================
 
-const REVIEW_API_BASE = 'http://localhost:5000/api/reviews';
+const REVIEW_API_BASE = CONFIG.API_BASE_URL + '/api/reviews';
 
 // Status helper for reviews
 function showReviewStatus(message, type) {
@@ -422,7 +422,7 @@ loadReviews();
 // ============================================
 // ============================================
 
-const SUBSCRIBER_API_BASE = 'http://localhost:5000/api/subscribers';
+const SUBSCRIBER_API_BASE = CONFIG.API_BASE_URL + '/api/subscribers';
 
 function showSubscriberStatus(message, type) {
   const el = document.getElementById('subscriber-status');
@@ -512,7 +512,7 @@ loadSubscribers();
 // ============================================
 // ============================================
 
-const QA_API_BASE = 'http://localhost:5000/api/questions';
+const QA_API_BASE = CONFIG.API_BASE_URL + '/api/questions';
 
 function showQAStatus(message, type) {
   const el = document.getElementById('qa-status');
