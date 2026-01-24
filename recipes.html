@@ -129,7 +129,7 @@
 </head>
 
 <body>
-    <div class="header">
+    <header class="header">
         <div class="header-left">
             <a href="index.html">
                 <p id="p" style="margin: 0;">BAKE<span style="font-weight: 400; font-size: 25px;">TIMES</span></p>
@@ -152,44 +152,46 @@
             <a href="https://twitter.com" class="fa fa-twitter"></a>
             <a href="https://instagram.com" class="fa fa-instagram"></a>
         </div>
-    </div>
-    <div class="container" data-aos="zoom-in">
-        <h1>Recipe Collections</h1>
-        <p>Discover thousands of tested recipes from simple cookies to show-stopping cakes.
-            Filter by<br> ingredients, dietary needs, or skill level to find your perfect bake.</p>
-    </div>
-    <div class="search" data-aos="zoom-in" data-aos-delay="50">
-        <form action="/action_page.php">
-            <label for="bar" class="search-label">Search baking recipes:</label>
-            <input type="text" id="bar" class="search-bar" placeholder="Search recipes, ingredients, or techniques..."
-                name="search">
+    </header>
+    <main>
+        <section class="container" data-aos="zoom-in">
+            <h1>Recipe Collections</h1>
+            <p>Discover thousands of tested recipes from simple cookies to show-stopping cakes.
+                Filter by<br> ingredients, dietary needs, or skill level to find your perfect bake.</p>
+        </section>
+        <section class="search" data-aos="zoom-in" data-aos-delay="50">
+            <form action="/action_page.php">
+                <label for="bar" class="search-label">Search baking recipes:</label>
+                <input type="text" id="bar" class="search-bar"
+                    placeholder="Search recipes, ingredients, or techniques..." name="search">
 
-            <div id="suggestions-box"></div>
-        </form>
-    </div>
-    <hr style="border: 0; height: 1px; background: #eee; margin: 40px 0;">
+                <div id="suggestions-box"></div>
+            </form>
+        </section>
+        <hr style="border: 0; height: 1px; background: #eee; margin: 40px 0;">
 
-    <div>
-        <h2 class="js-recipeText recipeText">Featured Collections</h2>
+        <section>
+            <h2 class="js-recipeText recipeText">Featured Collections</h2>
 
-        <div class="recipes js-Featured-Recipes" id="featured-Section">
+            <div class="recipes js-Featured-Recipes" id="featured-Section">
 
-        </div>
-        <hr style="border: 0; height: 1px; background: #eee; margin: 40px 0;" class="js-line">
-    </div>
-
-
-
-
-    <div>
-        <h2 class="js-allRecipeText allRecipeText">All Recipes</h2>
-
-        <div class="recipes js-recipes">
-
-        </div>
+            </div>
+            <hr style="border: 0; height: 1px; background: #eee; margin: 40px 0;" class="js-line">
+        </section>
 
 
-    </div>
+
+
+        <section>
+            <h2 class="js-allRecipeText allRecipeText">All Recipes</h2>
+
+            <div class="recipes js-recipes">
+
+            </div>
+
+
+        </section>
+    </main>
 
     <footer>
         <p style="margin: 0; font-size: 16px;">© 2025 BAKE TIMES. All rights reserved.</p>

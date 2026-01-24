@@ -297,13 +297,13 @@
 
 <body>
 
-  <div class="admin-wrapper">
+  <main class="admin-wrapper">
     <h1>Admin Dashboard</h1>
     <p style="margin:0 0 24px;">Manage recipes and user reviews in one place.</p>
 
     <div class="admin-layout">
       <!-- Add form -->
-      <div class="recipe-form">
+      <aside class="recipe-form">
         <h2>Add New Recipe</h2>
 
         <form id="recipe-form" enctype="multipart/form-data">
@@ -381,10 +381,10 @@
           <button type="submit" class="admin-btn">Add Recipe</button>
           <span id="form-status"></span>
         </form>
-      </div>
+      </aside>
 
       <!-- List / delete -->
-      <div class="recipe-list">
+      <section class="recipe-list">
         <h2>Recipe List</h2>
 
         <button id="refresh-list" class="admin-btn" style="margin-bottom: 15px;">
@@ -408,11 +408,11 @@
             </tr>
           </tbody>
         </table>
-      </div>
+      </section>
     </div>
 
     <!-- ================= REVIEWS SECTION ================= -->
-    <div class="reviews-section">
+    <section class="reviews-section">
       <div class="header-actions">
         <div>
           <h2>Review Management</h2>
@@ -442,7 +442,7 @@
 
       <div id="review-status" style="margin-bottom: 20px; font-weight: 500;"></div>
 
-      <div class="recipe-list" style="overflow-x: auto;">
+      <article class="recipe-list" style="overflow-x: auto;">
         <table id="reviews-table">
           <thead>
             <tr>
@@ -461,12 +461,12 @@
             </tr>
           </tbody>
         </table>
-      </div>
-    </div>
+      </article>
+    </section>
     <!-- =================================================== -->
 
     <!-- ================= SUBSCRIBERS SECTION ================= -->
-    <div class="subscribers-section" style="margin-top: 60px; padding-top: 40px; border-top: 2px solid #eee;">
+    <section class="subscribers-section" style="margin-top: 60px; padding-top: 40px; border-top: 2px solid #eee;">
       <div class="header-actions">
         <div>
           <h2>Newsletter Subscribers</h2>
@@ -484,7 +484,7 @@
 
       <div id="subscriber-status" style="margin-bottom: 20px; font-weight: 500;"></div>
 
-      <div class="recipe-list" style="overflow-x: auto;">
+      <article class="recipe-list" style="overflow-x: auto;">
         <table id="subscribers-table">
           <thead>
             <tr>
@@ -500,12 +500,12 @@
             </tr>
           </tbody>
         </table>
-      </div>
-    </div>
+      </article>
+    </section>
     <!-- =================================================== -->
 
     <!-- ================= Q&A SECTION ================= -->
-    <div class="qa-section" style="margin-top: 60px; padding-top: 40px; border-top: 2px solid #eee;">
+    <section class="qa-section" style="margin-top: 60px; padding-top: 40px; border-top: 2px solid #eee;">
       <div class="header-actions">
         <div>
           <h2>Q&A / Inquiries</h2>
@@ -523,7 +523,7 @@
 
       <div id="qa-status" style="margin-bottom: 20px; font-weight: 500;"></div>
 
-      <div class="recipe-list" style="overflow-x: auto;">
+      <article class="recipe-list" style="overflow-x: auto;">
         <table id="qa-table">
           <thead>
             <tr>
@@ -541,11 +541,11 @@
             </tr>
           </tbody>
         </table>
-      </div>
-    </div>
+      </article>
+    </section>
     <!-- =================================================== -->
 
-  </div>
+  </main>
 
   <!-- admin logic -->
   <script src="../scripts/config.js"></script>

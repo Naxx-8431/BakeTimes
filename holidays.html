@@ -186,7 +186,7 @@
 </head>
 
 <body style="line-height: 1.7;">
-    <div class="header">
+    <header class="header">
         <div class="header-left">
             <a href="index.html">
                 <p id="p" style="margin: 0;">BAKE<span style="font-weight: 400; font-size: 25px;">TIMES</span></p>
@@ -210,89 +210,91 @@
             <a href="https://twitter.com" class="fa fa-twitter"></a>
             <a href="https://instagram.com" class="fa fa-instagram"></a>
         </div>
-    </div>
+    </header>
 
-    <div class="holidays-nav">
+    <nav class="holidays-nav">
         <a href="#holiday1" id="christmas-link" style="background-color: #e0ffe3;" class="nav">🎄 Christmas</a>
         <a href="#holiday2" id="thanksgiving-link" style="background-color: #fcffdd;" class="nav">🦃 Thanksgiving</a>
         <a href="#holiday3" id="easter-link" style="background-color: #fff2d8;" class="nav">🐰 Easter</a>
-    </div>
+    </nav>
+
+    <main>
+
+        <!-- Christmas Recipes Section -->
 
 
 
-    <!-- Christmas Recipes Section -->
-
-
-
-    <div class="holiday" id="holiday1">
-        <div class="holiday-head" id="christmas-head">
-            <h2>🎄Christmas</h2>
-            <p>Christmas is a time for baking delicious treats and spending time with family.</p>
-        </div>
-
-        <div class="christmas-recipes">
-            <div class="cr-cards js-recipes">
-
+        <section class="holiday" id="holiday1">
+            <div class="holiday-head" id="christmas-head">
+                <h2>🎄Christmas</h2>
+                <p>Christmas is a time for baking delicious treats and spending time with family.</p>
             </div>
-        </div>
-    </div>
 
+            <div class="christmas-recipes">
+                <div class="cr-cards js-recipes">
 
-
-
-    <!-- Thanksgiving Recipes Section -->
-
-    <div class="holiday" id="holiday2">
-        <div class="holiday-head" id="thanksgiving-head">
-            <h2>🦃Thanksgiving</h2>
-            <p>Thanksgiving is all about gratitude and enjoying a feast with loved ones.</p>
-        </div>
-
-        <div class="thanksgiving-recipes">
-            <div class="cr-cards js-recipes">
-
-            </div>
-        </div>
-    </div>
-
-
-
-    <!-- Easter Recipes Section -->
-
-    <div class="holiday" id="holiday3">
-        <div class="holiday-head" id="easter-head">
-            <h2>🐰Easter</h2>
-            <p>Easter is a joyful celebration, often marked by baking sweet treats and decorating eggs.</p>
-        </div>
-
-        <div class="easter-recipes">
-            <div class="cr-cards js-recipes">
-
-            </div>
-        </div>
-    </div>
-
-    <div class="subscription-container">
-        <div data-aos="slide-right">
-            <h2 style="font-size: 36px; margin: 0;">Celebrate the Holidays with Sweet Treats in Your Inbox</h2>
-            <p style="font-size: 20px; text-align: justify; text-justify: inter-word;">Join our holiday mailing list and
-                receive delicious recipes,
-                baking guides, and festive kitchen ideas right in your inbox.
-                Make every holiday bake warm, joyful, and unforgettable!</p>
-        </div>
-        <div data-aos="slide-left">
-            <form id="newsletter-form" action="#" class="subscription-form" method="post">
-                <div>
-                    <input class="input-ne" type="text" placeholder="Name*" required>
-                    <input class="input-ne" type="email" placeholder="Email*" required>
-                    <input type="checkbox" id="checbox"><label for="checbox"
-                        style="color: #343E51; font-weight: 400; cursor: pointer;">Receive fresh baking ideas and
-                        recipes weekly.</label>
                 </div>
-                <input class="submit-btn" type="submit" value="Submit">
-            </form>
-        </div>
-    </div>
+            </div>
+        </section>
+
+
+
+
+        <!-- Thanksgiving Recipes Section -->
+
+        <section class="holiday" id="holiday2">
+            <div class="holiday-head" id="thanksgiving-head">
+                <h2>🦃Thanksgiving</h2>
+                <p>Thanksgiving is all about gratitude and enjoying a feast with loved ones.</p>
+            </div>
+
+            <div class="thanksgiving-recipes">
+                <div class="cr-cards js-recipes">
+
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- Easter Recipes Section -->
+
+        <section class="holiday" id="holiday3">
+            <div class="holiday-head" id="easter-head">
+                <h2>🐰Easter</h2>
+                <p>Easter is a joyful celebration, often marked by baking sweet treats and decorating eggs.</p>
+            </div>
+
+            <div class="easter-recipes">
+                <div class="cr-cards js-recipes">
+
+                </div>
+            </div>
+        </section>
+
+        <section class="subscription-container">
+            <div data-aos="slide-right">
+                <h2 style="font-size: 36px; margin: 0;">Celebrate the Holidays with Sweet Treats in Your Inbox</h2>
+                <p style="font-size: 20px; text-align: justify; text-justify: inter-word;">Join our holiday mailing list
+                    and
+                    receive delicious recipes,
+                    baking guides, and festive kitchen ideas right in your inbox.
+                    Make every holiday bake warm, joyful, and unforgettable!</p>
+            </div>
+            <div data-aos="slide-left">
+                <form id="newsletter-form" action="#" class="subscription-form" method="post">
+                    <div>
+                        <input class="input-ne" type="text" placeholder="Name*" required>
+                        <input class="input-ne" type="email" placeholder="Email*" required>
+                        <input type="checkbox" id="checbox"><label for="checbox"
+                            style="color: #343E51; font-weight: 400; cursor: pointer;">Receive fresh baking ideas and
+                            recipes weekly.</label>
+                    </div>
+                    <input class="submit-btn" type="submit" value="Submit">
+                </form>
+            </div>
+        </section>
+    </main>
 
     <footer>
         <p style="margin: 0; font-size: 16px;">© 2025 BAKE TIMES. All rights reserved.</p>
