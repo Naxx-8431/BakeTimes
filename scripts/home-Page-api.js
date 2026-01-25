@@ -35,7 +35,7 @@ function renderFeaturedRecipes(recipes = recipeList) {
         // Alternate layout: odd index = image first, even index = content first
         const layout = index % 2 === 1 ? imageDiv + contentDiv : contentDiv + imageDiv;
 
-        const cardHTML = `<div class="fr-card">${layout}</div>`;
+        const cardHTML = `<div class="fr-card" data-aos="zoom-in" data-aos-delay="${index * 100}">${layout}</div>`;
         featuredRecipeHTML += cardHTML;
     });
 
