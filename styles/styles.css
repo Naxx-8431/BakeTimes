@@ -1,7 +1,5 @@
 .bg {
   background-color: #f1f1f1;
-  overflow-x: hidden;
-  width: 100%;
 }
 
 .header {
@@ -18,11 +16,9 @@
   position: fixed;
   transform: translateX(-50%);
   width: 90%;
-  max-width: 100vw;
   border-radius: 12px;
   box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.15);
   z-index: 300;
-  box-sizing: border-box;
 }
 
 .header-left {
@@ -540,21 +536,6 @@ footer {
 
   footer div a {
     font-size: 16px;
-  }
-
-  /* Fix the floating header box on mobile */
-  .header {
-    position: sticky;
-    top: 0;
-    left: 0;
-    transform: none;
-    width: 100%;
-    max-width: 100vw;
-    border-radius: 0;
-    padding: 15px clamp(12px, 4vw, 20px);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-    box-sizing: border-box;
-    margin: 0;
   }
 
 
