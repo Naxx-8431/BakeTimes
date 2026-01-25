@@ -1,5 +1,12 @@
+body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
 .bg {
   background-color: #f1f1f1;
+  overflow-x: hidden;
 }
 
 .header {
@@ -111,7 +118,7 @@
   gap: clamp(16px, 4vw, 50px);
   grid-template-columns: clamp(250px, 40%, 540px) 1fr;
   padding: 160px 0 50px;
-  margin: 0 103px;
+  margin: 0 clamp(16px, 8vw, 103px);
   box-sizing: border-box;
   justify-items: end;
 }
@@ -210,7 +217,7 @@
   align-items: center;
   gap: 50px;
   scroll-margin-top: 170px;
-  margin: 120px 103px 70px;
+  margin: 120px clamp(16px, 8vw, 103px) 70px;
   box-sizing: border-box;
 }
 
@@ -250,8 +257,8 @@
   flex-wrap: wrap;
   align-items: center;
   flex-direction: row;
-  gap: 200px;
-  margin: 0px 103px;
+  gap: clamp(24px, 15vw, 200px);
+  margin: 0px clamp(16px, 8vw, 103px);
   vertical-align: top;
 
 }
@@ -426,7 +433,7 @@ input[type="checkbox"] {
 }
 
 footer {
-  margin: 0 103px;
+  margin: 0 clamp(16px, 8vw, 103px);
   padding: 40px 0;
   display: flex;
   align-items: center;
