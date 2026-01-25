@@ -22,7 +22,7 @@ function renderFeaturedRecipes(recipes = recipeList) {
     let featuredRecipeHTML = '';
 
     featuredRecipes.forEach((recipe, index) => {
-        const aos = index % 2 === 0 ? 'fade-right' : 'fade-left';
+        // const aos = index % 2 === 0 ? 'fade-right' : 'fade-left';
         const imageDiv = `<div class="fr-image"><img class="ricipe-img" src="${recipe.image}" alt="${recipe.name}" onerror="this.src='tumbnail-images/default-recipe.png'"></div>`;
         const contentDiv = `
       <div class="fr-content">
@@ -35,7 +35,7 @@ function renderFeaturedRecipes(recipes = recipeList) {
         // Alternate layout: odd index = image first, even index = content first
         const layout = index % 2 === 1 ? imageDiv + contentDiv : contentDiv + imageDiv;
 
-        const cardHTML = `<div class="fr-card" data-aos="${aos}" data-aos-delay="${index * 100}">${layout}</div>`;
+        const cardHTML = `<div class="fr-card">${layout}</div>`;
         featuredRecipeHTML += cardHTML;
     });
 
